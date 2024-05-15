@@ -4,36 +4,126 @@ body{
 *{
   color: whitesmoke;
   font-family: lexend;
+  text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.679);
+  cursor: url(Images/CustomCursor.png), auto;
 }
 .project-title{
   color: whitesmoke;
   font-family: lexend;
-  font-size: 200%;
+  font-size: 500%;
   display: block;
   text-align: center;
+  font-weight: bold;
+  margin-bottom: 0;
 }
 .project-description{
-  font-size: 100%;
+  margin-top: 0;
+  max-width: 50%;
+  font-size: 150%;
   display: block;
   text-align: center;
-  margin-left: 20%;
+  margin-left: 25%;
   margin-right: 20%;
+  font-weight: bold;
 }
 .explanation-container {
   margin-top: 100px;
-  height: 500px;
+  margin-bottom: 20px;
   overflow: hidden; /* Clear floats */
 }
 .explanation-title{
-  font-size: 30px;
+  font-size: 200%;
+  font-weight: bold;
 }
 .explanation-text {
-  font-size: 20px;
+  font-size: 100%;
+  font-weight: bold;
 }
 
 .explanation-image {
-  margin-left: 10px;
   width: 25%;
   border-radius: 10px;
-  float: right;
+  box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.679);
+}
+.project-link{
+  text-align: center;
+  color: rgb(0, 149, 255);
+}
+.second-part{
+  margin-top: 0px;
+}
+.parent-container{
+  width: 90vw;
+  margin-left: 3vw;
+}
+
+ul {
+  position: sticky;
+  top: 2%;
+  z-index: 1000;
+
+  margin-left: 3vw;
+  display: inline-block;
+  border-radius: 10px;
+  list-style-type: none;
+  padding: 0;
+  overflow: hidden;
+  background-color: #1f2125;
+  box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.679);
+  font-weight: bold;
+}
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #111;
+}
+
+.bg {
+  background: radial-gradient(circle at center, #f4b12e, #dc981a 80%);
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -2;
+}
+.fadeout{
+  background: radial-gradient(circle at center, transparent 20%, #f4b12e 100%);
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+.star-pattern {
+  background-image: url(Images/StarBG.png);
+  background-size: 8%;
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -2;
+  opacity: 0.2;
+  animation: pan 180s linear infinite;
+}
+@keyframes pan {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 100% 0;
+  }
 }
