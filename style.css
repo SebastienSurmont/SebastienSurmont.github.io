@@ -3,6 +3,39 @@
   --cardhighlightWidth: 5px;
 }
 
+ul {
+  position: sticky;
+  top: 2%;
+  margin-left: 3vw;
+  display: inline-block;
+  border-radius: 10px;
+  list-style-type: none;
+  padding: 0;
+  z-index: 1000;
+  background-color: #1f2125;
+  box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.679);
+  font-weight: bold;
+  overflow: hidden;
+}
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #111;
+}
+.active {
+  background-color: #2d456c;
+}
+
 
 
 body{
@@ -106,7 +139,7 @@ body{
 
   
   box-shadow: 4px 4px 1px rgba(0, 0, 0, 0.679);
-  /* box-shadow: 4px 4px 10px rgba(63, 91, 133, 0.159); */
+  
   
   background-size: cover;
   background-position: center;
@@ -117,12 +150,14 @@ body{
   position: relative;
   transform: scale(1.2) rotate(-2deg);
   z-index: 1000;
+  box-shadow: 4px 4px 10px rgba(63, 91, 133, 0.159);
   outline: var(--cardhighlightWidth) auto var(--cardhighlightColour);
 }
 .piece:nth-child(odd):hover{
   position: relative;
   transform: scale(1.2) rotate(2deg);
   z-index:  100000;
+  box-shadow: 4px 4px 10px rgba(63, 91, 133, 0.159);
   outline: var(--cardhighlightWidth) auto var(--cardhighlightColour);
 }
 .piece:hover .project-cards-text{
@@ -173,7 +208,7 @@ a {
 
 /* Fill in the project images */
 .project1-image{
-  background-image: url('Images/Thumbnails/BallIstic.png');
+  background-image: url('Images/Temp/GameDesign3Temp.png');
 }
 .project2-image{
   background-image: url('Images/Thumbnails/HouseOnFire.png');
@@ -185,7 +220,7 @@ a {
   background-image: url('Images/Thumbnails/HexGame.png');
 }
 .project5-image{
-  background-image: url('Images/Thumbnails/Tree.png');
+  background-image: url('Images/Thumbnails/Windmill_Final_Sebastien_Surmont.jpg');
 }
 
 .project7-image{
@@ -195,7 +230,7 @@ a {
   background-image: url('Images/Thumbnails/Rattatouille.png');
 }
 .project9-image{
-  background-image: url('Images/Thumbnails/Windmill_Final_Sebastien_Surmont.jpg');
+  background-image: url('Images/Thumbnails/18+Projects.png');
 }
 .project10-image{
   background-image: url('Images/Thumbnails/SesameStreet.png');
@@ -205,7 +240,16 @@ a {
 
 
 
-
+.contactme-image{
+  position: absolute;
+  margin-left: 20%;
+  margin-top: -17%;
+  border-radius: 10px;
+  border-width: 50px;
+  border-color: #111;
+  max-height: 400px;
+  box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.679);
+}
 
 .introduction{
   width: 70%;
@@ -221,6 +265,7 @@ a {
   display: inline-block;
 }
 .aboutMe-Image {
+  border-radius: 10px;
   border-width: 50px;
   border-color: #111;
   max-height: 400px;
@@ -242,6 +287,7 @@ a {
   display: inline-block;
   margin-top: 10vh;
   width: 98vw;
+  height: 400px;
   text-align: center;
   border-radius: 10px;
 }
@@ -250,7 +296,14 @@ a {
   border-radius: 10px;
   display: inline-block;
   background-color: #1f2125;
-  width: 200px;
+  width: 20%;
+  height: 40%;
+}
+.footer-text{
+  margin-top: 5%;
+  font-size: 200%;
+  text-align: center;
+  font-weight: bold;
 }
 .header {
   color: transparent;
@@ -275,14 +328,16 @@ a {
   font-weight: bold;
   width: 70%;
   margin: auto;
+  margin-top: -8%;
 }
 .hi-myname-contact{
   margin-right: 100px;
-  font-size: 55px;
+  font-size: 400%;
   font-weight: bold;
   text-align: left;
   max-width: 40vw;
   margin-top: 20vh;
+  margin-bottom: 20vh;
   display: inline-block;
   color: rgb(200, 214, 76);
 }
@@ -290,10 +345,169 @@ a {
 
 
 .lifelyimage{
-
   display: inline-block;
-  transition: transform .2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  transition: transform .15s  cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 .lifelyimage:hover{
-  transform: scale(1.1) rotate(4deg);
+  box-shadow: 4px 4px 10px rgba(63, 91, 133, 0.159);
+  outline: var(--cardhighlightWidth) auto var(--cardhighlightColour);
+  transform: scale(1.2) rotate(4deg);
  }
+
+
+
+ /* Navpage */
+
+
+ul {
+  position: sticky;
+  top: 2%;
+  margin-left: 3vw;
+  display: inline-block;
+  border-radius: 10px;
+  list-style-type: none;
+  padding: 0;
+  z-index: 100;
+  background-color: #1f2125;
+  box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.679);
+  font-weight: bold;
+  overflow: hidden;
+}
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #111;
+}
+.active {
+  background-color: #2d456c;
+}
+
+
+
+ /* ProjectPage */
+
+.project-title{
+  color: whitesmoke;
+  font-family: lexend;
+  font-size: 500%;
+  display: block;
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 0;
+  margin-top: 2%;
+}
+.project-description{
+  margin-top: 0;
+  font-size: 250%;
+  display: block;
+  text-align: center;
+  margin-left: 25%;
+  margin-right: 20%;
+  font-weight: bold;
+}
+.explanation-container {
+  margin-top: 100px;
+  margin-bottom: 20px;
+  overflow: hidden; /* Clear floats */
+}
+.explanation-title{
+  font-size: 400%;
+  font-weight: bold;
+}
+.explanation-text {
+  font-size: 150%;
+  font-weight: bold;
+}
+
+.explanation-image {
+  width: 25%;
+  border-radius: 10px;
+  box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.679);
+}
+.project-link{
+  text-align: center;
+  margin-left: 40vw;
+  font-size: 180%;
+  color: rgb(0, 149, 255);
+  font-weight: bold;
+}
+.list-title{
+  margin-top: 5%;
+  margin-bottom: 0%;
+  font-weight: bold;
+  font-size: 300%;
+}
+.list{
+  margin-top: 0%;
+  font-size: 200%;
+  font-weight: bold;
+}
+.parent-container{
+  width: 90vw;
+  margin-left: 3vw;
+  margin-bottom: 20%;
+}
+.project-header{
+  width: 50vw;
+  border-radius: 10px;
+  margin-left: 20vw;
+  box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.679);
+}
+.project-header:hover{
+  position: relative;
+  transform: scale(1.2) rotate(-2deg);
+  z-index: 1000;
+  box-shadow: 4px 4px 10px rgba(63, 91, 133, 0.159);
+  outline: var(--cardhighlightWidth) auto var(--cardhighlightColour);
+}
+
+
+.bg {
+  background: radial-gradient(circle at center, #f4b12e, #dc981a 80%);
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -2;
+}
+.fadeout{
+  background: radial-gradient(circle at center, transparent 20%, #f4b12e 100%);
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+.star-pattern {
+  background-image: url(Images/StarBG.png);
+  background-size: 8%;
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -2;
+  opacity: 0.2;
+  animation: pan 180s linear infinite;
+}
+@keyframes pan {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 100% 0;
+  }
+}
