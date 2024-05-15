@@ -1,3 +1,8 @@
+:root {
+  --cardhighlightColour: whitesmoke;
+  --cardhighlightWidth: 5px;
+}
+
 body{
   overflow-x: hidden; /* Hide horizontal scrollbar */
 }
@@ -103,20 +108,20 @@ body{
   
   background-size: cover;
   background-position: center;
-  transition: transform .3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: transform .15s  cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 
 .piece:nth-child(even):hover{
   position: relative;
   transform: scale(1.2) rotate(-2deg);
   z-index: 1000;
-  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.679);
+  outline: var(--cardhighlightWidth) auto var(--cardhighlightColour);
 }
 .piece:nth-child(odd):hover{
   position: relative;
   transform: scale(1.2) rotate(2deg);
   z-index:  100000;
-  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.679);
+  outline: var(--cardhighlightWidth) auto var(--cardhighlightColour);
 }
 .piece:hover .project-cards-text{
   opacity: 100%;
@@ -148,7 +153,7 @@ a {
 .interactivetext{
   color: rgb(238, 255, 196);
   display: inline-block;
-  transition: transform 1s;
+  transition: transform .2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 .interactivetext:nth-child(odd):hover {
   transform: scale(1.1) rotate(2deg);
