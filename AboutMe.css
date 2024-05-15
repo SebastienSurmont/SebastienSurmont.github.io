@@ -1,15 +1,58 @@
 body{
   overflow-x: hidden; /* Hide horizontal scrollbar */
-  background-color: rgb(0, 30, 30);
 }
+.bg {
+  background: radial-gradient(circle at center, #f4b12e, #dc981a 80%);
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -2;
+}
+.fadeout{
+  background: radial-gradient(circle at center, transparent 20%, #f4b12e 100%);
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+.star-pattern {
+  background-image: url(Images/StarBG.png);
+  background-size: 8%;
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -2;
+  opacity: 0.2;
+  animation: pan 180s linear infinite;
+}
+
+@keyframes pan {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 100% 0;
+  }
+}
+
+
 *{
   text-decoration: none;
   color: whitesmoke;
   font-family: lexend;
+  text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.679);
 }
 .introduction{
   width: 70%;
   margin: auto;
+  margin-bottom: 0;
 }
 .hi-myname{
   margin-right: 100px;
@@ -17,14 +60,17 @@ body{
   font-weight: bold;
   text-align: left;
   max-width: 40vw;
-  margin-top: 20vh;
   display: inline-block;
 }
 .aboutMe-Image {
-  max-width: 100%;
-  max-height: calc(100vh - 20vh);
-  width: auto;
-  margin: 0 auto;
+  display: inline-block;
+  max-height: 400px;
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.679);
+}
+.aboutMe-Image-Holder{
+  display: inline-block;
 }
 .second-text{
   font-size: 35px;
@@ -32,18 +78,25 @@ body{
   font-weight: bold;
   width: 70%;
   margin: auto;
-  margin-top: 20vh;
+  margin-bottom: 20vh;
 }
 
 .active {
   background-color: #2d456c;
 }
 ul {
+  position: sticky;
+  top: 2%;
+  z-index: 1000;
+
+  margin-left: 5vw;
+  display: inline-block;
+  border-radius: 10px;
   list-style-type: none;
-  margin: 0;
   padding: 0;
   overflow: hidden;
   background-color: #1f2125;
+  box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.679);
 }
 li {
   float: left;
@@ -62,30 +115,18 @@ li a:hover {
   background-color: #111;
 }
 .contact-div{
+  display: inline-block;
   margin-top: 10vh;
-  width: 100vw;
+  width: 98vw;
   text-align: center;
-  background-color: rgb(0, 0, 0);
+  background-color: #1f2125;
+  border-radius: 10px;
 }
 .contact{
   display: inline-block;
   width: 200px;
 }
 
-
-
-.card {
-  width: 70%;
-  transform: scale(2);
-  margin: auto;
-  margin-top: 200px;
-  align-items: center;
-  justify-content: center;
-  color: transparent;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  border-radius: 10px;
-  overflow: hidden;
-}
 
 .header {
   color: transparent;
@@ -99,37 +140,6 @@ li a:hover {
   padding: 20px;
 }
 
-.skill {
-  align-items: center;
-  justify-content: center;
-  display: flex;
-  align-items: center;
-  margin-bottom: 20px;
-  color: transparent;
-}
-
-.skill-name {
-  width: 120px;
-  font-size: 16px;
-}
-
-.skill-level {
-  width: 160px;
-  height: 10px;
-  border-radius: 10px;
-  overflow: hidden;
-  margin-left: 20px;
-}
-
-.skill-percent {
-  background-color: #333;
-  height: 100%;
-}
-
-.skill-percent-number {
-  margin-left: 20px;
-  font-size: 16px;
-}
 
 .clickableLink{
   color: rgb(98, 98, 210);
