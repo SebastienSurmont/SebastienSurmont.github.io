@@ -6,14 +6,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
   </head>
   <body>
-    <ul>
-      <li class="active"><a href="index.html">Projects</a></li>
-      <li><a href="404Page.html">Resume</a></li>
-      <li><a href="ContactPage.html">Contact</a></li>
-      <li><a href="AboutMe.html">About Me</a></li>
-    </ul>
+    <div id="navbar-placeholder"></div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="Navbar.js"></script>
 
-
+    
     <div class="hi-myname">
       <h1> Hi there, I'm <span class="interactivetext"">Sébastien</span>.
         A <span class="interactivetext">game designer</span> currently studying
@@ -24,22 +21,22 @@
         <div class="row" data-direction="left" data-speed="slow">
           <a href="P_HouseOnFire.html" class="piece project1-image">
             <p class="project-cards-text">
-              Ballistic
+              Ballistic: my first commercial game.
             </p>
           </a>
           <a href="P_HouseOnFire.html" class="piece project2-image">
             <p class="project-cards-text">
-              Houseonfire
+              House On Fire: My first project as lead of a team of 4 for a 3 day gamejam
             </p>
           </a>
           <a href="ProjectTemplate.html" class="piece project3-image">
             <p class="project-cards-text">
-              Gameart2
+              ShrimpKart: Game ready asset
             </p>
           </a>
           <a href="ProjectTemplate.html" class="piece project5-image">
             <p class="project-cards-text">
-              Tree
+              Tree: it's a tree
             </p>
           </a>
           
@@ -50,26 +47,46 @@
         <div class="row" data-direction="right" data-speed="slow">
           <a href="ProjectTemplate.html" class="piece project7-image">
             <p class="project-cards-text">
-              Applied Games
+              Museo Poseído: Team lead role with a client
             </p>
           </a>
           <a href="ProjectTemplate.html" class="piece project8-image">
             <p class="project-cards-text">
-              Rattatouille
+              Rattatouille: Polished game
             </p>
           </a>
           <a href="ProjectTemplate.html" class="piece project9-image">
             <p class="project-cards-text">
-              Greek city
+              Greek city: Modular Assets + shaders allowing me to make a map in minutes
             </p>
           </a>
           <a href="ProjectTemplate.html" class="piece project10-image">
             <p class="project-cards-text">
-              Sesame Street
+              Sesame Street: a finished FPS with different enemies
             </p>
           </a>
         </div>
       </div>
+    </div>
+
+    
+    <div class="introduction"> 
+      <p class="introduction-text">I'm a <span class="interactivetext">19 year old</span> with a passion for a lot of things including 
+        <span class="interactivetext">Astrophysics</span>, <span class="interactivetext">learning languages</span> & other 
+        <span class="interactivetext">new things.</span></p>
+      <div class="aboutMe-Image-Holder">
+        <img src="Images/Temp/MeV3.png" class="aboutMe-Image lifelyimage">
+      </div>
+    </div>
+    <p class="second-text">I started making games when I was 15 and had to make a choice between following my passion for space and physics or game development,
+      so I chose both. I love incorperating physics into my games using the unity game engine to make my silly ideas come to life.
+    </p>
+
+    
+    <div class="footer-div">
+      <a href="https://www.linkedin.com/in/s%C3%A9bastien-surmont-77b7a0252/" class="contact" class="clickableLink">
+      <p class="footer  lifelyimage">Contact me on LinkedIn</p></a>
+      <a href="#" id="emailLink" class="contact footer lifelyimage" class="clickableLink">Or send me an email</a>
     </div>
     
     <div class="bg"></div>

@@ -57,36 +57,6 @@ body{
   margin-left: 3vw;
 }
 
-ul {
-  position: sticky;
-  top: 2%;
-  z-index: 1000;
-
-  margin-left: 3vw;
-  display: inline-block;
-  border-radius: 10px;
-  list-style-type: none;
-  padding: 0;
-  overflow: hidden;
-  background-color: #1f2125;
-  box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.679);
-  font-weight: bold;
-}
-li {
-  float: left;
-}
-
-li a {
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-}
-
-li a:hover {
-  background-color: #111;
-}
 
 .bg {
   background: radial-gradient(circle at center, #f4b12e, #dc981a 80%);

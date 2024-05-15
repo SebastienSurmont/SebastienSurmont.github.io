@@ -7,12 +7,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
   </head>
   <body>
-    <ul>
-      <li><a href="index.html">Projects</a></li>
-      <li><a href="404Page.html">Resume</a></li>
-      <li><a href="ContactPage.html">Contact</a></li>
-      <li><a href="AboutMe.html">About Me</a></li>
-    </ul>
+    <div id="navbar-placeholder"></div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(function(){
+            $("#navbar-placeholder").load("NavBar.html");
+        });
+    </script>
 
     <div class="parent-container">
       <!-- Project -->
