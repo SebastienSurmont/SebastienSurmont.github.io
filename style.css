@@ -45,6 +45,7 @@ body{
   color: whitesmoke;
   font-family: lexend;
   text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.679);
+  cursor: url(Images/CustomCursor.png), auto;
 }
 .row{
   width: fit-content;
@@ -111,8 +112,10 @@ body{
 .piece:hover .project-cards-text{
   opacity: 100%;
 }
+a {
+  text-decoration: none; /* Remove underline */
+}
 .project-cards-text{
-  background-color: rgba(0, 0, 0, 0.786);
   background-size: cover;
   color: whitesmoke;
   font-size: 32px;
@@ -187,9 +190,6 @@ li a:hover {
   background-image: url('Images/Thumbnails/Tree.png');
 }
 
-.project6-image{
-  background-image: url('Images/Thumbnails/SovietSanta.png');
-}
 .project7-image{
   background-image: url('Images/Temp/TempAppliedGames.png');
 }

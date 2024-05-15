@@ -1,6 +1,13 @@
 body{
   overflow-x: hidden; /* Hide horizontal scrollbar */
 }
+*{
+  text-decoration: none;
+  color: whitesmoke;
+  font-family: lexend;
+  text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.679);
+  cursor: url(Images/CustomCursor.png), auto;
+}
 .bg {
   background: radial-gradient(circle at center, #f4b12e, #dc981a 80%);
   position: fixed;
@@ -40,14 +47,6 @@ body{
   100% {
     background-position: 100% 0;
   }
-}
-
-
-*{
-  text-decoration: none;
-  color: whitesmoke;
-  font-family: lexend;
-  text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.679);
 }
 .introduction{
   width: 70%;
