@@ -39,7 +39,7 @@ li a:hover {
 
 
 body{
-  overflow-x: hidden; /* Hide horizontal scrollbar */
+  overflow-x: hidden;
 }
 .bg {
   background: radial-gradient(circle at center, #f4b12e, #dc981a 80%);
@@ -228,7 +228,7 @@ a {
   background-image: url('Images/Thumbnails/Rattatouille.png');
 }
 .project9-image{
-  background-image: url('Images/Thumbnails/18+Projects.png');
+  background-image: url('Images/Thumbnails/18projects.gif');
 }
 .project10-image{
   background-image: url('Images/Thumbnails/SesameStreet.png');
@@ -243,8 +243,6 @@ a {
   margin-left: 20%;
   margin-top: -17%;
   border-radius: 10px;
-  border-width: 50px;
-  border-color: #111;
   max-height: 400px;
   box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.679);
 }
@@ -285,17 +283,18 @@ a {
   display: inline-block;
   margin-top: 10vh;
   width: 98vw;
-  height: 400px;
+  overflow: hidden;
   text-align: center;
   border-radius: 10px;
+  position: absolute;
 }
 .footer{
   margin: 10px;
+  margin-bottom: 10vh;
   border-radius: 10px;
   display: inline-block;
   background-color: #1f2125;
   width: 20%;
-  height: 40%;
 }
 .footer-text{
   margin-top: 5%;
@@ -346,12 +345,19 @@ a {
   display: inline-block;
   transition: transform .15s  cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
-.lifelyimage:hover{
+
+.lifelyimage:nth-child(even):hover{
   box-shadow: 4px 4px 10px rgba(63, 91, 133, 0.159);
+  z-index: 1000;
+  outline: var(--cardhighlightWidth) auto var(--cardhighlightColour);
+  transform: scale(1.2) rotate(-4deg);
+ }
+ .lifelyimage:nth-child(odd):hover{
+  box-shadow: 4px 4px 10px rgba(63, 91, 133, 0.159);
+  z-index: 1000;
   outline: var(--cardhighlightWidth) auto var(--cardhighlightColour);
   transform: scale(1.2) rotate(4deg);
  }
-
 
 
  /* Navpage */
