@@ -119,9 +119,11 @@ body{
 }
 .row-holder {
   margin-top: auto;
+  overflow: hidden;
   -webkit-mask: linear-gradient(90deg, transparent, white 10%, white 90%, transparent);
   mask: linear-gradient(90deg, transparent, white 10%, white 90%, transparent);
   transition: padding 0.3s ease;
+  width: 100%;
 }
 .row-holder-holder{
   margin-bottom: 1px;
@@ -147,14 +149,14 @@ body{
 .piece:nth-child(even):hover{
   position: relative;
   transform: scale(1.2) rotate(-2deg);
-  z-index: 1000;
+  z-index:  1000;
   box-shadow: 4px 4px 10px rgba(63, 91, 133, 0.159);
   outline: var(--cardhighlightWidth) auto var(--cardhighlightColour);
 }
 .piece:nth-child(odd):hover{
   position: relative;
   transform: scale(1.2) rotate(2deg);
-  z-index:  100000;
+  z-index:  1000;
   box-shadow: 4px 4px 10px rgba(63, 91, 133, 0.159);
   outline: var(--cardhighlightWidth) auto var(--cardhighlightColour);
 }
@@ -183,7 +185,7 @@ a {
   font-family: lexend;
   font-weight: bold;
   margin-left: 12vw;
-  margin-bottom: 200px;
+  margin-bottom: 100px;
   max-width: 100vw;
 }
 .interactivetext{
@@ -228,7 +230,7 @@ a {
   background-image: url('Images/Thumbnails/Rattatouille.png');
 }
 .project9-image{
-  background-image: url('Images/Thumbnails/18projects.gif');
+  background-image: url('Images/Thumbnails/PoliceGame.png');
 }
 .project10-image{
   background-image: url('Images/Thumbnails/SesameStreet.png');
@@ -345,20 +347,35 @@ a {
   display: inline-block;
   transition: transform .15s  cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
-
 .lifelyimage:nth-child(even):hover{
+  position: relative;
   box-shadow: 4px 4px 10px rgba(63, 91, 133, 0.159);
   z-index: 1000;
-  outline: var(--cardhighlightWidth) auto var(--cardhighlightColour);
   transform: scale(1.2) rotate(-4deg);
  }
  .lifelyimage:nth-child(odd):hover{
+  position: relative;
   box-shadow: 4px 4px 10px rgba(63, 91, 133, 0.159);
   z-index: 1000;
-  outline: var(--cardhighlightWidth) auto var(--cardhighlightColour);
   transform: scale(1.2) rotate(4deg);
  }
-
+ 
+ .image-button{
+  display: inline-block;
+  transition: transform .15s  cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+.image-button:nth-child(even):hover{
+  box-shadow: 4px 4px 10px rgba(63, 91, 133, 0.159);
+  outline: var(--cardhighlightWidth) auto var(--cardhighlightColour);
+  z-index: 1000;
+  transform: scale(1.2) rotate(-4deg);
+ }
+ .image-button:nth-child(odd):hover{
+  box-shadow: 4px 4px 10px rgba(63, 91, 133, 0.159);
+  outline: var(--cardhighlightWidth) auto var(--cardhighlightColour);
+  z-index: 1000;
+  transform: scale(1.2) rotate(4deg);
+ }
 
  /* Navpage */
 
@@ -466,13 +483,6 @@ li a:hover {
   border-radius: 10px;
   margin-left: 20vw;
   box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.679);
-}
-.project-header:hover{
-  position: relative;
-  transform: scale(1.2) rotate(-2deg);
-  z-index: 1000;
-  box-shadow: 4px 4px 10px rgba(63, 91, 133, 0.159);
-  outline: var(--cardhighlightWidth) auto var(--cardhighlightColour);
 }
 
 
