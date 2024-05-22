@@ -208,7 +208,7 @@ a {
 
 /* Fill in the project images */
 .project1-image{
-  background-image: url('Images/Temp/GameDesign3Temp.png');
+  background-image: url('Images/Thumbnails/EggyThumbnail.png');
 }
 .project2-image{
   background-image: url('Images/Thumbnails/HouseOnFire.png');
@@ -233,7 +233,7 @@ a {
   background-image: url('Images/Thumbnails/PoliceGame.png');
 }
 .project10-image{
-  background-image: url('Images/Thumbnails/SesameStreet.png');
+  background-image: url('Images/Temp/MobileGame.jpg');
 }
 
 
@@ -241,9 +241,8 @@ a {
 
 
 .contactme-image{
-  position: absolute;
-  margin-left: 20%;
-  margin-top: -17%;
+  margin-left: 65%;
+  margin-top: -27%;
   border-radius: 10px;
   max-height: 400px;
   box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.679);
