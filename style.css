@@ -167,6 +167,56 @@ body{
 .piece:hover{
   background-color: black;
 }
+
+.displaypiece{
+  background-color: black;
+  overflow: hidden;
+  object-fit: cover;
+  margin-left: 15%;
+  min-height: 70vh;
+  min-width: 70%;
+  border-radius: 10px;
+  display: inline-block;
+
+  box-shadow: 4px 4px 1px rgba(0, 0, 0, 0.679);
+  
+  background-size: cover;
+  background-position: center;
+  transition: transform .15s  cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+.displayproject-cards-text{
+  color: whitesmoke;
+  font-size: 52px;
+  word-wrap: break-word;
+  text-align: center;
+  top: 50%;
+  height: 20vh;
+  width: 100%;
+  margin: auto;
+  opacity: 100%;
+  font-weight: bold;
+  background-color: rgba(184, 123, 16, 0.626);
+  transition: opacity 1s;
+}
+.displaypiece:hover{
+  position: relative;
+  transform: scale(1.05) rotate(-2deg);
+  z-index:  1000;
+  box-shadow: 4px 4px 10px rgba(63, 91, 133, 0.159);
+  outline: var(--cardhighlightWidth) auto var(--cardhighlightColour);
+}
+.pidisplaypieceece:hover .project-cards-text{
+  opacity: 100%;
+  background-color: rgba(184, 123, 16, 0.626);
+}
+.displaypiece:hover{
+  background-color: black;
+}
+
+
+
+
+
 a {
   text-decoration: none;
 }
@@ -224,11 +274,11 @@ a {
   background-image: url('Images/Thumbnails/HexGame.png');
 }
 .project5-image{
-  background-image: url('Images/Thumbnails/ModularArt.jpg');
+  background-image: url('Images/Thumbnails/ModularArt.png');
 }
 
 .project7-image{
-  background-image: url('Images/Thumbnails/AppliedGames.png');
+  background-image: url('Images/Thumbnails/AppliedGames2.png');
 }
 .project8-image{
   background-image: url('Images/Thumbnails/Rattatouille.png');
@@ -240,27 +290,67 @@ a {
   background-image: url('Images/Temp/MobileGame.jpg');
 }
 
+.extraspace{
+  margin-top: 100px;
+}
 
 
 video{
   display: inline-block;
   border-radius: 10px;
-  margin: 2%;
+  margin: 2% 2% 2% 3%;
   box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.679);
 }
 img{
   border-radius: 10px;
   box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.679);
 }
-
-.contactme-image{
-  margin-left: 65%;
-  margin-top: -27%;
-  border-radius: 10px;
-  max-height: 400px;
-  box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.679);
+.stripebg{
+  opacity: 80%;
+  position: absolute;
+  z-index: -1;
 }
-
+.stripebg-div{
+ margin-top: -100px;
+ margin-right: 50vw;
+}
+.contactmeparent-div{
+  display: flex;
+  margin-left: 5vw;
+  width:  110vw;
+}
+.contactmetext-div{
+  width: 50%;
+}
+.contactme-image{
+  border-radius: 10px;
+  height: 22%;
+  width: 22%;
+  box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.679);
+  display: inline-block;
+  margin-top: 5%;
+}
+.hi-myname-contact{
+  margin-bottom: 30px;
+  margin-right: 100px;
+  font-size: 400%;
+  font-weight: bold;
+  text-align: left;
+  max-width: 40vw;
+  display: inline-block;
+}
+.resizecontactmeicons{
+  width: 150px;
+}
+.contactmeicons-container{
+  margin-bottom: 1000px;
+  width: 150%;
+  align-content: center;
+  display: inline-block;
+}
+.contactmeicons-container > * + * {
+  margin-left: 30px;
+}
 .introduction{
   width: 70%;
   margin: auto;
@@ -326,33 +416,17 @@ img{
 
 .clickableLink{
   display: inline-block;
+  cursor: pointer;
   color: rgb(98, 98, 210);
   transition: transform .2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+.resume{
+  display: block;
 }
 .clickableLink:hover{
   text-decoration: underline;
   transform: scale(1.03) rotate(1deg);
  }
-.second-text-contact{
-  font-size: 35px;
-  font-family: lexend;
-  font-weight: bold;
-  width: 70%;
-  margin: auto;
-  margin-top: -8%;
-}
-.hi-myname-contact{
-  margin-right: 100px;
-  font-size: 400%;
-  font-weight: bold;
-  text-align: left;
-  max-width: 40vw;
-  margin-top: 20vh;
-  margin-bottom: 20vh;
-  display: inline-block;
-  color: rgb(200, 214, 76);
-}
-
 
 
 .lifelyimage{
@@ -374,6 +448,7 @@ img{
  
  .image-button{
   display: inline-block;
+  cursor: pointer;
   transition: transform .15s  cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 .image-button:nth-child(even):hover{
@@ -430,6 +505,7 @@ li a:hover {
  /* ProjectPage */
 
 .textandvideo{
+  margin: 2%;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
@@ -463,11 +539,22 @@ li a:hover {
   font-size: 400%;
   font-weight: bold;
 }
-
+.displayproject-title{
+  font-size: 400%;
+  margin-left: 40vw;
+  font-weight: bold;
+}
+.explanation-subtitle{
+  display: block;
+  font-size: 200%;
+  margin: 0;
+  margin-left: 5%;
+  font-weight: bold;
+}
 
 .explanation-text {
   font-size: 150%;
-  margin-right: 5%;
+  margin-right: 3%;
   text-align: left;
   font-weight: bold;
   margin-top: 2%;
@@ -486,12 +573,12 @@ li a:hover {
 }
 
 .explanation-image {
-  width: 45%;
-  height: 100%;
+  width: 704px;
+  height: 396px;
   display: inline-block;
   border-radius: 10px;
   box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.679);
-  margin: 20px;
+  margin: 20px 20px 5px 20px;
   transition: transform .15s  cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 .explanation-image:nth-child(even) {
@@ -544,8 +631,8 @@ li a:hover {
 .fadeout{
   background: radial-gradient(circle at center, transparent 20%, #f4b12e 100%);
   position: absolute;
-  height: 100vh;
-  width: 100vw;
+  height: 100%;
+  width: 100%;
   position: fixed;
   top: 0;
   left: 0;
@@ -554,8 +641,8 @@ li a:hover {
 .star-pattern {
   background-image: url(Images/StarBG.png);
   background-size: 8%;
-  height: 100vh;
-  width: 100vw;
+  height: 100%;
+  width: 100%;
   position: fixed;
   top: 0;
   left: 0;
@@ -577,4 +664,8 @@ li a:hover {
 .centervideo{
   width: 100%;
   height: 100%;
+}
+
+.videoimage{
+  cursor: pointer 
 }

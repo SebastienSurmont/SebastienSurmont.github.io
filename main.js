@@ -30,7 +30,9 @@ document.getElementById("emailLink").addEventListener("click", function() {
   // Open default email client
   window.location.href = mailtoLink;
 });
-
+document.getElementById("linkedinlink").addEventListener("click", function() {
+  window.open('https://www.linkedin.com/in/s%C3%A9bastien-surmont-77b7a0252/', '_blank').focus();
+});
 
 
 
