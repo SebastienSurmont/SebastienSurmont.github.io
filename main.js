@@ -34,6 +34,33 @@ document.getElementById("linkedinlink").addEventListener("click", function() {
   window.open('https://www.linkedin.com/in/s%C3%A9bastien-surmont-77b7a0252/', '_blank').focus();
 });
 
+document.addEventListener('DOMContentLoaded', function () {
+  const rows = document.querySelectorAll('.row');
+  const speedButtons = document.querySelectorAll('.speed-button');
+
+  function setSpeed(speed) {
+    rows.forEach(row => {
+      row.classList.remove('slow', 'medium', 'fast', 'quick');
+      row.classList.add(speed);
+    });
+  }
+
+  speedButtons.forEach(button => {
+    button.addEventListener('mousedown', () => {
+      const speed = button.getAttribute('data-speed');
+      setSpeed(speed);
+    });
+
+    button.addEventListener('mouseup', () => {
+      setSpeed('slow'); // Revert back to the original speed
+    });
+
+    button.addEventListener('mouseleave', () => {
+      setSpeed('slow'); // Revert back to the original speed if mouse leaves the button
+    });
+  });
+});
+
 
 
 

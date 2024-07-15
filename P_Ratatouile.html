@@ -27,20 +27,24 @@
       
       <!-- Game Making Process -->
       <div class="explanation-container">
-        
+        <video width="1408" height="792" controls poster="Images/Thumbnails/Ratatouiletrailerthumbnail.png">
+          <source src="Videos/RatatouilleTrailer.mp4"  type="video/mp4" >
+        </video> 
         <!-- Process Screenshot -->
         <!-- <img img src="Images/Thumbnails/HouseOnFire.png" class="explanation-image"> -->
 
         <div>
           <h1 class="explanation-title interactivetext">The Process</h1>
         <div class="textandvideo">
-          <p  class="explanation-text">
-            <!-- General Process -->
-            I had an idea for a cooking game with as many physics as possible.
-            <br> The hardest part was balancing the game so that the physics aspect made the game more fun, instead of being frustrating.
-            <br>Additionally I had the extra challenge of me wanting to include the Rattatouille movie, 
-            meaning I had to incorperate the main character. Remi the rat.
-          </p>
+          <div>
+            <h1 class="explanation-subtitle interactivetext">First Challenge</h1>
+            <p  class="explanation-text">
+              I had an idea for a cooking game with as many physics as possible.
+              <br> The hardest part was balancing the game so that the physics aspect made the game more fun, instead of being frustrating.
+              <br>Additionally I had the extra challenge of me wanting to include the Rattatouille movie, 
+              meaning I had to incorperate the main character. Remi the rat.
+            </p>
+          </div>
           <video class="explanation-image" autoplay muted loop>
             <source src="Videos/RatatouilePrototypeVideo.mp4" type="video/mp4" >
             Your browser does not support the video tag.
@@ -59,22 +63,35 @@
           </p>
         </div>
         <div class="textandvideo">
-          <p  class="explanation-text">
-            <!-- General Process -->
-            The game also needed an engaging way to complete it, which I did in 2 different ways: reviews & a countdown.
+          <div>
+            <h1 class="explanation-subtitle interactivetext">Gameloop</h1>
+            <p  class="explanation-text">
+              The game also needed an engaging way to complete it, which I did in 2 different ways: reviews & a countdown.
             Either you deliver all the orders in your order list or the timer runs out. 
             Out of the orders 3 random ones will be food critiques, so you don't wanna deliver any burnt food as to not get a bad review.
-          </p>
+            </p>
+          </div>
           <video class="explanation-image" autoplay muted loop>
             <source src="Videos/RatatouileReviews.mp4" type="video/mp4" >
             Your browser does not support the video tag.
           </video> 
         </div>
+        <div class="textandvideo">
+          <img img src="Projects/RatGame/RatGameCode.png" class="explanation-image">
+          <div>
+            <h1 class="explanation-subtitle interactivetext">Technical</h1>
+            <p  class="explanation-text">
+              For the cooking mechanic I used Unity's Scriptable Objects, inheritance, polymorphism & MVP. This allowed me to combine
+              the logic every food and every cooking utensil would need. 
+              <br>
+              This allowed me to easily add more utensils & food as needed with little to no added difficulty.
+            </p>
+          </div>
+        </div>
         <p  class="explanation-text">
           <!-- Conclusion -->
           <h1 class="explanation-title interactivetext">Conclusion</h1>
           <p  class="explanation-text">What I learned
-          
           </p>
         </p>
         </div>

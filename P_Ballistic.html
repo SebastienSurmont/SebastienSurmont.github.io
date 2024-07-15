@@ -2,7 +2,7 @@
 
 <html>
   <head>
-    <title>Eggsy</title>
+    <title>Ballistic</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
   </head>
@@ -16,7 +16,7 @@
 
     <div class="parent-container">
       <!-- Header -->
-      <img src="Images/Temp/TempBallistic.png" class="project-header lifelyimage">
+      <img src="Images/Thumbnails/BallisticTempThumbnailNoText.png" class="project-header lifelyimage">
       <!-- Title -->
       <h1 class="project-title interactivetext">Ballistic</h1>
       
@@ -31,68 +31,110 @@
 
       <!-- Game Making Process -->
       <div class="explanation-container">
-        <h1 class="explanation-title interactivetext">The Process</h1>
+        <h1 class="explanation-title interactivetext">First Steam Game</h1>
         <div class="textandvideo">
-          <p  class="explanation-text">
-            <!-- General Process -->
-            I've been working on this project off & on for 2 summers now. With plans to finally publish it this summer.
-          </p>
-            <img img src="Projects/Eggsy/Brainstorming.png" class="explanation-image">
+          <div>
+            <p  class="explanation-text">
+              <!-- General Process -->
+              I've been working on this project off & on for 2 summers now. With plans to finally publish it by the end of this year.
+              <br>
+              <br>
+              This is my first game that I won't release for free on itch.io, which brings a whole lot of challenges with it.
+            </p>
+          </div>
+          <img img src="Projects/Ballistic/BallisticGameplay.png" class="explanation-image">
         </div>
         <div class="textandvideo">
+          <img img src="Projects/Ballistic/Gameplay3.png" class="explanation-image">
+          <div>
+            <h1 class="explanation-subtitle interactivetext">Challenges</h1>
+            <p  class="explanation-text">
+              <!-- General Process -->
+              When releasing a free game bugs are not an issue. You also don't have to get super detailed with the design.
+              <br>
+              Just having 1 solid mechanic is enough. For a big game like this a lot more has to be thought out.
+              <br>
+              For this project I have to think a lot more about player experience. From game feel to settings.
+            </p>
+          </div>
+        </div>
+        <div class="textandvideo">
+          <div>
+            <h1 class="explanation-subtitle interactivetext">Level Design Struggles</h1>
+            <p  class="explanation-text">
+              In the first version of this game the level design was very simple. All platforms were on a 2 dimensional plane, going forwards or
+              up.
+              <br> This limits the amount of levels you can make without introducing new obstacles every time very limited.
+              To solve this I had to do a LOT of iteration on the level design. 
+            </p>
+          </div>
+          <img img src="Projects/Ballistic/BallisticOldLevelDesign.png" class="explanation-image">
+        </div>
+        <div class="textandvideo">
+          <img img src="Projects/Ballistic/BallisticLevelDesign.png" class="explanation-image">
+          <p  class="explanation-text">
+            I don't have much to show off yet, since it's still very early.
+            But levels will now have walls. Which can have things like shortcuts, tnt & other stuff.
+            With the orginal level design you could only improve your timing & angles, now you can even improve your route. (at least
+            more than in the first version)
+          </p>
+        </div>
+        <div class="textandvideo">
+          <div>
+            <h1 class="explanation-subtitle interactivetext">Medals</h1>
+            <p  class="explanation-text">
+              When playtesting I found that people didn't tend to try and get as fast a time as possible. Until I showed them my score that was.
+              That's when the competitive nature that I was trying to appeal to came out. That's why I designed medals, to give people
+              goals to strive for.
+            </p>
+          </div>
           <video class="explanation-image" autoplay muted loop>
-            <source src="Videos/EggsyPrototype.mp4" type="video/mp4" >
+            <source src="Projects/Ballistic/BallisticMedalGameplay.mp4" type="video/mp4" >
             Your browser does not support the video tag.
           </video> 
-          <p  class="explanation-text">
-            <!-- General Process -->
-            After being left with 4 great ideas at the end of the 2 months I landed on what would become Eggsy. 
-            <br>I made a demo version of the game over the course of
-            3 weeks and polished it for another 1 to improve the player feedback and such. 
-            <br><br>After that I wrote a 
-            <a href="Projects/Eggsy/GDD_Eggy.pdf" style="color: rgb(114, 142, 212);" class="clickableLink">GDD</a> as well as publishing the game on
-            <a href="https://slobbymonk.itch.io/eggsy" style="color: rgb(114, 142, 212);" class="clickableLink">itch.io</a> & finished it off by making a concept trailer.
-          </p>
         </div>
         <div class="textandvideo">
+          <img img src="Projects/Ballistic/Coin.png" class="explanation-image">
           <div>
-            <h1 class="explanation-subtitle interactivetext">Level Design</h1>
+            <h1 class="explanation-subtitle interactivetext">Coins</h1>
             <p  class="explanation-text">
-              For the level design I took heavy inspiration from Mario platforming games. There's always a main road to follow, 
-              which is usually pretty doable for the target audience. 
-              <br><br>For people who want more of a challenge, they can take a sideroad. They're more difficult,
-              but also hold many more rewards. Like more coins & such.
+              One thing I learned from my <a href="P_MuseoPoseido.html" style="color: rgb(114, 142, 212);" class="clickableLink">Egg Parkour Game</a>
+              is the value of coins in platforming games.
+              <br>They are a great way to give more experienced players an extra challenge. Thus allowing for greater replayability.
             </p>
           </div>
-          <img img src="Projects/Eggsy/Sidepath.png" class="explanation-image">
         </div>
         <div class="textandvideo">
-          <img img src="Projects/Eggsy/ObstacleFirst.png" class="explanation-image">
           <p  class="explanation-text">
-            Aside from the sidepaths, I had one rule when designing levels. I called it: 
-            <span class="interactivetext">obstacle first, then solution.  </span> 
-            <br>Which meant I never wanted the player to come across, or even see, the solution before facing the obstacle.
-            <br><br>This made for one design difficulty, you had to complete the same parkour twice. That's because the solution is always hidden
-            behind an obstacle course. Meaning the obstacles had to be fun & challenging both as an egg, as well as when on a mech. 
+            Unlike my Egg game, lots of coins to collect wouldn't work. Since the goal is to complete the level as fast as possible.
+            So every level only has 3 big coins. The perfect amount. Enough to force the player to find new better routes, while
+            not being overwhelming in any way.
           </p>
+          <video class="explanation-image" autoplay muted loop>
+            <source src="Projects/Ballistic/BallisticCoinGameplay.mp4" type="video/mp4" >
+            Your browser does not support the video tag.
+          </video> 
         </div>
         <div class="textandvideo">
+          <img img src="Projects/Ballistic/Gameplay2.png" class="explanation-image">
           <div>
-            <h1 class="explanation-subtitle interactivetext">Original Prototype</h1>
+            <h1 class="explanation-subtitle interactivetext">Marketability</h1>
             <p  class="explanation-text">
-              Originally the game was going to center around what would become the mechs. You were a character standing on a ball, so you had to move while trying
-              not to lose balance. <br>This ended up not being as fun.
-              <br><br> So I decided to go further with the balance concept & put an egg on top of the character's head. Now you had to make sure you didn't drop the egg.
+              From the start I had to have not just fun, but also marketability in my design. 
+              How a game plays is just as important as how it feels when watching a clip of it. 
+              <br>
+              My experience making games for youtube videos helps a lot with this.
             </p>
           </div>
-          <img img src="Projects/Eggsy/EggsyFirstPrototype.gif" class="explanation-image">
         </div>
         <div class="textandvideo">
-          <img img src="Projects/Eggsy/FinalPrototype.gif" class="explanation-image">
           <p  class="explanation-text">
-            Through playtests I found out it's not actually fun to keep the egg inside the nest. So I decided to pivot with an idea a playtester had, what if you're the egg?
-            So I made one final prototype where you're an egg & you've got to move around in the nest to move the character you stand on top of.
+            Marketing a video on youtube is difficult. You're trying to make a game that you can describe
+            in a way that will get people to click, with only 60 characters & a static image. 
+            <br>After that you've also got to keep people hooked for long enough so they stick around. 
+            This is almost exactly the same as with marketing on other platforms.
           </p>
+          <img img src="Projects/Ballistic/BallisticGameplay.png" class="explanation-image">
         </div>
       </div>
       
