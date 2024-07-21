@@ -515,6 +515,7 @@ li a:hover {
 
  /* ProjectPage */
 
+
 .textandvideo{
   margin: 2%;
   display: flex;
@@ -679,4 +680,48 @@ li a:hover {
 
 .videoimage{
   cursor: pointer 
+}
+
+/* Music */
+
+.song-parent {
+  width: 70%;
+  margin: auto;
+  margin-bottom: 0;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.song-text {
+  font-size: 150%;
+  text-align: center;
+  font-weight: bold;
+  margin-top: 2%;
+}
+
+.circle-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.circle {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background-color: #1f2125;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 4px 4px 10px rgba(63, 91, 133, 0.159);
+  cursor: pointer;
+  transition: transform 0.2s;
+  background-size: cover;
+  background-position: center;
+}
+
+.circle:hover {
+  transform: scale(1.1);
 }
