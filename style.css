@@ -1,6 +1,19 @@
+
 :root {
   --cardhighlightColour: whitesmoke;
   --cardhighlightWidth: 5px;
+
+  --selected-text-bg-colour: #0feb8f83;
+
+  --rotate-offset: 10;
+}
+::-moz-selection { /* Code for Firefox */
+  background: var(--selected-text-bg-colour);
+
+}
+
+::selection {
+  background: var(--selected-text-bg-colour);
 }
 
 ul {
@@ -725,3 +738,109 @@ li a:hover {
 .circle:hover {
   transform: scale(1.1);
 }
+
+
+
+.skills-used {
+  margin-top: 40px;
+  text-align: center;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.skills-title {
+  font-size: 46px;
+  margin: 20px 0;
+  justify-content: center;
+  margin-left: 20%;
+}
+
+.skills-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-left: 20%;
+  gap: 20px;
+  width: 100%;
+}
+
+.skill-item {
+  background-color: #efb20ac5; /* Playful, vibrant color */
+  padding: 30px;
+  border-radius: 12px;
+  width: 150px;
+  height: 180px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.45s cubic-bezier(0.68, -0.55, 0.27, 1.55), border-color 0.3s;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  border: 3px solid transparent; /* Border with default color */
+}
+
+.skill-item:hover {
+  border-color: #ffffff; /* Highlight border color on hover */
+  animation: spin 0.45s cubic-bezier(0.68, -0.55, 0.27, 1.55) forwards;
+}
+
+.skill-icon {
+  width: 75px;
+  height: 75px;
+  margin-bottom: 10px;
+  filter: brightness(0) invert(1); /* Adjusts black icons to white */
+  transition: transform 0.45s cubic-bezier(0.68, -0.55, 0.27, 1.55); /* Smooth transition for icon rotation */
+  box-shadow: none; /* Ensures no shadow for the icons */
+}
+
+.skill-item:hover .skill-icon {
+  animation: icon-rotate 0.45s cubic-bezier(0.68, -0.55, 0.27, 1.55) forwards;
+}
+
+.skill-item p {
+  color: #fff; /* Bright text color */
+  font-size: 26px; /* Slightly smaller font size for balance */
+  font-weight: bold; /* Make the text bold for impact */
+  margin: 0;
+  text-shadow: 2px 2px 0 #00000096; /* Hard shadow with dark orange and black */
+  transition: transform 0.3s ease, text-shadow 0.3s ease; /* Smooth transitions for effects */
+}
+
+.skill-item:hover p {
+  text-shadow: 2px 2px 0 #ffc400, 4px 4px 0 #cc8100; /* Enhanced shadow on hover with brighter dark orange shades */
+  transform: translateY(-5px); /* Slight lift effect on hover */
+}
+
+
+
+
+@keyframes bounce {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
+}
+
+
+/* Keyframes for the skill item rotation */
+@keyframes spin {
+  0% {
+    transform: rotateZ(0deg);
+  }
+  100% {
+    transform: rotateZ(calc(20deg + (var(--rotate-offset, 0) * 1deg)));
+  }
+}
+
+/* Keyframes for the skill icon rotation */
+@keyframes icon-rotate {
+  0% {
+    transform: rotateX(0deg);
+  }
+  100% {
+    transform: rotateX(calc(20deg + (var(--icon-offset, 0) * 1deg)));
+  }
+}
+
+
