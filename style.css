@@ -783,7 +783,7 @@ li a:hover {
 
 .skill-item:hover {
   border-color: #ffffff; /* Highlight border color on hover */
-  animation: spin 0.45s cubic-bezier(0.68, -0.55, 0.27, 1.55) forwards;
+  transform: rotateZ(calc(20deg + (var(--rotate-offset, 0) * 1deg)));
 }
 
 .skill-icon {
@@ -796,7 +796,7 @@ li a:hover {
 }
 
 .skill-item:hover .skill-icon {
-  animation: icon-rotate 0.45s cubic-bezier(0.68, -0.55, 0.27, 1.55) forwards;
+  transform: rotateZ(calc(20deg + (var(--icon-offset, 0) * 1deg)));
 }
 
 .skill-item p {
@@ -813,34 +813,11 @@ li a:hover {
   transform: translateY(-5px); /* Slight lift effect on hover */
 }
 
-
-
-
+/* Keyframes for bounce animation */
 @keyframes bounce {
   0% { transform: translateY(0); }
   50% { transform: translateY(-10px); }
   100% { transform: translateY(0); }
-}
-
-
-/* Keyframes for the skill item rotation */
-@keyframes spin {
-  0% {
-    transform: rotateZ(0deg);
-  }
-  100% {
-    transform: rotateZ(calc(20deg + (var(--rotate-offset, 0) * 1deg)));
-  }
-}
-
-/* Keyframes for the skill icon rotation */
-@keyframes icon-rotate {
-  0% {
-    transform: rotateX(0deg);
-  }
-  100% {
-    transform: rotateX(calc(20deg + (var(--icon-offset, 0) * 1deg)));
-  }
 }
 
 
