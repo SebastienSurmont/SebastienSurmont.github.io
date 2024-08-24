@@ -18,6 +18,8 @@ function addAnimation(){
     })
   });
 }
+
+
 document.getElementById("emailLink").addEventListener("click", function() {
   var subject = "Subject of the email";
   var body = "Body of the email";
@@ -40,3 +42,7 @@ document.querySelectorAll('.skill-item').forEach(item => {
   item.style.setProperty('--rotate-offset', randomRotation);
   item.querySelector('.skill-icon').style.setProperty('--icon-offset', randomRotation);
 });
+
+
+
+

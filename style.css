@@ -119,6 +119,7 @@ body{
   animation: scroll var(--_animation-duration, 40s) var(--_animation-direction, forwards) linear infinite;
 }
 
+
 .row[data-direction="right"]{
   --_animation-direction: reverse;
 }
@@ -294,7 +295,7 @@ a {
   background-image: url('Images/Thumbnails/HexGame.png');
 }
 .project5-image{
-  background-image: url('Images/Thumbnails/BallisticTempThumbnail.png');
+  background-image: url('Images/Thumbnails/RandyThumbnail.png');
 }
 
 .project7-image{
@@ -555,6 +556,10 @@ li a:hover {
   margin-right: 15%;
   font-weight: bold;
 }
+
+
+
+
 .explanation-container {
   margin-top: 100px;
   margin-bottom: 20px;
@@ -575,6 +580,12 @@ li a:hover {
   margin: 0;
   margin-left: 5%;
   font-weight: bold;
+}
+.explanation-subtitle:nth-child(odd):hover {
+  transform: scale(1) rotate(0deg);
+}
+.explanation-subtitle:nth-child(even):hover {
+  transform: scale(1) rotate(-2deg);
 }
 
 .explanation-text {
@@ -605,6 +616,35 @@ li a:hover {
   box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.679);
   margin: 20px 20px 5px 20px;
   transition: transform .15s  cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+.explanation-image-side {
+  width: 904px;
+  height: 596px;
+  display: inline-block;
+  border-radius: 10px;
+  box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.679);
+  margin: 0px 20px 5px 100px;
+  transition: transform .15s  cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+.project-title-side{
+  font-family: lexend;
+  font-size: 380%;
+  display: block;
+  text-align: left;
+  font-weight: bold;
+  margin-bottom: 0;
+  margin-top: 2%;
+  margin-left:  5%;
+}
+.project-description-side{
+  margin-top: 0;
+  margin-top: 0;
+  font-size: 200%;
+  display: block;
+  text-align: left;
+  margin-left:  5%;
+  margin-right: 15%;
+  font-weight: bold;
 }
 .explanation-image:nth-child(even) {
   transform: rotate(3deg);
@@ -674,6 +714,9 @@ li a:hover {
   z-index: -2;
   opacity: 0.2;
   animation: pan 180s linear infinite;
+}
+.star-pattern-pixelated{
+  background-image: url(Images/StarBG_Pixelated.png);
 }
 @keyframes pan {
   0% {
