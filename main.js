@@ -6,56 +6,90 @@ if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
 
 function addAnimation() {
   scrollers.forEach(scroller => {
-    scroller.setAttribute("data-animated", true); 
+    scroller.setAttribute("data-animated", true);
 
     const scrollerInner = scroller.querySelector('.row');
     const scrollerContent = Array.from(scrollerInner.children);
+    const direction = scrollerInner.getAttribute('data-direction');
 
-    // Clone enough items to ensure we have enough for infinite scrolling
-    const numberOfDuplicates = Math.ceil(scrollerContent.length * 2); // Adjust as needed for a seamless loop
-    for (let i = 0; i < numberOfDuplicates; i++) {
-      const duplicatedItem = scrollerContent[i % scrollerContent.length].cloneNode(true);
+    // Create a copy of the row's content to enable seamless scrolling
+    scrollerContent.forEach(item => {
+      const duplicatedItem = item.cloneNode(true);
       duplicatedItem.setAttribute("aria-hidden", true);
       scrollerInner.appendChild(duplicatedItem);
-    }
 
-    // Add drag functionality to scroll the entire row
-    addDragToScroll(scroller, scrollerInner);
+      // Enable dragging for individual items to scroll the row
+      addDragToScroll(item, scroller, scrollerInner, direction);
+    });
+
+    // Add drag to scroll the entire row if dragging outside elements
+    addDragToScroll(scroller, scroller, scrollerInner, direction);
   });
 }
 
-function addDragToScroll(rowHolder, row) {
+// Drag-to-scroll functionality (applies to both row-holder and individual items)
+function addDragToScroll(draggableElement, rowHolder, row, direction) {
   let isDown = false;
   let startX;
   let scrollLeft;
-  let scrollWidth = row.scrollWidth / 2; // Total width of the scrollable content (half because it's duplicated)
+  const dragThreshold = 5; // Minimum distance to distinguish drag from click
 
-  rowHolder.addEventListener('mousedown', (e) => {
+  draggableElement.addEventListener('mousedown', (e) => {
     e.preventDefault(); // Prevent default drag behavior
     isDown = true;
     rowHolder.classList.add('active');
     startX = e.pageX - rowHolder.offsetLeft;
     scrollLeft = rowHolder.scrollLeft;
     row.style.animationPlayState = 'paused'; // Pause the animation during dragging
+
+    // Prevent any background color change
+    rowHolder.style.backgroundColor = 'transparent'; // Set to transparent or your desired color
   });
 
   document.addEventListener('mouseup', () => {
     isDown = false;
     row.style.animationPlayState = 'running'; // Resume animation when the drag ends
+    rowHolder.style.backgroundColor = ''; // Reset to original color
   });
 
   document.addEventListener('mousemove', (e) => {
     if (!isDown) return;
-    e.preventDefault(); // Prevent default text/image selection behavior
+
+    // Calculate movement
     const x = e.pageX - rowHolder.offsetLeft;
     const walk = (x - startX) * 2; // Scroll faster
-    rowHolder.scrollLeft = scrollLeft - walk;
 
-    // Infinite scrolling behavior: If we've scrolled past half the scrollable content, reset to the start
-    if (rowHolder.scrollLeft >= scrollWidth) {
-      rowHolder.scrollLeft = rowHolder.scrollLeft - scrollWidth;
-    } else if (rowHolder.scrollLeft <= 0) {
-      rowHolder.scrollLeft = scrollWidth + rowHolder.scrollLeft;
+    // Check if movement exceeds threshold
+    if (Math.abs(x - startX) > dragThreshold) {
+      e.preventDefault(); // Prevent default text/image selection behavior
+      rowHolder.scrollLeft = scrollLeft - walk;
+
+      // Check scroll direction
+      if (direction === "left") {
+        if (rowHolder.scrollLeft >= rowHolder.scrollWidth - rowHolder.clientWidth) {
+          // Reset scroll position to the start smoothly
+          rowHolder.scrollLeft = 0; 
+          // Continue dragging
+          scrollLeft = rowHolder.scrollLeft; // Update scrollLeft to prevent jitter
+        } else if (rowHolder.scrollLeft <= 0) {
+          // Reset scroll position to the end smoothly
+          rowHolder.scrollLeft = rowHolder.scrollWidth / 2; 
+          // Continue dragging
+          scrollLeft = rowHolder.scrollLeft; // Update scrollLeft to prevent jitter
+        }
+      } else if (direction === "right") {
+        if (rowHolder.scrollLeft <= 0) {
+          // Reset scroll position to the end smoothly
+          rowHolder.scrollLeft = rowHolder.scrollWidth / 2; 
+          // Continue dragging
+          scrollLeft = rowHolder.scrollLeft; // Update scrollLeft to prevent jitter
+        } else if (rowHolder.scrollLeft >= rowHolder.scrollWidth - rowHolder.clientWidth) {
+          // Reset scroll position to the start smoothly
+          rowHolder.scrollLeft = 0; 
+          // Continue dragging
+          scrollLeft = rowHolder.scrollLeft; // Update scrollLeft to prevent jitter
+        }
+      }
     }
   });
 }
