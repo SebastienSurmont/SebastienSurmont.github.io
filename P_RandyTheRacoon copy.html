@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Randy The Raccoon</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="Images/Icons/DillIcon.png">
+</head>
+<body>
+  <ul>
+    <li><a href="index.html">Projects</a></li>
+    <li><a href="404Page.html">Resume</a></li>
+    <li><a href="ContactPage.html">Contact</a></li>
+    <li><a href="AboutMe.html">Youtube</a></li>
+  </ul>
+    <h1 class="project-title">Randy The Raccoon</h1>
+    <main class="parent-container">
+        <section class="header-video">
+            <video controls poster="Images/Thumbnails/RandyThumbnail.png" class="project-header">
+                <source src="Projects/RandyTheRacoon/RandyRacoonTrailer.mp4" type="video/mp4">
+            </video>
+            <p class="project-description">
+                You've arrived on a brand new island, holding a new identity. Explore the island & the people. Drive around in your car, upgrade your car, paint your car. Whatever you want to do. Hit tricks, talk to people, take down the goose gang. The world is yours.
+            </p>
+        </section>
+
+        <section class="game-process">
+            <h2 class="section-title">The Process</h2>
+            <div class="process-details">
+                <h3 class="explanation-subtitle">Second Place</h3>
+                <p>
+                    I participated in a video game challenge with 6 other developers for $5,000. I ended up narrowly losing first place but decided to keep working on Randy anyway. I plan on releasing the game somewhere in 2025.
+                </p>
+            </div>
+            <div class="unique-features">
+                <img class="explanation-image" src="Projects/RandyTheRacoon/RandyHittingWall.gif" alt="Randy Hitting Wall">
+                <div>
+                    <h3 class="explanation-subtitle">What Makes It Unique</h3>
+                    <p>
+                        Having originally started with the simple idea to turn the movie 
+                        <a class="clickableLink" style="color: rgb(114, 142, 212);" href="https://youtu.be/8piqd2BWeGI?si=QmvNcIH-O2F1bAyV&t=69">Speed</a> into a video game, it quickly developed into a game full of character and personality instead. With every person you run over, Randy will react to it; every time you crash, he will swear.
+                    </p>
+                </div>
+            </div>
+            <div class="game-loop">
+                <div>
+                    <h3 class="explanation-subtitle">Game Loop</h3>
+                    <p>
+                        Unlike my previous games, RTR is a non-linear game. So far, I've managed that by giving NPCs that aren't active in the main storyline some idle dialogue. But I want to add more personality to them, by having them challenge you to a race instead of just talking.
+                    </p>
+                </div>
+                <img class="explanation-image" src="Projects/RandyTheRacoon/IslandView.gif" alt="Island View">
+            </div>
+            <div class="technical-section">
+                <div>
+                    <h3 class="explanation-subtitle">Technical</h3>
+                    <p>
+                        Because of the grand scope of the game, I need some solid background systems. The first ones I made were a mission, NPC, and minimap system. All of these systems have to work together seamlessly. For this, I used inheritance. This way, when you make a new mission, you can have an NPC give it to you, which links them. Afterward, it will be marked on the minimap, all managed by the MissionManager.
+                    </p>
+                </div>
+            </div>
+            <div class="roots-section">
+                <h3 class="explanation-subtitle">Sticking to the Roots</h3>
+                <p>
+                    The original idea was a car-based retro driving game based on the competition's "Momentum" theme. Although I have somewhat shifted away from this, I do still plan on keeping this aspect central.
+                </p>
+            </div>
+            <div class="unique-skills">
+                <div>
+                    <p>
+                        Because of a car's limited move-ability compared to a normal character, missions have to be designed differently. That's why I developed unlockable skills like the ability to jump and basically fly using your booster. This way, the base system is not only challenging but also fun & freeing.
+                    </p>
+                </div>
+                <img class="explanation-image" src="Projects/RandyTheRacoon/DoingTricksInTheAir.gif" alt="Doing Tricks in the Air">
+            </div>
+        </section>
+
+        <section class="skills-used">
+            <h2 class="section-title">Skills Used</h2>
+            <div class="skills-grid">
+                <div class="skill-item">
+                    <img src="Images/Icons/Unity.png" alt="Unity Icon" class="skill-icon">
+                    <p>Unity</p>
+                </div>
+                <div class="skill-item">
+                    <img src="Images/Icons/CSharp.png" alt="C# Icon" class="skill-icon">
+                    <p>C#</p>
+                </div>
+                <div class="skill-item">
+                    <img src="Images/Icons/Gamedev.png" alt="Game Design Icon" class="skill-icon">
+                    <p>Game Design</p>
+                </div>
+                <div class="skill-item">
+                    <img src="Images/Icons/Inheritance.png" alt="Inheritance Icon" class="skill-icon">
+                    <p>OOP</p>
+                </div>
+                <div class="skill-item">
+                    <img src="Images/Icons/UX.png" alt="UX Design Icon" class="skill-icon">
+                    <p>User Experience</p>
+                </div>
+                <div class="skill-item">
+                    <img src="Images/Icons/Maya.png" alt="Maya Icon" class="skill-icon">
+                    <p>Maya</p>
+                </div>
+                <div class="skill-item">
+                    <img src="Images/Icons/SubstancePainter.png" alt="Substance Painter Icon" class="skill-icon">
+                    <p>Substance Painter</p>
+                </div>
+            </div>
+        </section>
+
+        <footer class="footer-div">
+            <a href="https://www.linkedin.com/in/s%C3%A9bastien-surmont-77b7a0252/" class="contact">
+                <p class="footer image-button footer-text">Contact me on LinkedIn</p>
+            </a>
+            <a href="#" id="emailLink">
+                <p class="footer image-button footer-text">Or send me an email</p>
+            </a>
+        </footer>
+    </main>
+
+    <div class="bg"></div>
+    <div class="fadeout"></div>
+    <div class="star-pattern star-pattern-pixelated"></div>
+
+    <script src="main.js"></script>
+</body>
+</html>

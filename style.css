@@ -1,4 +1,3 @@
-
 :root {
   --cardhighlightColour: whitesmoke;
   --cardhighlightWidth: 5px;
@@ -15,6 +14,7 @@
 ::selection {
   background: var(--selected-text-bg-colour);
 }
+/*#region Navbar*/
 
 ul {
   position: sticky;
@@ -25,6 +25,14 @@ ul {
   list-style-type: none;
   padding: 0;
   z-index: 1000;
+  background-color: #232323; /* Solid background color */
+
+  /* Adding an SVG pattern with a different color using 'background-image' */
+  background-image: 
+    url('Images/WigglyLinePattern.png');
+  
+  background-size: 75px 38px; /* Adjust the scale of the pattern */
+  background-repeat: repeat; /* Ensures the pattern repeats */
   background-color: #1f2125;
   box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.679);
   font-weight: bold;
@@ -48,12 +56,12 @@ li a:hover {
 .active {
   background-color: #2d456c;
 }
+/*#endregion*/
 
-
-
+/*#region Background*/
 body{
   overflow-x: hidden;
-}
+} 
 .bg {
   background: radial-gradient(circle at center, #f4b12e, #dc981a 80%);
   position: fixed;
@@ -100,167 +108,24 @@ body{
   text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.679);
   cursor: url(Images/CustomCursor.png), auto;
 }
-.row{
-  width: fit-content;
-
-  gap: 1rem;
-  padding-block: .5rem;
-
-  
-  align-items: center;
-
-  flex-wrap: nowrap;
-
-  display: grid;
-  grid-auto-flow: column;
-
-
-  padding: 40px;
-  animation: scroll var(--_animation-duration, 40s) var(--_animation-direction, forwards) linear infinite;
-}
-
-
-.row[data-direction="right"]{
-  --_animation-direction: reverse;
-}
-.row[data-direction="left"]{
-  --_animation-direction: forwards;
-}
-.row[data-speed="slow"]{
-  --_animation-duration: 120s;
-}
-.row[data-speed="fast"]{
-  --_animation-duration: 40s;
-}
-.row-holder {
-  margin-top: auto;
-  overflow: hidden;
-  -webkit-mask: linear-gradient(90deg, transparent, white 10%, white 90%, transparent);
-  mask: linear-gradient(90deg, transparent, white 10%, white 90%, transparent);
-  transition: padding 0.3s ease;
-  width: 100%;
-}
-.row-holder-holder{
-  margin-bottom: 1px;
-}
-.project-arrow-button{
-  position: absolute;
-}
-
-.piece{
-  background-color: black;
-  overflow: hidden;
-  object-fit: cover;
-  min-height: 270px;
-  max-height: 270px;
-  min-width: var(--_piece-width, 475px);
-  max-width: var(--_piece-width, 475px);
-  border-radius: 10px;
-  display: inline-block;
-
-  box-shadow: 4px 4px 1px rgba(0, 0, 0, 0.679);
-  
-  background-size: cover;
-  background-position: center;
-  transition: transform .15s  cubic-bezier(0.68, -0.55, 0.265, 1.55);
-}
-
-.piece:nth-child(even):hover{
-  position: relative;
-  transform: scale(1.2) rotate(-2deg);
-  z-index:  1000;
-  box-shadow: 4px 4px 10px rgba(63, 91, 133, 0.159);
-  outline: var(--cardhighlightWidth) auto var(--cardhighlightColour);
-}
-.piece:nth-child(odd):hover{
-  position: relative;
-  transform: scale(1.2) rotate(2deg);
-  z-index:  1000;
-  box-shadow: 4px 4px 10px rgba(63, 91, 133, 0.159);
-  outline: var(--cardhighlightWidth) auto var(--cardhighlightColour);
-}
-.piece:hover .project-cards-text{
-  opacity: 100%;
-  background-color: rgba(184, 123, 16, 0.626);
-}
-.piece:hover{
-  background-color: black;
-}
-
-.displaypiece{
-  background-color: black;
-  overflow: hidden;
-  object-fit: cover;
-  margin-left: 15%;
-  min-height: 70vh;
-  min-width: 70%;
-  border-radius: 10px;
-  display: inline-block;
-
-  box-shadow: 4px 4px 1px rgba(0, 0, 0, 0.679);
-  
-  background-size: cover;
-  background-position: center;
-  transition: transform .15s  cubic-bezier(0.68, -0.55, 0.265, 1.55);
-}
-.displayproject-cards-text{
-  color: whitesmoke;
-  font-size: 52px;
-  word-wrap: break-word;
-  text-align: center;
-  top: 50%;
-  height: 20vh;
-  width: 100%;
-  margin: auto;
-  opacity: 100%;
-  font-weight: bold;
-  background-color: rgba(184, 123, 16, 0.626);
-  transition: opacity 1s;
-}
-.displaypiece:hover{
-  position: relative;
-  transform: scale(1.05) rotate(-2deg);
-  z-index:  1000;
-  box-shadow: 4px 4px 10px rgba(63, 91, 133, 0.159);
-  outline: var(--cardhighlightWidth) auto var(--cardhighlightColour);
-}
-.pidisplaypieceece:hover .project-cards-text{
-  opacity: 100%;
-  background-color: rgba(184, 123, 16, 0.626);
-}
-.displaypiece:hover{
-  background-color: black;
-}
+/*#endregion*/
 
 
 
+
+.section-title {
+  font-size: 2em;
+  margin: 20px 0;
+  border-bottom: 2px solid #3d3d3d;
+  padding-bottom: 10px;
+}
 
 
 a {
   text-decoration: none;
 }
-.project-cards-text{
-  background-size: cover;
-  color: whitesmoke;
-  font-size: 32px;
-  text-align: center;
-  top: 50%;
-  height: 100%;
-  width: 100%;
-  margin: auto;
-  opacity: 0%;
-  transition: opacity 1s;
-  font-weight: bold;
-}
-.hi-myname{
-  color: white;
-  font-size: 45px;
-  font-family: lexend;
-  font-weight: bold;
-  margin-left: 12vw;
-  margin-bottom: 100px;
-  max-width: 100vw;
-}
+
+
 .interactivetext{
   color: rgb(238, 255, 196);
   display: inline-block;
@@ -281,35 +146,6 @@ a {
 
 
 
-/* Fill in the project images */
-.project1-image{
-  background-image: url('Images/Thumbnails/EggsyBanner.png');;
-}
-.project2-image{
-  background-image: url('Images/Thumbnails/HouseOnFireThumbnail.png');
-}
-.project3-image{
-  background-image: url('Images/Thumbnails/GameArt2.jpg');
-}
-.project4-image{
-  background-image: url('Images/Thumbnails/HexGame.png');
-}
-.project5-image{
-  background-image: url('Images/Thumbnails/RandyThumbnail.png');
-}
-
-.project7-image{
-  background-image: url('Images/Thumbnails/AppliedGames2.png');
-}
-.project8-image{
-  background-image: url('Images/Thumbnails/Rattatouille.png');
-}
-.project9-image{
-  background-image: url('Images/Thumbnails/PoliceGame.png');
-}
-.project10-image{
-  background-image: url('Images/Temp/MobileGame.jpg');
-}
 
 .extraspace{
   margin-top: 100px;
@@ -326,56 +162,7 @@ img{
   border-radius: 10px;
   box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.679);
 }
-.stripebg{
-  opacity: 80%;
-  position: absolute;
-  z-index: -1;
-}
-.stripebg-div{
- margin-top: -100px;
- margin-right: 50vw;
-}
-.contactmeparent-div{
-  display: flex;
-  margin-left: 5vw;
-  width:  110vw;
-  overflow: hidden;
-}
-.contactmetext-div{
-  width: 50%;
-  height: 82vh;
-  overflow: hidden;
-}
-.contactme-image{
-  border-radius: 10px;
-  height: 18%;
-  width:  18%;
-  box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.679);
-  margin-top: 5%;
-}
-.hi-myname-contact{
-  margin-bottom: 30px;
-  margin-right: 100px;
-  font-size: 500%;
-  font-weight: bold;
-  text-align: left;
-  max-width: 100%;
-  display: inline-block;
-  margin-left: 10vw;
-}
-.resizecontactmeicons{
-  width: 250px;
-}
-.contactmeicons-container{
-  margin-bottom: 1000px;
-  margin-left: 10vw;
-  width: 150%;
-  align-content: center;
-  display: inline-block;
-}
-.contactmeicons-container > * + * {
-  margin-left: 30px;
-}
+
 .introduction{
   width: 70%;
   margin: auto;
@@ -420,10 +207,20 @@ img{
 .footer{
   margin: 10px;
   margin-bottom: 10vh;
-  border-radius: 10px;
   display: inline-block;
-  background-color: #1f2125;
   width: 20%;
+
+
+  background-color: #232323; /* Solid background color */
+
+  /* Adding an SVG pattern with a different color using 'background-image' */
+  background-image: 
+    url('Images/WigglyLinePattern.png');
+  
+  background-size: 75px 38.5px; /* Adjust the scale of the pattern */
+  background-repeat: repeat; /* Ensures the pattern repeats */
+
+  border-radius: 2px 30px 2px 30px;
 }
 .footer-text{
   margin-top: 5%;
@@ -537,36 +334,41 @@ li a:hover {
   flex-wrap: nowrap;
 }
 
+.project-header{
+  width: 50vw;
+  border-radius: 10px;
+  height: 100%;
+  outline: var(--cardhighlightWidth) solid var(--cardhighlightColour);
+  box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.379);
+}
 .project-title{
   font-family: lexend;
-  font-size: 500%;
+  font-size: 250%;
   display: block;
-  text-align: center;
+  text-align: left;
   font-weight: bold;
-  margin-bottom: 0;
-  margin-top: 2%;
 }
 .project-description{
   margin-top: 0;
-  margin-top: 0;
-  font-size: 250%;
-  display: block;
-  text-align: center;
-  margin-left:  15%;
-  margin-right: 15%;
+  font-size: 160%;
+  display: inline-block;
+  text-align: left;
   font-weight: bold;
 }
 
+.sidebysidedivs{
+  margin-left: 4%;
 
-
+}
 
 .explanation-container {
   margin-top: 100px;
   margin-bottom: 20px;
-  overflow: visible; /* Clear floats */
+  overflow: visible;
 }
 .explanation-title{
   font-size: 400%;
+  margin-left: 65px;
   font-weight: bold;
 }
 .displayproject-title{
@@ -577,7 +379,6 @@ li a:hover {
 .explanation-subtitle{
   display: block;
   font-size: 200%;
-  margin: 0;
   margin-left: 5%;
   font-weight: bold;
 }
@@ -615,9 +416,10 @@ li a:hover {
   border-radius: 10px;
   box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.679);
   margin: 20px 20px 5px 20px;
-  transition: transform .15s  cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  transition: transform 0.15s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
-.explanation-image-side {
+
+/* .explanation-image-side {
   width: 904px;
   height: 596px;
   display: inline-block;
@@ -625,7 +427,7 @@ li a:hover {
   box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.679);
   margin: 0px 20px 5px 100px;
   transition: transform .15s  cubic-bezier(0.68, -0.55, 0.265, 1.55);
-}
+} */
 .project-title-side{
   font-family: lexend;
   font-size: 380%;
@@ -646,12 +448,6 @@ li a:hover {
   margin-right: 15%;
   font-weight: bold;
 }
-.explanation-image:nth-child(even) {
-  transform: rotate(3deg);
-}
-.explanation-image:nth-child(odd) {
-  transform: rotate(-3deg);
-}
 .project-link{
   text-align: center;
   margin-left: 40vw;
@@ -670,19 +466,15 @@ li a:hover {
   font-size: 150%;
   font-weight: bold;
 }
-.parent-container{
-  overflow: visible;
-  width: 90vw;
-  margin-left: 3vw;
-  margin-bottom: 20%;
-}
-.project-header{
-  width: 50vw;
-  border-radius: 10px;
-  margin-left: 20vw;
-  box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.679);
+.parent-container {
+  max-width: 95%;
+  margin: auto;
+  padding: 20px;
 }
 
+.header-video {
+  margin-bottom: 30px;
+}
 
 .bg {
   background: radial-gradient(circle at center, #f4b12e, #dc981a 80%);
@@ -810,10 +602,19 @@ li a:hover {
 }
 
 .skill-item {
-  background-color: #efb20ac5; /* Playful, vibrant color */
+  /* Base background color */
+  background-color: #232323; /* Solid background color */
+
+  /* Adding an SVG pattern with a different color using 'background-image' */
+  background-image: 
+    url('Images/WigglyLinePattern.png');
+  
+  background-size: 75px 38px; /* Adjust the scale of the pattern */
+  background-repeat: repeat; /* Ensures the pattern repeats */
+  
   padding: 30px;
   border-radius: 12px;
-  width: 150px;
+  width: 250px;
   height: 180px;
   display: flex;
   flex-direction: column;
@@ -822,11 +623,12 @@ li a:hover {
   transition: transform 0.45s cubic-bezier(0.68, -0.55, 0.27, 1.55), border-color 0.3s;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
   border: 3px solid transparent; /* Border with default color */
+
+  border-radius: 2px 30px 2px 30px;
 }
 
 .skill-item:hover {
-  border-color: #ffffff; /* Highlight border color on hover */
-  transform: rotateZ(calc(20deg + (var(--rotate-offset, 0) * 1deg)));
+  transform: rotateZ(calc(0deg + (var(--rotate-offset, 0) * 1deg)));
 }
 
 .skill-icon {
@@ -862,5 +664,3 @@ li a:hover {
   50% { transform: translateY(-10px); }
   100% { transform: translateY(0); }
 }
-
-

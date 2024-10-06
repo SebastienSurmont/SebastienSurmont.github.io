@@ -1,0 +1,42 @@
+
+.contactmeparent-div{
+  display: flex;
+  margin-left: 5vw;
+  width:  110vw;
+  overflow: hidden;
+}
+.contactmetext-div{
+  width: 50%;
+  height: 82vh;
+  overflow: hidden;
+}
+.contactme-image{
+  border-radius: 10px;
+  height: 18%;
+  width:  18%;
+  box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.679);
+  margin-top: 5%;
+}
+.hi-myname-contact{
+  margin-bottom: 30px;
+  margin-right: 100px;
+  font-size: 500%;
+  font-weight: bold;
+  text-align: left;
+  max-width: 100%;
+  display: inline-block;
+  margin-left: 10vw;
+}
+.resizecontactmeicons{
+  width: 250px;
+}
+.contactmeicons-container{
+  margin-bottom: 1000px;
+  margin-left: 10vw;
+  width: 150%;
+  align-content: center;
+  display: inline-block;
+}
+.contactmeicons-container > * + * {
+  margin-left: 30px;
+}
