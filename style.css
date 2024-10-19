@@ -664,3 +664,84 @@ li a:hover {
   50% { transform: translateY(-10px); }
   100% { transform: translateY(0); }
 }
+
+
+/* Screenshot showcase slider*/
+
+.piece{
+  background-color: black;
+  overflow: hidden;
+  object-fit: cover;
+  min-height: 270px;
+  max-height: 270px;
+  min-width: var(--_piece-width, 475px);
+  max-width: var(--_piece-width, 475px);
+  border-radius: 10px;
+  display: inline-block;
+
+  box-shadow: 4px 4px 1px rgba(0, 0, 0, 0.679);
+  
+  background-size: cover;
+  background-position: center;
+  transition: transform .15s  cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+.row{
+  width: fit-content;
+
+  gap: 1rem;
+  padding-block: .5rem;
+
+  
+  align-items: center;
+
+  flex-wrap: nowrap;
+
+  display: grid;
+  grid-auto-flow: column;
+
+
+  padding: 40px;
+  animation: scroll var(--_animation-duration, 40s) var(--_animation-direction, forwards) linear infinite;
+}
+
+
+.row[data-direction="right"]{
+  --_animation-direction: reverse;
+}
+.row[data-direction="left"]{
+  --_animation-direction: forwards;
+}
+.row[data-speed="slow"]{
+  --_animation-duration: 120s;
+}
+.row[data-speed="fast"]{
+  --_animation-duration: 40s;
+}
+.row-holder {
+  margin-top: auto;
+  overflow: hidden;
+  -webkit-mask: linear-gradient(90deg, transparent, white 10%, white 90%, transparent);
+  mask: linear-gradient(90deg, transparent, white 10%, white 90%, transparent);
+  transition: padding 0.3s ease;
+  width: 100%;
+  cursor: grab;
+
+  user-select: none;
+  background-color: transparent;
+} 
+
+.row-holder:active {
+  cursor: grabbing; 
+  background-color: transparent;
+}
+.row, .piece {
+  user-select: none; 
+  cursor: grab;      
+}
+
+.row:active, .piece:active {
+  cursor: grabbing; 
+}
+.row-holder-holder{
+  margin-bottom: 1px;
+}
