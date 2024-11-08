@@ -1,11 +1,11 @@
 .parent-container {
-  max-width: 100%;
+  max-width: 100vw;
   margin: auto;
   padding: 20px;
 }
 .hi-myname{
   color: white;
-  font-size: 40px;
+  font-size: 2.5vw;
   font-family: lexend;
   font-weight: bold;
   margin-left: 12vw;
@@ -72,18 +72,15 @@
 .row-holder-holder{
   margin-bottom: 1px;
 }
-.project-arrow-button{
-  position: absolute;
-}
 
 .piece{
   background-color: black;
   overflow: hidden;
   object-fit: cover;
-  min-height: 270px;
-  max-height: 270px;
-  min-width: var(--_piece-width, 475px);
-  max-width: var(--_piece-width, 475px);
+  min-height:  15vw;
+  max-height:  15vw;
+  min-width: var(--_piece-width, 25vw);
+  max-width: var(--_piece-width, 25vw);
   border-radius: 10px;
   display: inline-block;
 
@@ -185,10 +182,10 @@
   background-image: url('Images/Thumbnails/HouseOnFireThumbnail.png');
 }
 .project3-image{
-  background-image: url('Images/Thumbnails/GameArt2.jpg');
+  background-image: url('Images/Thumbnails/AppliedGames.png');
 }
 .project4-image{
-  background-image: url('Images/Thumbnails/HexGame.png');
+  background-image: url('Images/Thumbnails/ModularArt.png');
 }
 .project5-image{
   background-image: url('Images/Thumbnails/RandyThumbnail.png');
