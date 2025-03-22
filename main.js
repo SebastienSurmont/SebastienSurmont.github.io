@@ -54,44 +54,41 @@ function addDragToScroll(draggableElement, rowHolder, row, direction) {
 
   document.addEventListener('mousemove', (e) => {
     if (!isDown) return;
-
+  
     // Calculate movement
     const x = e.pageX - rowHolder.offsetLeft;
     const walk = (x - startX) * 2; // Scroll faster
-
+  
     // Check if movement exceeds threshold
     if (Math.abs(x - startX) > dragThreshold) {
       e.preventDefault(); // Prevent default text/image selection behavior
       rowHolder.scrollLeft = scrollLeft - walk;
-
-      // Check scroll direction
+  
+      // Reset scroll position based on direction
       if (direction === "left") {
         if (rowHolder.scrollLeft >= rowHolder.scrollWidth - rowHolder.clientWidth) {
-          // Reset scroll position to the start smoothly
-          rowHolder.scrollLeft = 0; 
-          // Continue dragging
+          // Reached the end, reset to start
+          rowHolder.scrollLeft = 0;
           scrollLeft = rowHolder.scrollLeft; // Update scrollLeft to prevent jitter
         } else if (rowHolder.scrollLeft <= 0) {
-          // Reset scroll position to the end smoothly
-          rowHolder.scrollLeft = rowHolder.scrollWidth / 2; 
-          // Continue dragging
+          // Reached the start, reset to end
+          rowHolder.scrollLeft = rowHolder.scrollWidth / 2;
           scrollLeft = rowHolder.scrollLeft; // Update scrollLeft to prevent jitter
         }
       } else if (direction === "right") {
         if (rowHolder.scrollLeft <= 0) {
-          // Reset scroll position to the end smoothly
-          rowHolder.scrollLeft = rowHolder.scrollWidth / 2; 
-          // Continue dragging
+          // Reached the start, reset to end
+          rowHolder.scrollLeft = rowHolder.scrollWidth - rowHolder.clientWidth;
           scrollLeft = rowHolder.scrollLeft; // Update scrollLeft to prevent jitter
         } else if (rowHolder.scrollLeft >= rowHolder.scrollWidth - rowHolder.clientWidth) {
-          // Reset scroll position to the start smoothly
-          rowHolder.scrollLeft = 0; 
-          // Continue dragging
+          // Reached the end, reset to start
+          rowHolder.scrollLeft = 0;
           scrollLeft = rowHolder.scrollLeft; // Update scrollLeft to prevent jitter
         }
       }
     }
   });
+  
 }
 
 // Existing code for email and LinkedIn links
