@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+
+<!-- Things to put in here -->
+
+<!-- Event bus that uses reflection to make it so you don't have to manually write a subscription
+ & unsubscribtion, all you need to do is implement a base class and then subscribe to any
+ event you want by adding an interface holding a generic which you replace with the event you want
+ to subscribe to, leading to a much less bug prone system as everything is 100% centralized -->
+
+<!-- Mission system, NPC system, Car controller, Tons of handy method extensions -->
+
+<!-- Design -->
+
+<html>
+  <head>
+    <title>Randy The Racoon</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="index.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="Images/Icons/DillIcon.png">
+  </head>
+  <body>
+    <ul>
+      <li><a href="index.html">Projects</a></li>
+      <li><a href="404Page.html">Resume</a></li>
+      <li><a href="ContactPage.html">Contact</a></li>
+      <li><a href="AboutMe.html">Youtube</a></li>
+    </ul>
+
+    <div class="parent-container">
+
+      <div class="textandvideo">
+        <div>
+          <h1 class="project-title interactivetext">Randy The Racoon</h1>
+          <p class="project-description">
+            You've arrived on a brand new island, holding a new identity. Explore the island & the people. 
+            Drive around in your car, upgrade your car, paint your car. Whatever you want to do. 
+            Hit tricks, talk to people, take down the goose gang. The world is yours.
+          </p>
+        </div>
+        <video poster="Images/Thumbnails/RandyThumbnail.png" class="project-header" controls>
+          <source src="Projects/RandyTheRacoon/RandyRacoonTrailer.mp4"  type="video/mp4" >
+        </video> 
+      </div>
+      
+      
+      <!-- Game Making Process -->
+      <!-- Game Making Process -->
+      <div class="explanation-container">
+        
+        <!-- <h1 class="explanation-title interactivetext">The Process</h1> -->
+
+        <div>
+          <h1 class="explanation-subtitle interactivetext">Competitive Origin</h1>
+          <p class="explanation-text">
+            This game came to be after participating in a YouTube competition where I would narrowly lose first place. 
+            <a href="https://www.youtube.com/watch?v=15yMUE7fmQU&t=763s" class="clickableLink" style="color: rgb(114, 142, 212);">The video</a>
+            got a lot of exposure & the game a lot of positive feedback. So I decided to develop it into my first Steam game.
+          </p>
+      
+      <div class="textandvideo">
+      </div>
+      <div>
+        <h1 class="explanation-subtitle interactivetext" style="text-align: center;">The goals I set for myself</h1>
+        <div class="textandvideo" style="gap: 20px; width: 100%;text-align:center;">
+          <div class="skill-item" style='margin:0px auto;'>
+            <p>Fit the theme the best</p>
+          </div>
+          <div class="skill-item" style='margin:0px auto;'>
+            <p>Be the most fun</p>
+          </div>
+          <div class="skill-item" style='margin:0px auto;'>
+            <p>Be recognizable</p>
+          </div>
+          <div class="skill-item" style='margin:0px auto;'>
+            <p>Win $5,000</p>
+          </div>
+        </div>
+      </div> 
+      <div>
+        <h1 class="explanation-subtitle interactivetext"style="text-align: center;">The challenges I faced making the game.</h1>
+        <div class="textandvideo" style="gap: 20px; width: 100%;text-align:center;">
+          <div class="skill-item" style='margin:0px auto;'>
+            <p>My first open-world game</p>
+          </div>
+          <div class="skill-item" style='margin:0px auto;'>
+            <p>Time constraint</p>
+          </div>
+          <div class="skill-item" style='margin:0px auto;'>
+            <p> Working within a theme</p>
+          </div>
+        </div>
+      </div> 
+      <div>
+        <h1 class="explanation-subtitle interactivetext">Gameplay Evolution</h1>
+        <p class="explanation-text">
+          It started off as an arcade driving game in which you drove around a city. You couldn’t slow down because that would trigger a bomb; 
+          this was my take on the theme momentum. The goal of the game was to get rid of all the bomb signals.
+          <br><br>
+          This was enough to get me through to the next week. But because of the simple foundation, 
+          it only worked as an arcade game & wasn’t expandable.
+          I was also thrown a second theme by a competitor in the second week, theft. This left me with an easy way out, 
+          I could make a GTA-inspired heist game. 
+          But that wouldn’t be enough to win, so I forced myself to think further.
+          <br><br>
+          That’s when I came up with an idea that would lead to the open-world design: the world is filled with thieving animals.
+          <br><br>
+          Although I went away from the thief theme after the competition, it’s still ingrained into Randy the main character. 
+          He laughs when hitting pedestrians and swears when crashing. 
+          <br><br>
+            Despite only being intended to be a side feature at first, it ended up being one of the things people enjoyed most, 
+          leading to the comedic part of the game’s genre.
+          
+          
+        </p>
+        
+        <div class="textandvideo">
+          <video class="project-header" controls loop>
+            <source src="Projects/RandyTheRacoon/BunchaWeapons.mp4" type="video/mp4" >
+            Your browser does not support the video tag.
+          </video>
+          <div>
+            <h1 class="explanation-subtitle interactivetext">Solidifying accidental design.</h1>
+          <p class="explanation-text" style="margin-top: 0;">
+            To support that design pillar I added a bunch of new ways to mess with civilians.
+            Crazy weapons such as stinky tornado launchers, vacuums that can also launch civilians. <br>
+            These weapons can also be used to fight the goose gang, which was another unintenional design.
+          </p>
+          </div>
+          
+        </div>
+        
+        <h1 class="explanation-subtitle interactivetext">Key Features</h1>
+        <div class="textandvideo" style="gap: 20px; width: 100%;text-align:center;">
+          <div class="skill-item" style='margin:0px auto;'>
+            <p>Retro-inspired car controller with ragdoll attached to it</p>
+          </div>
+          <div class="skill-item" style='margin:0px auto;'>
+            <p>Comedic main character that reacts to player actions</p>
+          </div>
+          <div class="skill-item" style='margin:0px auto;'>
+            <p>Tons of missions to do</p>
+          </div>
+          <div class="skill-item" style='margin:0px auto;'>
+            <p>Map filled with content</p>
+          </div>
+        </div>
+        <div>
+        <h1 class="explanation-subtitle interactivetext">Programming</h1>
+        <p class="explanation-text">
+          Because of the game’s open-world nature, I needed a lot of solid background systems. With a budget of $0 and my love for making systems, 
+          I designed and programmed them all. 
+          <br><br>
+          From a customizable and expandable NPC system to an interlinked mission system & shooting geese.
+          <br><br>
+          To see the code, you can go to this snapshot of the game’s 
+          <a href="https://github.com/slobbymonk/RandyCode" class="clickableLink" style="color: rgb(114, 142, 212);">GitHub repository</a>.
+        </p>
+        </div>
+        <h1 class="explanation-subtitle interactivetext"style="text-align: center; margin-top: 100px;">Screenshots</h1>
+        <div class="row-holder-holder">
+          <div class="row-holder">
+            <div class="row" data-direction="left" data-speed="slow">
+              <img img src="Projects/RandyTheRacoon/Randy_JumpingWithBroomOntoPig.png" 
+                class="explanation-image piece">
+                <img img src="Projects/RandyTheRacoon/Randy_PigTalkingScreenshot.png" 
+                class="explanation-image piece">
+                <img img src="Projects/RandyTheRacoon/RandyFlyingInCity.png" 
+                class="explanation-image piece">
+                <img img src="Projects/RandyTheRacoon/CivilianFlying.png" 
+                class="explanation-image piece">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      
+      
+      <div class="skills-used">
+        <h1 class="skills-title interactivetext">Skills Used</h1>
+        <div class="skills-grid">
+            <div class="skill-item">
+                <img src="Images/Icons/Unity.png" alt="Unity Icon" class="skill-icon">
+                <p>Unity</p>
+            </div>
+            <div class="skill-item">
+                <img src="Images/Icons/CSharp.png" alt="C# Icon" class="skill-icon">
+                <p>C#</p>
+            </div>
+            <div class="skill-item">
+                <img src="Images/Icons/Gamedev.png" alt="Game Design Icon" class="skill-icon">
+                <p>Game Design</p>
+            </div>
+            <div class="skill-item">
+                <img src="Images/Icons/Inheritance.png" alt="Inheritance Icon" class="skill-icon">
+                <p>OOP</p>
+            </div>
+            <div class="skill-item">
+                <img src="Images/Icons/UX.png" alt="UX Design Icon" class="skill-icon">
+                <p>User Experience</p>
+            </div>
+            <div class="skill-item">
+                <img src="Images/Icons/Maya.png" alt="Playtesting Icon" class="skill-icon">
+                <p>Maya</p>
+            </div>
+            
+            <div class="skill-item">
+              <img src="Images/Icons/SubstancePainter.png" alt="Playtesting Icon" class="skill-icon">
+              <p>Substance Painter</p>
+          </div>
+        </div>
+    </div>
+      <div class="footer-div">
+        <a href="https://www.linkedin.com/in/s%C3%A9bastien-surmont-77b7a0252/" class="contact">
+        <p class="footer image-button footer-text">Contact me on LinkedIn</p></a>
+        <a href="#" id="emailLink">
+          <p class="footer image-button footer-text">Or send me an email</p>
+        </a>
+      </div>
+      </div>
+      
+    </div>
+    
+    
+  <div class="bg"></div>
+  <div class="fadeout"></div>
+  <div class="star-pattern star-pattern-pixelated"></div>
+
+  <script src="main.js"></script>
+  </body>
+</html>
