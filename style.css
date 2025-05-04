@@ -6,6 +6,9 @@
 
   --rotate-offset: 10;
 }
+html {
+  font-size: clamp(14px, 1vw, 18px); /* Scales between 14px and 18px based on viewport width */
+} 
 ::-moz-selection { /* Code for Firefox */
   background: var(--selected-text-bg-colour);
 
@@ -351,7 +354,7 @@ li a:hover {
 }
 .project-description{
   margin-top: 0;
-  font-size: 2vw;
+  font-size: 2.5rem;
   display: inline-block;
   text-align: left;
   font-weight: bold;
@@ -391,14 +394,14 @@ li a:hover {
 }
 
 .explanation-text {
-  font-size: 1.8vw;
+  font-size: 3rem;
   margin-right: 3%;
   text-align: left;
   font-weight: bold;
   margin-top: 2%;
 }
 .explanation-text:nth-child(odd) {
-  margin-right: 5%;
+  margin-left: 5%;
 }
 .explanation-text:nth-child(even) {
   margin-left: 5%;
@@ -468,7 +471,7 @@ li a:hover {
   font-weight: bold;
 }
 .parent-container {
-  max-width: 95%;
+  max-width: 95vw;
   margin: auto;
   padding: 20px;
 }

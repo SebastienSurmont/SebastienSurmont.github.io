@@ -155,16 +155,40 @@
           </div>
         </div>
         <div>
-        <h1 class="explanation-subtitle interactivetext">Programming</h1>
-        <p class="explanation-text">
-          Because of the game’s open-world nature, I needed a lot of solid background systems. With a budget of $0 and my love for making systems, 
-          I designed and programmed them all. 
-          <br><br>
-          From a customizable and expandable NPC system to an interlinked mission system & shooting geese.
-          <br><br>
-          To see the code, you can go to this snapshot of the game’s 
-          <a href="https://github.com/slobbymonk/RandyCode" class="clickableLink" style="color: rgb(114, 142, 212);">GitHub repository</a>.
-        </p>
+            <h1 class="explanation-subtitle interactivetext">Programming</h1>
+            <p class="explanation-text">
+              I optimized many systems to support an open-world environment—this included writing more performant code and implementing techniques like culling.
+            </p>
+            <p class="explanation-text">
+              Due to the project's scope, all base systems had to be designed for scalability and maintainability. I frequently used the 
+              <span class="interactivetext">framework design pattern</span> to build these systems.
+            </p>
+            <p class="explanation-text">
+              One example is the <span class="interactivetext">mission framework</span>, which follows the model-view approach. 
+              It allows me to write mission logic by simply inheriting from a base class, making integration into the mission system seamless.
+            </p>
+            <p class="explanation-text">
+              I applied the same pattern to the <span class="interactivetext">NPC system</span>, creating a ~1000-line base class that supports:
+              giving out missions, multi-stage dialogues, dialogue bubbles, and conditional behavior triggers.
+            </p>
+            <p class="explanation-text">
+              To speed up future development, I began organizing reusable code into a framework package—this is how I learned to create Unity packages.
+            </p>
+            <p class="explanation-text">
+              This package includes:
+              <ul>
+                <li>An <span class="interactivetext">Event Bus</span> system that uses reflection to auto-subscribe based on interface implementation</li>
+                <li>Useful <span class="interactivetext">method extensions</span></li>
+                <li>A <span class="interactivetext">custom debugger</span></li>
+              </ul>
+            </p>
+          
+            <p class="explanation-text">
+              You can explore the code on my
+              <a href="https://github.com/slobbymonk/Slobbymonk.Framework" class="clickableLink" style="color: rgb(114, 142, 212);">
+                GitHub repository
+              </a>.
+            </p>          
         </div>
         <h1 class="explanation-subtitle interactivetext"style="text-align: center; margin-top: 100px;">Screenshots</h1>
         <div class="row-holder-holder">
