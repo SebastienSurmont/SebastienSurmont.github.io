@@ -323,11 +323,6 @@ li a:hover {
   background-color: #2d456c;
 }
 
-
-
- /* ProjectPage */
-
-
 .textandvideo{
   margin: 2%;
   display: flex;
@@ -339,6 +334,13 @@ li a:hover {
   width: 50vw;
   border-radius: 10px;
   height: 100%;
+  outline: var(--cardhighlightWidth) solid var(--cardhighlightColour);
+  box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.379);
+}
+.project-header-ytlink{
+  width: 250vw;
+  border-radius: 10px;
+  height: 60vh;
   outline: var(--cardhighlightWidth) solid var(--cardhighlightColour);
   box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.379);
 }
