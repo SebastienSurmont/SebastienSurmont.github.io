@@ -191,7 +191,7 @@ img{
 }
 .introduction-text{
   margin-right: 100px;
-  font-size: 3.5vw;
+  font-size: 3vw;
   font-weight: bold;
   text-align: left;
   max-width: 40vw;
@@ -218,13 +218,12 @@ img{
 
 .footer-div {
   display: block;
-  margin-top: 10vh;
   width: 100%;
   text-align: center;
   position: relative;
-  padding: 40px 0 60px 0;
+  padding: 0px 0 25px 0;
 
-  background-size: 18px 18px;
+  background-size: 13px 13px;
   background-image: linear-gradient(
     -45deg,
     rgb(var(--primary-stripe-rgb)) 25%,
@@ -264,42 +263,37 @@ img{
 }
 
 .footer-wrapper {
-  filter: drop-shadow(0px -8px 200px rgba(0, 0, 0, 0.274));
+  filter: drop-shadow(0px -8px 2px rgba(0, 0, 0, 0.076));
 }
 
-.footer-tear {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 40px;
-  display: block;
-  box-shadow: none;
-  border-radius: 0;
-  transform: translateY(-99%);  /* sits just above the footer */
-}
 .footer{
   margin: 10px;
+  margin-top: 80px;
   display: inline-block;
 
-  width: 20vw;
+  width: 30vw;
+  height: 15vh;
 
-  background-color: #232323; /* Solid background color */
+  background-color: #232323;
 
-  /* Adding an SVG pattern with a different color using 'background-image' */
   background-image: 
     url('Images/WigglyLinePattern.png');
   
   background-size: 75px 38.5px; /* Adjust the scale of the pattern */
-  background-repeat: repeat; /* Ensures the pattern repeats */
 
-  border-radius: 2px 30px 2px 30px;
 }
-.footer-text{
-  margin-top: 5%;
-  font-size: 200%;
+.footer:nth-child(even){
+  border-radius: 2px 30px 30px 2px;
+}
+.footer:nth-child(odd){
+  border-radius: 30px 2px 2px 30px;
+}
+.footer-text {
+  font-size: 180%;
   text-align: center;
   font-weight: bold;
+  white-space: normal;
+  word-wrap: break-word;
 }
 .header {
   color: transparent;
@@ -400,19 +394,28 @@ li a:hover {
  /* ProjectPage */
 
 
-.textandvideo{
-  margin: 2%;
+.textandvideo {
+  margin-left: 7%;
+  margin-right: 7%;
+  margin-top: 2%;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
+  align-items: center;
+  min-height: 60vh;
 }
 
-.project-header{
-  width: 50vw;
+.project-header {
+  width: 50%;
+  aspect-ratio: 16 / 9;
+  height: auto;
+  min-height: 55vh;
+  max-height: 50vw;
   border-radius: 10px;
-  height: 100%;
   outline: var(--cardhighlightWidth) solid var(--cardhighlightColour);
   box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.379);
+  flex-shrink: 0;
+  aspect-ratio: 16 / 9;
 }
 .project-title{
   font-family: lexend;
@@ -423,6 +426,7 @@ li a:hover {
 }
 .project-description{
   margin-top: 0;
+  margin-right: 5%;
   font-size: 2vw;
   display: inline-block;
   text-align: left;
@@ -726,6 +730,7 @@ li a:hover {
 }
 
 
+
 /* Screenshot showcase slider*/
 /* ─── Project Grid ──────────────────────────────────────────────────────────── */
 
@@ -733,7 +738,7 @@ li a:hover {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 16px;
-  width: 90%;
+  width: 60%;
   margin: 0 auto 60px auto;
 }
 
@@ -755,7 +760,7 @@ li a:hover {
 
 .project-card--featured {
   grid-column: 1 / -1;
-  min-height: 300px;
+  min-height: 600px;
 }
 
 /* Hover: each card tilts its own way, z-index raised via JS */
