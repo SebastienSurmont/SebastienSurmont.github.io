@@ -16,11 +16,19 @@
       <li><a href="AboutMe.html">Youtube</a></li>
     </ul>
 
+    <ul class="nav-right">
+      <li><a href="https://store.steampowered.com/app/3187000/Randy_The_Racoon/">▶ Steam Page</a></li>
+    </ul>
+
     <div class="parent-container">
 
       <div class="textandvideo">
         <div>
-          <h1 class="project-title interactivetext">Randy The Racoon</h1>
+          <h1 class="project-title interactivetext" style="margin-bottom: 0;">Randy The Racoon</h1>
+          <div class="award-badges">
+            <span class="award-badge award-badge--purple">steam game</span>
+            <span class="award-badge award-badge--gold">solo project</span>
+          </div>
           <p class="project-description">
             Use cartoony weapons, run over humans, take down the Goose Mafia that wants you dead, 
             drop giant snowballs into crowds, fly your stunt car across a packed island. 
@@ -36,10 +44,70 @@
           </iframe>
       </div>
       
-      
+      <div class="explanationandvideo-container">
+        <div class="explanation-container">
+          <h1 class="explanation-title interactivetext " style="margin-bottom: 0;">Building Systems</h1>
+          <p class="explanation-text">
+            Because the game was open world, I needed every system to fully work with each other. Think NPCs
+            starting missions, changing states during missions, etc... On top of this they also had to be cancellable
+            and restartable & work with a save system. 
+            Because of this I made a lot of use of polymorphism, dependency injection, 
+            and the strategy pattern to make sure every system was as modular as possible. It's ended up being
+            modular enough that I still use these systems in new projects today.
+          </p>
+        </div>
+        <img src="Projects/RandyTheRacoon/RandyIsland.gif" class="explanation-image">
+      </div>
+      <div class="explanationandvideo-container">
+        <img src="Projects/RandyTheRacoon/RandyDriving.gif" class="explanation-image">
+        <div class="explanation-container">
+          <h1 class="explanation-title interactivetext " style="margin-bottom: 0;">Design Challenge</h1>
+          <p class="explanation-text">
+            How do I introduce this world to the player organically?
+            I went through a few solutions, such as having a voice over or an introduction text. 
+            But these went against one of my core design principles, 
+            <span class="interactivetext">"let the player discover the world themselves"</span>.            
+            I ended up letting the NPCs explain the world to the player, that way the player finds
+             out by themselves. This did have the drawback of needed to playtest
+            everything quite a few times to make sure people didn't get confused, but it ended up being the right decision.
+          </p>
+        </div>
+      </div>
+      <!--My role-->
+      <!--My goal-->
+      <!--The outcome-->
+      <!--My learnings-->
       
       
     </div>
+
+    <h1 class="explanation-subtitle interactivetext"style="text-align: center; margin-top: 100px;">Screenshots</h1>
+        <div class="row-holder-holder">
+          <div class="row-holder">
+            <div class="row" data-direction="left" data-speed="slow">
+              <img img src="Projects/RandyTheRacoon/MainLibraryCapsule.png" 
+                class="explanation-image piece">
+                <img img src="Projects/RandyTheRacoon/RTRSC1.jpg" 
+                class="explanation-image piece">
+                <img img src="Projects/RandyTheRacoon/RTRSC2.jpg" 
+                class="explanation-image piece">
+                <img img src="Projects/RandyTheRacoon/RTRSC3.jpg" 
+                class="explanation-image piece">
+                <img img src="Projects/RandyTheRacoon/RTRSC4.jpg" 
+                class="explanation-image piece">
+                <img img src="Projects/RandyTheRacoon/RTRSC5.jpg" 
+                class="explanation-image piece">
+                <img img src="Projects/RandyTheRacoon/RTRSC6.jpg" 
+                class="explanation-image piece">
+                <img img src="Projects/RandyTheRacoon/RTRSC7.jpg" 
+                class="explanation-image piece">
+                <img img src="Projects/RandyTheRacoon/RTRSC8.jpg" 
+                class="explanation-image piece">
+                <img img src="Projects/RandyTheRacoon/RTRSC9.jpg" 
+                class="explanation-image piece">
+            </div>
+          </div>
+        </div>
     
     <div class="footer-div">
         <a href="https://www.linkedin.com/in/s%C3%A9bastien-surmont-77b7a0252/" class="footer image-button">

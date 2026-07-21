@@ -16,21 +16,24 @@
       <li><a href="AboutMe.html">Youtube</a></li>
     </ul>
 
-
+    <ul class="nav-right">
+      <li><a href="https://store.steampowered.com/app/4592040/Just_Chessing_Around/">▶ Steam Page</a></li>
+    </ul>
 
 
 
     
     <div class="parent-container">
-      <div class="textandvideo">
+      <div class="textandvideo project-intro-container">
         <div>
-          <h1 class="project-title interactivetext">Just Chessing Around</h1>
+          <h1 class="project-title interactivetext" style="margin-bottom: 0;">Just Chessing Around</h1>
+          <div class="award-badges">
+            <span class="award-badge award-badge--purple">steam game</span>
+            <span class="award-badge award-badge--gold">made in team</span>
+          </div>
           <p class="project-description">
-            Build a chess army. Break the rules. <br>
-            Collect buffs that make your pieces addictively OP, with knights that roam the entire board, 
-            rooks that smash through anything. Use items like bombs or potions to cause even more chaos. 
-            No king to checkmate. Just enemies to destroy.
-            <a class="clickableLink" style="color: rgb(13, 144, 232);" href="https://store.steampowered.com/app/4592040/Just_Chessing_Around/">Steam Page</a>
+            This is a commercial roguelike chess game shipping on Steam, 
+            built in Unity with a friend. I'm the lead developer, technical designer, and marketer.
           </p>
         </div>
         <iframe 
@@ -41,26 +44,72 @@
           allowfullscreen>
         </iframe>
       </div>
-    </div>
 
-    <h1 class="explanation-subtitle interactivetext"style="text-align: center; margin-top: 100px;">Screenshots</h1>
-        <div class="row-holder-holder">
+      <div class="explanationandvideo-container">
+          <img src="Projects/JCA/CabbageClubTeam.jpg" class="explanation-image" >
+          <div class="explanation-container">
+            <h1 class="explanation-title interactivetext " style="margin-bottom: 0;">Background</h1>
+            <p class="explanation-text">
+              It's a game I'm making with a friend of mine, I'm the lead developer, marketer, and technical designer.
+               Because I'm developing this game with someone else I have to make sure that the systems
+               I make are always cleanly split between front end & backend. This way my friend cannot
+               create systematic bugs. I do this in a few ways, such as using MPV, the strategy pattern, etc...
+            </p>
+          </div>
+      </div>
+
+      <div class="explanationandvideo-container">
+        <div class="explanation-container">
+            <h1 class="explanation-title interactivetext " style="margin-bottom: 0;">Human AI</h1>
+            <p class="explanation-text">
+              The biggest challenge for me was a mixture between design & developing. It was making
+              a chess AI that felt like you were fighting actual humans. One way I did that was by
+              writing down why I made certain moves while playing & reverse engineering that to see
+              how the AI should think. This combined with some tricks I learned from minecraft, where
+              you give certain terrain certain values, gave the AI that human feel.
+            </p>
+        </div>
+          <img src="Projects/JCA/JCAGameplay.gif" class="explanation-image" >
+      </div>
+
+      <div class="explanationandvideo-container">
+        <div class="explanation-container">
+            <h1 class="explanation-title interactivetext " style="margin-bottom: 0;">Design Challenge</h1>
+            <p class="explanation-text">
+              Because this game is  based on chess, I wrote a custom grid engine. 
+              To minimise any bugs, I worked in a layered approach.
+              Having a grid engine at the bottom, with different layers of abstraction on top of that.
+              This had the added benefit of me now being able to use this grid engine in future projects.
+              Because I'm now working in a custom grid engine I also had to make a lot of features that Unity
+              normally supports. Such as a custom A* pathfinding algorithm, which thanks to 
+            </p>
+          </div>
+      </div>
+
+      <h1 class="explanation-subtitle interactivetext"style="text-align: center; margin-top: 100px;">Screenshots</h1>
+          <div class="row-holder-holder">
           <div class="row-holder">
             <div class="row" data-direction="left" data-speed="slow">
               <img img src="Projects/JCA/Screenshot_Desert.png" 
+                class="explanation-image piece">
+                <img img src="Projects/JCA/Swamp_ChangingBuffs.png" 
+                class="explanation-image piece">
+                <img img src="Projects/JCA/ThroneRoom_PieceSelected.png" 
+                class="explanation-image piece">
+                <img img src="Projects/JCA/Shop.png" 
                 class="explanation-image piece">
                 <img img src="Projects/JCA/Screenshot_BuffChest.png" 
                 class="explanation-image piece">
                 <img img src="Projects/JCA/Screenshot_Grass.png" 
                 class="explanation-image piece">
-                <img img src="Projects/JCA/Screenshot_UnderlingRoom.png" 
+                <img img src="Projects/JCA/UnderlingRoom.png" 
                 class="explanation-image piece">
                 <img img src="Projects/JCA/Screenshot_Defeated.png" 
                 class="explanation-image piece">
             </div>
           </div>
-        </div>
-
+          </div>
+    </div>
     <div class="footer-div">
         <a href="https://www.linkedin.com/in/s%C3%A9bastien-surmont-77b7a0252/" class="footer image-button">
         <p class=" footer-text">Contact me on LinkedIn</p></a>

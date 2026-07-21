@@ -148,7 +148,8 @@ a {
 
 
 .interactivetext{
-  color: rgb(238, 255, 196);
+  color: rgb(253, 244, 210);
+  /*color: rgb(238, 255, 196);*/
   display: inline-block;
   transition: transform .2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
@@ -355,7 +356,12 @@ img{
 
  /* Navpage */
 
-
+.nav-right {
+  position: fixed;
+  top: 2%;
+  right: 3vw;
+  margin-left: 0;
+}
 ul {
   position: sticky;
   top: 2%;
@@ -404,6 +410,9 @@ li a:hover {
   align-items: center;
   min-height: 60vh;
 }
+.project-intro-container{
+  margin-bottom: 20vh;
+}
 
 .project-header {
   width: 50%;
@@ -438,15 +447,37 @@ li a:hover {
 
 }
 
+.explanationandvideo-container {
+  margin-top: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;   /* fixed typo, was "top" */
+  gap: 40px;              /* consistent spacing instead of relying on width % */
+}
+
 .explanation-container {
-  margin-top: 100px;
   margin-bottom: 20px;
+  flex: 1 1 0;               /* stop it getting too wide when text is short */
   overflow: visible;
 }
+
 .explanation-title{
-  font-size: 400%;
-  margin-left: 65px;
+  font-size: 200%;
+  margin-left: 5%;
   font-weight: bold;
+  color: rgb(238, 255, 196);
+}
+
+
+.explanation-image {
+  flex-shrink: 0; 
+  max-width: 704px;
+  height: 396px;
+  display: inline-block;
+  border-radius: 10px;
+  box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.679);
+  margin: 20px 20px 5px 20px;
+  transition: transform 0.15s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 .displayproject-title{
   font-size: 400%;
@@ -467,7 +498,7 @@ li a:hover {
 }
 
 .explanation-text {
-  font-size: 1.8vw;
+  font-size: 150%;
   margin-right: 3%;
   text-align: left;
   font-weight: bold;
@@ -484,16 +515,6 @@ li a:hover {
 }
 .explanation-image:nth-child(odd):hover {
   transform: rotate(3deg);
-}
-
-.explanation-image {
-  width: 704px;
-  height: 396px;
-  display: inline-block;
-  border-radius: 10px;
-  box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.679);
-  margin: 20px 20px 5px 20px;
-  transition: transform 0.15s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 
 /* .explanation-image-side {
@@ -762,6 +783,9 @@ li a:hover {
   grid-column: 1 / -1;
   min-height: 600px;
 }
+.project-card--wide {
+  grid-column: 1 / -1;
+}
 
 /* Hover: each card tilts its own way, z-index raised via JS */
 .project-card:nth-child(1):hover  { transform: scale(1.03) rotate(0.7deg); }
@@ -850,3 +874,128 @@ li a:hover {
 
 .project-card--featured .project-card-title { font-size: 1.9rem; }
 .project-card--featured .project-card-sub   { font-size: 1rem;   }
+
+
+
+.contribution-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  width: 80%;
+  margin: 30px auto 0;
+}
+ 
+.contribution-card {
+  position: relative;
+  overflow: hidden;
+  background-color: #232323;
+  background-image: url('Images/WigglyLinePattern.png');
+  background-size: 75px 38px;
+  background-repeat: repeat;
+  border-radius: 2px 30px 2px 30px;
+  padding: 24px 20px;
+  border: 2px solid transparent;
+  transition: transform 0.35s cubic-bezier(0.68, -0.55, 0.27, 1.55),
+              border-color 0.2s;
+  box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.4);
+}
+ 
+.contribution-card:nth-child(even) {
+  border-radius: 30px 2px 30px 2px;
+}
+ 
+.contribution-card:nth-child(odd):hover {
+  transform: rotateZ(-4deg) scale(1.04);
+  border-color: whitesmoke;
+  box-shadow: 6px 6px 0px rgba(0, 0, 0, 0.6);
+}
+ 
+.contribution-card:nth-child(even):hover {
+  transform: rotateZ(4deg) scale(1.04);
+  border-color: whitesmoke;
+  box-shadow: 6px 6px 0px rgba(0, 0, 0, 0.6);
+}
+ 
+.contribution-number {
+  position: absolute;
+  top: -10px;
+  right: 4px;
+  font-size: 52px;
+  font-weight: bold;
+  color: rgba(255, 255, 255, 0.06);
+  line-height: 1;
+  text-shadow: none;
+}
+ 
+.contribution-tag {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: bold;
+  padding: 3px 10px;
+  border-radius: 6px;
+  letter-spacing: 0.04em;
+  text-shadow: none;
+}
+ 
+.contribution-tag--systems  { background: #2d456c; color: #dce8ff; }
+.contribution-tag--gameplay { background: #2d456c; color: #dce8ff; }
+.contribution-tag--design   { background: #5c3d6e; color: #eeddf4; }
+.contribution-tag--editing   { background: #99b85a; color: #eeddf4; }
+.contribution-tag--production { background: #6e5136; color: #f4e3cc; }
+ 
+.contribution-title {
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin: 12px 0 4px;
+}
+ 
+.contribution-desc {
+  color: #b9b9b9;
+  font-size: 0.85rem;
+  font-weight: normal;
+  line-height: 1.4;
+  margin: 0;
+}
+
+
+.award-badges {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin: 8px 0 20px;
+}
+
+.award-badge {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.8rem;
+  font-weight: bold;
+  padding: 5px 14px;
+  border-radius: 6px 16px 6px 16px;
+  letter-spacing: 0.03em;
+  box-shadow: 2px 2px 0px rgba(0, 0, 0, 0.3);
+  transition: transform 0.2s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+
+.award-badge:nth-child(even) {
+  border-radius: 16px 6px 16px 6px;
+}
+
+.award-badge:nth-child(odd):hover {
+  transform: rotateZ(-4deg) scale(1.08);
+}
+
+.award-badge:nth-child(even):hover {
+  transform: rotateZ(4deg) scale(1.08);
+}
+
+.award-badge--gold {
+  background: #b67941;
+  color: #f5f0e9;
+}
+
+.award-badge--purple {
+  background: #8547a8;
+  color: #f5f0e9;
+}
