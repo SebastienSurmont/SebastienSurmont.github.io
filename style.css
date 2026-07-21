@@ -149,7 +149,6 @@ a {
 
 .interactivetext{
   color: rgb(253, 244, 210);
-  /*color: rgb(238, 255, 196);*/
   display: inline-block;
   transition: transform .2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
@@ -472,7 +471,7 @@ li a:hover {
 .explanation-image {
   flex-shrink: 0; 
   max-width: 704px;
-  height: 396px;
+  max-height: 396px;
   display: inline-block;
   border-radius: 10px;
   box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.679);
