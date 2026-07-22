@@ -398,6 +398,76 @@ li a:hover {
 
  /* ProjectPage */
 
+.explanation-list,
+.explanation-list ul {
+  /* --- kill every bit of navbar-ul styling, at every nesting depth --- */
+  position: static;
+  top: auto;
+  margin-left: 0;
+  display: block;
+  border-radius: 0;
+  background: none;
+  box-shadow: none;
+  z-index: auto;
+  overflow: visible;
+}
+
+.explanation-list li {
+  float: none;
+  background: none;
+  box-shadow: none;
+}
+
+/* align the whole list with the h1 title's 5% margin above it */
+.explanation-list {
+  font-size: 150%;
+  font-weight: bold;
+  text-align: left;
+  margin-top: 2%;
+  margin-right: 3%;
+  margin-left: 5%;
+  padding-left: 1.1em;
+  list-style: none;
+}
+
+.explanation-list > li {
+  position: relative;
+  margin-bottom: 0.6em;
+}
+
+.explanation-list > li::before {
+  content: "▸";
+  position: absolute;
+  left: -1.1em;
+  color: rgb(238, 255, 196);
+}
+
+.explanation-list ul {
+  list-style: none;
+  padding-left: 2em;       /* pushed further right than parent text */
+  margin-top: 0.4em;
+  margin-left: 0;
+  font-size: 0.75em;
+  font-weight: normal;
+  opacity: 0.85;
+}
+
+.explanation-list ul > li {
+  position: relative;
+  margin-bottom: 0.5em;
+}
+
+.explanation-list ul > li::before {
+  content: "–";
+  position: absolute;
+  left: -1.2em;
+  opacity: 0.6;
+}
+
+.explanation-list strong {
+  color: rgb(238, 255, 196);
+  font-weight: bold;
+}
 
 .textandvideo {
   margin-left: 7%;
@@ -447,24 +517,88 @@ li a:hover {
 }
 
 .explanationandvideo-container {
+  transition: opacity 0.3s;
   margin-top: 10%;
   display: flex;
   justify-content: center;
-  align-items: center;   /* fixed typo, was "top" */
-  gap: 40px;              /* consistent spacing instead of relying on width % */
+  align-items: center;  
+  gap: 40px;            
+}
+body[data-view="design"] .explanationandvideo-container:not([data-lean="design"]):not([data-lean="both"]) {
+  opacity: 0.35;
+}
+body[data-view="programming"] .explanationandvideo-container:not([data-lean="programming"]):not([data-lean="both"]) {
+  opacity: 0.35;
+}
+.explanation-heading {
+  position: relative;
+}
+
+.explanation-subtitle-row {
+  display: flex;
+  align-items: stretch;
+  gap: 14px;
+}
+
+.explanation-heading-tag {
+  display: flex;
+  align-items: center;
+  margin-top: .5%;
+  max-height: 20px;
+  flex-shrink: 0;
+}
+
+.explanationandvideo-container--stacked {
+  flex-direction: column;
+}
+.explanationandvideo-container--stacked .explanation-image {
+  max-width: 90%;
+  max-height: none;
+  width: 60%;
+  margin: 20px auto;
 }
 
 .explanation-container {
   margin-bottom: 20px;
-  flex: 1 1 0;               /* stop it getting too wide when text is short */
+  flex: 1 1 0;              
   overflow: visible;
 }
-
 .explanation-title{
-  font-size: 200%;
+  font-size: 180%;
   margin-left: 5%;
   font-weight: bold;
   color: rgb(238, 255, 196);
+}.explanation-subtitle{
+  font-size: 150%;
+  margin-left: 5%;
+  color: rgb(238, 255, 196);
+  margin-bottom: 0;
+}
+.explanation-text {
+  font-size: 125%;
+  margin-right: 3%;
+  text-align: left;
+  font-weight: bold;
+  margin-top: 2%;
+}
+.explanation-text:nth-child(odd) {
+  margin-right: 5%;
+}
+.explanation-text:nth-child(even) {
+  margin-left: 5%;
+}
+
+.chapter-title{
+  display: block;
+  font-size: 3vw;
+  margin-left: 5%;
+  font-weight: bold;
+}
+.chapter-title:nth-child(odd):hover {
+  transform: scale(1) rotate(0deg);
+}
+.chapter-title:nth-child(even):hover {
+  transform: scale(1) rotate(-2deg);
 }
 
 
@@ -482,32 +616,6 @@ li a:hover {
   font-size: 400%;
   margin-left: 40vw;
   font-weight: bold;
-}
-.explanation-subtitle{
-  display: block;
-  font-size: 3vw;
-  margin-left: 5%;
-  font-weight: bold;
-}
-.explanation-subtitle:nth-child(odd):hover {
-  transform: scale(1) rotate(0deg);
-}
-.explanation-subtitle:nth-child(even):hover {
-  transform: scale(1) rotate(-2deg);
-}
-
-.explanation-text {
-  font-size: 150%;
-  margin-right: 3%;
-  text-align: left;
-  font-weight: bold;
-  margin-top: 2%;
-}
-.explanation-text:nth-child(odd) {
-  margin-right: 5%;
-}
-.explanation-text:nth-child(even) {
-  margin-left: 5%;
 }
 .explanation-image:nth-child(even):hover {
   transform: rotate(-3deg);
@@ -938,9 +1046,10 @@ li a:hover {
  
 .contribution-tag--systems  { background: #2d456c; color: #dce8ff; }
 .contribution-tag--gameplay { background: #2d456c; color: #dce8ff; }
-.contribution-tag--design   { background: #5c3d6e; color: #eeddf4; }
+.contribution-tag--design   { background: #458f51; color: #eeddf4; }
 .contribution-tag--editing   { background: #99b85a; color: #eeddf4; }
 .contribution-tag--production { background: #6e5136; color: #f4e3cc; }
+.contribution-tag--programming { background: #446ca0; color: #f5eee5; }
  
 .contribution-title {
   color: #fff;

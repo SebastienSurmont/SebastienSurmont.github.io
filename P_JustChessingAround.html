@@ -58,35 +58,136 @@
           </div>
       </div>
 
-      <div class="explanationandvideo-container">
+      <div class="explanationandvideo-container" data-lean="design">
         <div class="explanation-container">
-            <h1 class="explanation-title interactivetext " style="margin-bottom: 0;">I reverse-engineered my own decisions to make the AI feel human.</h1>
-            <p class="explanation-text">
-              The biggest challenge for me was a mixture between design & developing. It was making
-              a chess AI that felt like you were fighting actual humans. One way I did that was by
-              writing down why I made certain moves while playing & reverse engineering that to see
-              how the AI should think. This combined with some tricks I learned from minecraft, where
-              you give certain terrain certain values, gave the AI that human feel.
-            </p>
-        </div>
-          <img src="Projects/JCA/JCAGameplay.gif" class="explanation-image" >
-      </div>
-
-      <div class="explanationandvideo-container">
-        <div class="explanation-container">
-            <h1 class="explanation-title interactivetext " style="margin-bottom: 0;">Design Challenge</h1>
-            <p class="explanation-text">
-              Because this game is  based on chess, I wrote a custom grid engine. 
-              To minimise any bugs, I worked in a layered approach.
-              Having a grid engine at the bottom, with different layers of abstraction on top of that.
-              This had the added benefit of me now being able to use this grid engine in future projects.
-              Because I'm now working in a custom grid engine I also had to make a lot of features that Unity
-              normally supports. Such as a custom A* pathfinding algorithm, which thanks to 
-            </p>
+          <div class="explanation-heading">
+              <h1 class="explanation-title" style="margin-bottom: 0;">The biggest design challenge:</h1>
+          <div class="explanation-subtitle-row">
+              <h2 class="explanation-subtitle" style="margin-top: 0;">
+              making the <span class="interactivetext">AI</span> feel <span class="interactivetext">human.</span></h2>
+              <span class="contribution-tag contribution-tag--design explanation-heading-tag">design</span>
+            </div>
           </div>
+            <ul class="explanation-list">
+            <li>
+              <strong>Reverse-engineering player choices</strong>
+              <p class="explanation-text" style="color: #fff; font-size: 30px">While playing, I wrote down <em>why</em> I made certain moves, then reverse-engineered that reasoning into the AI's decision logic.</p>
+            </li>
+            <li>
+              <strong>Weighing the surroundings</strong>
+              <p class="explanation-text" style="color: #fff; font-size: 30px">Borrowed a trick from Minecraft: give terrain tiles values the AI factors into its move calculations — dangerous tiles score negative, favorable ones positive.</p>
+            </li>
+          </ul>
+        </div>
+        <img src="Projects/JCA/JCAGameplay.gif" class="explanation-image">
       </div>
 
-      <h1 class="explanation-subtitle interactivetext"style="text-align: center; margin-top: 100px;">Screenshots</h1>
+      <div class="explanationandvideo-container" data-lean="design">
+        <div class="explanation-container">
+          <div class="explanation-heading">
+              <h1 class="explanation-title" style="margin-bottom: 0;">Guiding the player:</h1>
+          <div class="explanation-subtitle-row">
+              <h2 class="explanation-subtitle" style="margin-top: 0;">
+              we wanted the mystery of <span class="interactivetext">the binding of isaac</span>
+              where there's no explanations</h2>
+              <span class="contribution-tag contribution-tag--design explanation-heading-tag">design</span>
+            </div>
+          </div>
+            <ul class="explanation-list">
+            <li>
+              <strong>The downsides</strong>
+              <p class="explanation-text" style="color: #fff; font-size: 30px">
+                Without any explanation, because it's much more complex than the binding of isaac people quit because they were
+                <em>confused</em>  
+              </p>
+            </li>
+            <li>
+              <strong>Fixing it without compromise</strong>
+              <p class="explanation-text" style="color: #fff; font-size: 30px">
+                Instead of giving in & adding a tutorial I created a camera system that would zoom in on a new
+                action. Players didn't always understand what happened, but now they knew why it happened & would
+                try to find out instead of being confused.
+              </p>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="explanationandvideo-container">
+        <div class="explanation-container">
+          <div class="explanation-heading">
+            <h1 class="explanation-title" style="margin-bottom: 0;">Design Challenge:</h1>
+            <div class="explanation-subtitle-row">
+              <h2 class="explanation-subtitle" style="margin-top: 0; margin-bottom: 0;">
+                building a custom <span class="interactivetext">grid engine.</span></h2>
+              <span class="contribution-tag contribution-tag--programming explanation-heading-tag">programming</span>
+            </div>
+          </div>
+          <ul class="explanation-list">
+            <li>
+              <strong>Layered architecture</strong>
+              <p class="explanation-text" style="color: #fff; font-size: 30px">To minimise bugs, I built a grid engine at the base, with separate layers of abstraction stacked on top. As a bonus, the engine itself is now reusable in future projects.</p>
+            </li>
+            <li>
+              <strong>Filling in Unity's gaps</strong>
+              <p class="explanation-text" style="color: #fff; font-size: 30px">Working outside Unity's built-in tools meant building missing features myself — including a custom A* pathfinding algorithm, which the layered structure made straightforward to slot in.</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <h1 class="chapter-title interactivetext" style="text-align: center; margin-top: 100px;">What I did</h1>
+      <div class="contribution-grid">
+        <div class="contribution-card">
+          <div class="contribution-number">01</div>
+          <div class="contribution-tag contribution-tag--systems">systems</div>
+          <h3 class="contribution-title">Grid Engine</h3>
+          <p class="contribution-desc">everything in the game interacts with a grid layer, making it 
+            and engine within an engine
+          </p>
+        </div>
+
+        <div class="contribution-card">
+          <div class="contribution-number">02</div>
+          <div class="contribution-tag contribution-tag--systems">systems</div>
+          <h3 class="contribution-title">Buff System</h3>
+          <p class="contribution-desc">Using polymorphism, the system is easily expandable 
+            to new buffs without touching the backend & can interact with any system
+          </p>
+        </div>
+
+        <div class="contribution-card">
+          <div class="contribution-number">03</div>
+          <div class="contribution-tag contribution-tag--design">design</div>
+          <h3 class="contribution-title">inventing new chess pieces</h3>
+          <p class="contribution-desc">creating chess pieces with their own unique abilities and movement patterns</p>
+        </div>
+      
+        <div class="contribution-card">
+          <div class="contribution-number">04</div>
+          <div class="contribution-tag contribution-tag--design">design & gameplay</div>
+          <h3 class="contribution-title">Environments</h3>
+          <p class="contribution-desc">designed & implemented boards with unique tiles & dangers, such as tornadoes
+            and quicksand
+          </p>
+        </div>
+      
+        <div class="contribution-card">
+          <div class="contribution-number">05</div>
+          <div class="contribution-tag contribution-tag--design">design</div>
+          <h3 class="contribution-title">buff synergies</h3>
+          <p class="contribution-desc">designed interactions between different buffs to create 
+            strategic depth</p>
+        </div>
+        <div class="contribution-card">
+          <div class="contribution-number">06</div>
+          <div class="contribution-tag contribution-tag--gameplay">gameplay</div>
+          <h3 class="contribution-title"></h3>
+          <p class="contribution-desc"></p>
+        </div>
+      </div>
+
+      <h1 class="chapter-title interactivetext" style="text-align: center; margin-top: 100px;">Screenshots</h1>
           <div class="row-holder-holder">
           <div class="row-holder">
             <div class="row" data-direction="left" data-speed="slow">

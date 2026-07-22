@@ -105,3 +105,9 @@ document.querySelectorAll('.project-card').forEach(card => {
   card.addEventListener('mouseenter', () => card.style.zIndex = 10);
   card.addEventListener('mouseleave', () => card.style.zIndex = '');
 });
+
+document.querySelectorAll('.view-toggle button').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.body.dataset.view = btn.dataset.view;
+  });
+});
