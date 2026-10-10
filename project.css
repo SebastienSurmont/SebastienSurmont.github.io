@@ -1,0 +1,579 @@
+/* ==========================================================================
+   project.css  -  project page layout
+   Load AFTER style.css and index.css:
+     <link rel="stylesheet" href="style.css">
+     <link rel="stylesheet" href="index.css">
+     <link rel="stylesheet" href="project.css">
+
+   Structure of a project page:
+     1. Hero            (.textandvideo)
+     2. At a glance     (.glance)
+     3. Story           (.story)  problem / solution / result
+     4. Deep dive       (.deep-dive)  media, code cards, diagrams
+     5. What I did      (.contribution-grid)  already in style.css
+     6. Takeaways       (.takeaways)
+     7. Screenshots     (.row-holder-holder)  already in index.css
+   ========================================================================== */
+
+:root {
+  --pp-surface: rgba(31, 33, 37, 0.92);
+  --pp-surface-dark: #17191c;
+  --pp-accent: rgb(238, 255, 196);
+  --pp-muted: #daf382;
+  --pp-shadow: 4px 4px 0 rgba(0, 0, 0, 0.4);
+  --pp-gap: 20px;
+  --pp-section-space: 72px;
+  --pp-content-width: 1100px;
+}
+
+/* ---------- Shared panel look (nav / card style) ---------- */
+.panel {
+  background-color: #1f2125;
+  background-image: url('Images/WigglyLinePattern.png');
+  background-size: 75px 38px;
+  background-repeat: repeat;
+  border-radius: 2px 30px 2px 30px;
+  box-shadow: var(--pp-shadow);
+  padding: 24px 28px;
+}
+.panel:nth-child(even) {
+  border-radius: 30px 2px 30px 2px;
+}
+
+/* ---------- Page rhythm ---------- */
+.parent-container {
+  max-width: var(--pp-content-width);
+  padding: 20px 24px 0;
+}
+
+.pp-section {
+  margin-top: var(--pp-section-space);
+}
+
+/* Section headings: replaces the inline-styled .chapter-title usage */
+.pp-heading {
+  font-size: clamp(1.6rem, 2.6vw, 2.4rem);
+  font-weight: bold;
+  margin: 0 0 24px;
+  text-align: left;
+}
+.pp-heading small {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--pp-accent);
+  opacity: 0.8;
+  margin-bottom: 4px;
+}
+
+/* ==========================================================================
+   1. HERO
+   ========================================================================== */
+.textandvideo {
+  margin: 2% 0 0;
+  min-height: 0;
+  gap: 40px;
+}
+.project-intro-container {
+  margin-bottom: 0;
+}
+.textandvideo > div {
+  flex: 1 1 0;
+  min-width: 0;
+}
+.project-title {
+  font-size: clamp(2rem, 4vw, 3.4rem);
+  line-height: 1.1;
+}
+.project-description {
+  font-size: clamp(1rem, 1.4vw, 1.3rem);
+  font-weight: 500;
+  line-height: 1.55;
+  margin-right: 0;
+  max-width: 48ch;
+}
+.project-header {
+  width: 55%;
+  min-height: 0;
+  max-height: none;
+}
+
+/* ==========================================================================
+   2. AT A GLANCE  (4 quick facts: role, team, duration, result...)
+   ========================================================================== */
+.glance {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: var(--pp-gap);
+  margin-top: 56px;
+}
+.glance-item {
+  padding: 16px 20px;
+}
+.glance-label {
+  display: block;
+  font-size: 0.7rem;
+  font-weight: bold;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--pp-accent);
+  text-shadow: none;
+  margin-bottom: 4px;
+}
+.glance-value {
+  display: block;
+  font-size: 1.05rem;
+  font-weight: bold;
+  line-height: 1.3;
+}
+
+/* ==========================================================================
+   3. STORY  (problem / solution / result)
+   ========================================================================== */
+.story {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--pp-gap);
+  align-items: stretch;
+}
+.story-block {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.story-step {
+  align-self: flex-start;
+}
+.story-title {
+  font-size: 1.3rem;
+  font-weight: bold;
+  margin: 4px 0 0;
+  color: var(--pp-accent);
+}
+.story-text {
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.6;
+  margin: 0;
+  max-width: 60ch;
+}
+.story-text strong {
+  color: var(--pp-accent);
+}
+
+/* ==========================================================================
+   4. DEEP DIVE  (media, code cards, diagrams)
+   One column of cards, each with a heading + short caption.
+   ========================================================================== */
+.deep-dive {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+.dd-block {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.dd-block-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin: 0;
+  color: var(--pp-accent);
+}
+.dd-caption {
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.6;
+  color: #e4e4e4;
+  margin: 0;
+  max-width: 70ch;
+}
+
+/* Side by side: media + text. Add .dd-split--reverse to flip it. */
+.dd-split {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 32px;
+  align-items: center;
+}
+.dd-split--reverse {
+  grid-template-columns: 1fr 1.2fr;
+}
+.dd-split--reverse .dd-media {
+  order: 2;
+}
+.dd-media {
+  width: 100%;
+  max-width: 100%;
+  max-height: none;
+  margin: 0;
+  display: block;
+}
+.dd-media:hover {
+  transform: none;
+}
+
+/* Bullet list with bold lead-ins (scannable alternative to paragraphs).
+   Uses <div class="dd-points"> not <ul>, because style.css styles every <ul>
+   as the navbar. */
+.dd-points {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.dd-point {
+  position: relative;
+  padding-left: 22px;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.55;
+  margin: 0;
+}
+.dd-point::before {
+  content: "▸";
+  position: absolute;
+  left: 0;
+  color: var(--pp-accent);
+}
+.dd-point strong {
+  color: var(--pp-accent);
+}
+
+/* ---------- Code card ---------- */
+.code-card {
+  background: var(--pp-surface-dark);
+  border-radius: 2px 30px 2px 30px;
+  box-shadow: var(--pp-shadow);
+  overflow: hidden;
+  border: 2px solid rgba(255, 255, 255, 0.06);
+}
+.code-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px 20px;
+  background-color: #1f2125;
+  background-image: url('Images/WigglyLinePattern.png');
+  background-size: 75px 38px;
+}
+.code-card-file {
+  font-family: ui-monospace, "SF Mono", Consolas, monospace;
+  font-size: 0.85rem;
+  color: #dce8ff;
+  text-shadow: none;
+}
+.code-card pre {
+  margin: 0;
+  padding: 18px 22px;
+  overflow-x: auto;
+  font-family: ui-monospace, "SF Mono", Consolas, monospace;
+  font-size: 0.85rem;
+  line-height: 1.6;
+  tab-size: 4;
+}
+.code-card code {
+  font-family: inherit;
+  color: #e6e6e6;
+  text-shadow: none;
+  cursor: text;
+}
+.code-card code span {
+  text-shadow: none;
+  font-family: inherit;
+}
+/* Minimal syntax colouring: wrap tokens in these spans by hand */
+.tok-k { color: #ff9d6c; }   /* keyword  */
+.tok-t { color: #7fd1ff; }   /* type     */
+.tok-f { color: #ffe08a; }   /* function */
+.tok-s { color: #a6e3a1; }   /* string   */
+.tok-c { color: #7f8c8d; font-style: italic; } /* comment */
+.tok-n { color: #d6a6ff; }   /* number   */
+
+.code-card-caption {
+  padding: 14px 22px 18px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  line-height: 1.55;
+  color: var(--pp-muted);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  margin: 0;
+}
+.code-card-caption strong {
+  color: var(--pp-accent);
+}
+
+/* ---------- Diagram card (flow of boxes and arrows) ---------- */
+.diagram {
+  padding: 28px;
+}
+.flow {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  gap: 0;
+  flex-wrap: wrap;
+  row-gap: 16px;
+}
+.flow-step {
+  flex: 1 1 150px;
+  max-width: 220px;
+  background: #2d456c;
+  border-radius: 10px;
+  padding: 14px 16px;
+  text-align: center;
+  box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.4);
+  transition: transform 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+.flow-step:nth-of-type(odd):hover  { transform: rotate(-2deg) scale(1.04); }
+.flow-step:nth-of-type(even):hover { transform: rotate(2deg) scale(1.04); }
+.flow-step--accent { background: #458f51; }
+.flow-step--warm   { background: #6e5136; }
+.flow-step-title {
+  display: block;
+  font-weight: bold;
+  font-size: 0.95rem;
+  color: #fff;
+}
+.flow-step-sub {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: #dce8ff;
+  margin-top: 4px;
+  text-shadow: none;
+}
+.flow-arrow {
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+  font-size: 1.4rem;
+  color: var(--pp-accent);
+}
+
+/* ==========================================================================
+   5. WHAT I DID  (reuses .contribution-grid from style.css)
+   ========================================================================== */
+.contribution-grid {
+  width: 100%;
+  margin: 0;
+}
+
+/* ==========================================================================
+   6. TAKEAWAYS
+   ========================================================================== */
+.takeaways {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: var(--pp-gap);
+}
+.takeaway-title {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: var(--pp-accent);
+  margin: 0 0 8px;
+}
+.takeaway-text {
+  font-size: 0.95rem;
+  font-weight: 500;
+  line-height: 1.55;
+  margin: 0;
+}
+
+/* ==========================================================================
+   7. SCREENSHOTS + FOOTER spacing
+   ========================================================================== */
+.pp-screenshots {
+  margin-top: var(--pp-section-space);
+}
+/* the carousel is wider than the content column on purpose */
+.pp-screenshots .row-holder-holder {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+}
+.footer-wrapper {
+  margin-top: 40px;
+}
+.footer {
+  margin-top: 60px;
+}
+
+/* ==========================================================================
+   Tablet / mobile
+   ========================================================================== */
+@media (max-width: 900px) {
+  :root { --pp-section-space: 48px; }
+
+  .textandvideo {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 24px;
+  }
+  .project-header {
+    width: 100%;
+    min-height: 0;
+  }
+  .story { grid-template-columns: 1fr; }
+
+  .dd-split,
+  .dd-split--reverse { grid-template-columns: 1fr; }
+  .dd-split--reverse .dd-media { order: 0; }
+
+  .flow { flex-direction: column; align-items: center; }
+  .flow-step { max-width: 100%; width: 100%; }
+  .flow-arrow { transform: rotate(90deg); padding: 4px 0; }
+
+  .piece {
+    min-height: 40vw;
+    max-height: 40vw;
+    min-width: 70vw;
+    max-width: 70vw;
+  }
+  .footer {
+    width: 80vw;
+    height: auto;
+    min-height: 12vh;
+  }
+}
+
+@media (max-width: 520px) {
+  .parent-container { padding: 12px 16px 0; }
+  .panel { padding: 18px 20px; }
+  .glance { grid-template-columns: 1fr 1fr; }
+}
+
+/* Respect reduced-motion preferences: stop the carousel & background pan */
+@media (prefers-reduced-motion: reduce) {
+  .row,
+  .star-pattern { animation: none; }
+}
+
+/* ==========================================================================
+   8. FIGURES  (screenshots and diagrams placed inside the story)
+   Usage:
+     <div class="figure-grid figure-grid--3">
+       <figure class="figure">
+         <a class="figure-link" href="img.png" target="_blank" rel="noopener">
+           <img src="img.png" alt="..." loading="lazy" decoding="async">
+         </a>
+         <figcaption class="figure-caption">...</figcaption>
+       </figure>
+     </div>
+   Clicking an image opens it full size in a new tab.
+   ========================================================================== */
+.figure {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-width: 0;
+}
+.figure-link {
+  display: block;
+  cursor: zoom-in;
+}
+.figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0;
+}
+.figure-caption {
+  font-size: 0.9rem;
+  font-weight: 500;
+  line-height: 1.5;
+  color: var(--pp-muted);
+  margin: 0;
+}
+.figure-caption strong {
+  color: var(--pp-accent);
+}
+.figure-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: var(--pp-gap);
+  align-items: start;
+}
+.figure-grid--2 { grid-template-columns: repeat(2, 1fr); }
+.figure-grid--3 { grid-template-columns: repeat(3, 1fr); }
+
+/* Hero image: never stretch or crop a screenshot */
+img.project-header {
+  object-fit: contain;
+  background: #111;
+}
+
+/* NDA / disclaimer strip under the hero */
+.notice {
+  margin-top: 28px;
+  padding: 14px 22px;
+}
+.notice + .glance {
+  margin-top: 24px;
+}
+
+@media (max-width: 900px) {
+  .figure-grid--2,
+  .figure-grid--3 { grid-template-columns: 1fr; }
+}
+
+/* ==========================================================================
+   9. STEPS  (numbered sequence of wide 512x202 images, left to right)
+   ========================================================================== */
+.steps {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--pp-gap);
+  align-items: start;
+}
+.step {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-width: 0;
+}
+.step-head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.step-num {
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #2d456c;
+  font-weight: bold;
+  text-shadow: none;
+  box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.4);
+}
+.step:nth-child(2) .step-num { background: #6e5136; }
+.step:nth-child(3) .step-num { background: #458f51; }
+.step-title {
+  font-size: 1.05rem;
+  font-weight: bold;
+  margin: 0;
+  color: var(--pp-accent);
+}
+.step:not(:last-child) .step-head::after {
+  content: "→";
+  margin-left: auto;
+  color: var(--pp-accent);
+  font-size: 1.3rem;
+}
+/* reserve the space before the image loads, so the page doesn't jump */
+.step .figure img {
+  aspect-ratio: 512 / 202;
+  object-fit: cover;
+}
+
+@media (max-width: 900px) {
+  .steps { grid-template-columns: 1fr; }
+  .step:not(:last-child) .step-head::after { content: "↓"; }
+}

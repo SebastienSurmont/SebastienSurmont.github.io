@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Pack It Perfect</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="project.css"> <!-- must come last -->
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="Images/Icons/DillIcon.png">
+  </head>
+  <body>
+    <ul>
+      <li><a href="index.html">Projects</a></li>
+      <li><a href="404Page.html">Resume</a></li>
+      <li><a href="ContactPage.html">Contact</a></li>
+      <li><a href="AboutMe.html">Youtube</a></li>
+    </ul>
+
+
+    <div class="parent-container">
+
+      <!-- 1. HERO -->
+      <div class="textandvideo">
+        <div>
+          <h1 class="project-title interactivetext" style="margin-bottom: 0;">Pack It Perfect</h1>
+          <div class="award-badges">
+            <span class="award-badge award-badge--gold">VR game</span>
+            <span class="award-badge award-badge--purple">internship</span>
+          </div>
+          <p class="project-description">
+            A VR puzzle game about packing a suitcase, made during my internship at AlterEyes in
+            Belgium. Every item takes up space on a 3D grid, and some items have rules about their
+            neighbours.
+          </p>
+        </div>
+        <img
+          class="project-header"
+          src="Projects/PackItPerfect/TopDownViewOfItemsAndSuitcase.png"
+          alt="Top-down view of the items and the suitcase">
+      </div>
+
+      <div class="notice panel">
+        <p class="takeaway-text">
+          <strong>Disclaimer:</strong> due to NDA reasons I can't share the game's code. I can only talk about it.
+        </p>
+      </div>
+
+
+      <!-- 2. AT A GLANCE -->
+      <div class="glance">
+        <div class="glance-item panel">
+          <span class="glance-label">Role</span>
+          <span class="glance-value">Lead programmer & designer</span>
+        </div>
+        <div class="glance-item panel">
+          <span class="glance-label">Team</span>
+          <span class="glance-value">3: me, an artist, another programmer</span>
+        </div>
+        <div class="glance-item panel">
+          <span class="glance-label">Inspired by</span>
+          <span class="glance-value">Is This Seat Taken?</span>
+        </div>
+        <div class="glance-item panel">
+          <span class="glance-label">Where</span>
+          <span class="glance-value">Internship at AlterEyes, Belgium</span>
+        </div>
+      </div>
+
+
+      <!-- 3. STORY -->
+      <section class="pp-section">
+        <h2 class="pp-heading interactivetext"><small>The short version</small>Space plus rules</h2>
+        <div class="story">
+          <div class="story-block panel">
+            <span class="contribution-tag contribution-tag--design story-step">goal</span>
+            <h3 class="story-title">A spatial puzzle with rules</h3>
+            <p class="story-text">
+              Fit every item into the suitcase's squares, then make it harder with
+              <strong>rules about what can sit next to what</strong>.
+            </p>
+          </div>
+          <div class="story-block panel">
+            <span class="contribution-tag contribution-tag--systems story-step">problem</span>
+            <h3 class="story-title">What did the player mean?</h3>
+            <p class="story-text">
+              When a piece snapped in and stuck out of the box, I had to
+              <strong>decide what the player was actually trying to do</strong>.
+            </p>
+          </div>
+          <div class="story-block panel">
+            <span class="contribution-tag contribution-tag--production story-step">solution</span>
+            <h3 class="story-title">Assume the closest fit</h3>
+            <p class="story-text">
+              The piece shifts toward the <strong>nearest valid spot</strong>, one grid step at a time,
+              without disturbing the items already packed.
+            </p>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- 4. DEEP DIVE -->
+      <section class="pp-section">
+        <h2 class="pp-heading interactivetext"><small>Deep dive</small>How I designed it</h2>
+
+        <div class="deep-dive">
+
+          <!-- Packing -->
+          <div class="dd-block">
+            <h3 class="dd-block-title">Packing in 3D</h3>
+            <div class="code-card">
+              <div class="code-card-header">
+                <span class="code-card-file">item footprints (examples)</span>
+                <span class="contribution-tag contribution-tag--design">design</span>
+              </div>
+<pre><code>banana        toothbrush
+ooo           oo
+o  o</code></pre>
+              <p class="code-card-caption">
+                <strong>How it reads:</strong> when you pick an item up, it shows the space it takes up on the grid.
+                The suitcase has a bunch of squares that all need to be filled.
+              </p>
+            </div>
+            <div class="dd-points">
+              <p class="dd-point"><strong>Fitting shapes together.</strong> You have to work out how odd shapes, like a banana, fit into what's left of the suitcase.</p>
+              <p class="dd-point"><strong>VR makes it better.</strong> You can see everything and look into every nook and cranny of the box.</p>
+            </div>
+          </div>
+
+          <!-- What the grid around an item looks like -->
+          <div class="dd-block">
+            <h3 class="dd-block-title">What the grid around an item looks like</h3>
+            <div class="steps">
+              <div class="step">
+                <div class="step-head"><span class="step-num">1</span><h4 class="step-title">Look at the item</h4></div>
+                <figure class="figure">
+                  <a class="figure-link" href="Projects/PackItPerfect/GridAroundItem_LongRectangle_viewingitembeforeplacing.png" target="_blank" rel="noopener">
+                    <img src="Projects/PackItPerfect/GridAroundItem_LongRectangle_viewingitembeforeplacing.png" alt="Step 1: a long rectangular item with the grid around it, viewed before placing it" loading="lazy" decoding="async">
+                  </a>
+                  <figcaption class="figure-caption">Pick an item up and the grid around it shows the space it will take up.</figcaption>
+                </figure>
+              </div>
+              <div class="step">
+                <div class="step-head"><span class="step-num">2</span><h4 class="step-title">Put it in the box</h4></div>
+                <figure class="figure">
+                  <a class="figure-link" href="Projects/PackItPerfect/GridAroundItem_LongRectangle_WrongSolution.png" target="_blank" rel="noopener">
+                    <img src="Projects/PackItPerfect/GridAroundItem_LongRectangle_WrongSolution.png" alt="Step 2: the long rectangular item placed in the box where it overlaps, with the cells changing colour" loading="lazy" decoding="async">
+                  </a>
+                  <figcaption class="figure-caption">Place it where it overlaps and the cells change colour to tell you.</figcaption>
+                </figure>
+              </div>
+              <div class="step">
+                <div class="step-head"><span class="step-num">3</span><h4 class="step-title">Find the fit</h4></div>
+                <figure class="figure">
+                  <a class="figure-link" href="Projects/PackItPerfect/GridAroundItem_LongRectangle_CorrectSolutionNoOverlap.png" target="_blank" rel="noopener">
+                    <img src="Projects/PackItPerfect/GridAroundItem_LongRectangle_CorrectSolutionNoOverlap.png" alt="Step 3: the long rectangular item placed correctly, fitting with no overlap" loading="lazy" decoding="async">
+                  </a>
+                  <figcaption class="figure-caption">The correct solution: it fits with no overlap, and the cells show it.</figcaption>
+                </figure>
+              </div>
+            </div>
+            <p class="dd-caption">
+              Player feedback: the cells around the item change colour as you place it.
+            </p>
+          </div>
+
+          <!-- Rules -->
+          <div class="dd-block">
+            <h3 class="dd-block-title">Rules inspired by Is This Seat Taken?</h3>
+            <div class="story">
+              <div class="panel">
+                <span class="contribution-tag contribution-tag--design story-step">rule</span>
+                <h3 class="story-title">Shark and fish</h3>
+                <p class="story-text">A shark can't look at a fish, or it'll <strong>eat it</strong>.</p>
+              </div>
+              <div class="panel">
+                <span class="contribution-tag contribution-tag--systems story-step">rule</span>
+                <h3 class="story-title">Ice cube and fan</h3>
+                <p class="story-text">An ice cube needs to be <strong>next to a fan</strong>.</p>
+              </div>
+              <div class="panel">
+                <span class="contribution-tag contribution-tag--production story-step">rule</span>
+                <h3 class="story-title">The egg</h3>
+                <p class="story-text">You can't put <strong>anything on top of an egg</strong>.</p>
+              </div>
+            </div>
+            <p class="dd-caption">
+              The spatial challenge combined with the rules made for really interesting puzzles, especially in VR,
+              where you can see everything at once.
+            </p>
+          </div>
+
+          <!-- Design challenge: intent -->
+          <div class="dd-block">
+            <h3 class="dd-block-title">Design challenge: reading the player's intent</h3>
+            <div class="diagram panel">
+              <div class="flow">
+                <div class="flow-step">
+                  <span class="flow-step-title">Player snaps a piece</span>
+                  <span class="flow-step-sub">part of it sticks out</span>
+                </div>
+                <div class="flow-arrow">→</div>
+                <div class="flow-step flow-step--warm">
+                  <span class="flow-step-title">Guess the intent</span>
+                  <span class="flow-step-sub">the closest valid spot</span>
+                </div>
+                <div class="flow-arrow">→</div>
+                <div class="flow-step flow-step--accent">
+                  <span class="flow-step-title">Nudge it in</span>
+                  <span class="flow-step-sub">one grid step at a time</span>
+                </div>
+                <div class="flow-arrow">→</div>
+                <div class="flow-step">
+                  <span class="flow-step-title">Piece fits</span>
+                  <span class="flow-step-sub">other items untouched</span>
+                </div>
+              </div>
+            </div>
+            <div class="dd-points">
+              <p class="dd-point"><strong>The problem.</strong> Pieces could stick out of the box when you snapped them, and the fix couldn't break any of the other items inside.</p>
+              <p class="dd-point"><strong>The design question.</strong> How do I decide what the player was actually trying to do?</p>
+              <p class="dd-point"><strong>My answer.</strong> Move the piece toward the closest valid position, and repeat until all of it is inside. The maths behind it is on the programming page.</p>
+            </div>
+          </div>
+
+          <!-- Tools -->
+          <div class="dd-block">
+            <h3 class="dd-block-title">Designing with tools</h3>
+            <div class="dd-points">
+              <p class="dd-point"><strong>Level checker.</strong> A helper window with an algorithm that tests that every level can actually be solved.</p>
+              <p class="dd-point"><strong>Item grid tool.</strong> It builds the grid around a new item automatically, so the artist can import items without my help.</p>
+              <p class="dd-point"><strong>Easy to change rules.</strong> I built the rule system so the other programmer wouldn't have to touch it when rules changed.</p>
+              <p class="dd-point"><strong>PC controls.</strong> Taking the headset on and off is annoying, so I wrote PC-based controls to test the game.</p>
+            </div>
+            <div class="figure-grid figure-grid--2">
+              <figure class="figure">
+                <a class="figure-link" href="Projects/PackItPerfect/ArtistTool.png" target="_blank" rel="noopener">
+                  <img src="Projects/PackItPerfect/ArtistTool.png" alt="The artist tool" loading="lazy" decoding="async">
+                </a>
+                <figcaption class="figure-caption"><strong>Artist tool.</strong> Builds the grid around a new item automatically, so the artist can import items without my help.</figcaption>
+              </figure>
+              <figure class="figure">
+                <a class="figure-link" href="Projects/PackItPerfect/ToolWindow2.png" target="_blank" rel="noopener">
+                  <img src="Projects/PackItPerfect/ToolWindow2.png" alt="Editor tool window 2" loading="lazy" decoding="async">
+                </a>
+                <figcaption class="figure-caption"><strong>Tool window 1.</strong> A helper window made to make designing easier.</figcaption>
+              </figure>
+              <figure class="figure">
+                <a class="figure-link" href="Projects/PackItPerfect/ToolWindow3.png" target="_blank" rel="noopener">
+                  <img src="Projects/PackItPerfect/ToolWindow3.png" alt="Editor tool window 3" loading="lazy" decoding="async">
+                </a>
+                <figcaption class="figure-caption"><strong>Tool window 2.</strong> A helper window made to make designing easier.</figcaption>
+              </figure>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+
+      <!-- 5. WHAT I DID -->
+      <section class="pp-section">
+        <h2 class="pp-heading interactivetext"><small>My part</small>What I did</h2>
+        <div class="contribution-grid">
+          <div class="contribution-card">
+            <div class="contribution-number">01</div>
+            <div class="contribution-tag contribution-tag--design">design</div>
+            <h3 class="contribution-title">Packing puzzle</h3>
+            <p class="contribution-desc">I designed everything around the game, from level design to user experience & gameplay.</p>
+          </div>
+          <div class="contribution-card">
+            <div class="contribution-number">02</div>
+            <div class="contribution-tag contribution-tag--design">design</div>
+            <h3 class="contribution-title">Rules</h3>
+            <p class="contribution-desc">Neighbour rules inspired by Is This Seat Taken?, like the shark and fish, the ice cube and fan, and the egg</p>
+          </div>
+          <div class="contribution-card">
+            <div class="contribution-number">03</div>
+            <div class="contribution-tag contribution-tag--tools">tools</div>
+            <h3 class="contribution-title">Level checker</h3>
+            <p class="contribution-desc">Made a lot of tools to help with level design, testing & the artist.</p>
+          </div>
+          <div class="contribution-card">
+            <div class="contribution-number">04</div>
+            <div class="contribution-tag contribution-tag--systems">tools</div>
+            <h3 class="contribution-title">Grid Engine</h3>
+            <p class="contribution-desc">The core grid engine that powers the game's spatial logic.</p>
+          </div>
+          <div class="contribution-card">
+            <div class="contribution-number">05</div>
+            <div class="contribution-tag contribution-tag--production">production</div>
+            <h3 class="contribution-title">Lead programmer</h3>
+            <p class="contribution-desc">Led programming in a team of three, mentored by an experienced programmer</p>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- Cross-link to the other version -->
+      <div class="panel" style="margin-top: 40px; text-align: center;">
+        <a class="clickableLink" href="PackItPerfect-programming.html" style="color: rgb(238, 255, 196);">Want the code side? See the programming breakdown →</a>
+      </div>
+
+
+      <!-- 6. TAKEAWAYS -->
+      <section class="pp-section">
+        <h2 class="pp-heading interactivetext"><small>Looking back</small>Takeaways</h2>
+        <div class="takeaways">
+          <div class="panel">
+            <h3 class="takeaway-title">Guess player intent through playtesting</h3>
+            <p class="takeaway-text">I ended up making the algorithm that pushes an item into the box based on player behavior and frustrations.</p>
+          </div>
+          <div class="panel">
+            <h3 class="takeaway-title">Rules plus space make puzzles</h3>
+            <p class="takeaway-text">Simple neighbour rules on top of a spatial puzzle created more interesting levels than either alone.</p>
+          </div>
+          <div class="panel">
+            <h3 class="takeaway-title">Spend time to save it</h3>
+            <p class="takeaway-text">By spending an hour or 2 on tools I ended up saving a lot of manual work.</p>
+          </div>
+        </div>
+      </section>
+
+
+    </div>
+
+
+    <div class="footer-wrapper">
+      <div class="footer-div">
+        <a href="https://www.linkedin.com/in/s%C3%A9bastien-surmont-77b7a0252/" id="linkedinlink" class="footer image-button">
+          <p class="footer-text">Contact me on LinkedIn</p>
+        </a>
+        <a href="#" id="emailLink" class="footer image-button">
+          <p class="footer-text">Or send me an email</p>
+        </a>
+      </div>
+    </div>
+
+
+    <div class="bg"></div>
+    <div class="fadeout"></div>
+    <div class="star-pattern"></div>
+  </body>
+</html>

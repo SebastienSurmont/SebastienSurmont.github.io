@@ -1050,6 +1050,7 @@ body[data-view="programming"] .explanationandvideo-container:not([data-lean="pro
 .contribution-tag--editing   { background: #99b85a; color: #eeddf4; }
 .contribution-tag--production { background: #6e5136; color: #f4e3cc; }
 .contribution-tag--programming { background: #446ca0; color: #f5eee5; }
+.contribution-tag--tools { background: #8744a0; color: #f5eee5; }
  
 .contribution-title {
   color: #fff;

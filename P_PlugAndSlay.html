@@ -2,9 +2,12 @@
 
 <html>
   <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Plug n' Slay</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="project.css"> <!-- must come last -->
     <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
     <link rel="icon" type="image/png" href="Images/Icons/DillIcon.png">
   </head>
@@ -17,159 +20,265 @@
     </ul>
 
 
-<!--Intro-->
     <div class="parent-container">
-      <div class="textandvideo project-intro-container">
-          <div>
-            <h1 class="project-title interactivetext" style="margin-bottom: 0;">Plug n' Slay</h1>
-            <div class="award-badges">
-              <span class="award-badge award-badge--purple">client game</span>
-              <span class="award-badge award-badge--gold">team of 5</span>
-            </div>
-            <p class="project-description">
-              A local multiplayer game for 2-4 players, with a variety of maps and game modes. <br>
-              You can only shoot when you're plugged into a socket, which has limited range & ammo.
+
+      <!-- 1. HERO -->
+      <div class="textandvideo">
+        <div>
+          <h1 class="project-title interactivetext" style="margin-bottom: 0;">Plug n' Slay</h1>
+          <div class="award-badges">
+            <span class="award-badge award-badge--purple">client game</span>
+            <span class="award-badge award-badge--gold">team of 5</span>
+          </div>
+          <p class="project-description">
+            A local multiplayer game for 2-4 players. You can only shoot while plugged into a socket,
+            and sockets have limited range and ammo.
+          </p>
+        </div>
+        <iframe
+          class="project-header"
+          src="https://www.youtube.com/embed/MHf5wOFw9no"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen>
+        </iframe>
+      </div>
+
+
+      <!-- 2. AT A GLANCE -->
+      <div class="glance">
+        <div class="glance-item panel">
+          <span class="glance-label">Role</span>
+          <span class="glance-value">Lead developer & technical designer</span>
+        </div>
+        <div class="glance-item panel">
+          <span class="glance-label">Team</span>
+          <span class="glance-value">5 people</span>
+        </div>
+        <div class="glance-item panel">
+          <span class="glance-label">Format</span>
+          <span class="glance-value">Local multiplayer, 2-4 players</span>
+        </div>
+        <div class="glance-item panel">
+          <span class="glance-label">For</span>
+          <span class="glance-value">A client's prototype idea</span>
+        </div>
+      </div>
+
+
+      <!-- 3. STORY -->
+      <section class="pp-section">
+        <h2 class="pp-heading interactivetext"><small>The short version</small>Summary</h2>
+        <div class="story">
+          <div class="story-block panel">
+            <span class="contribution-tag contribution-tag--design story-step">goal</span>
+            <h3 class="story-title">Prototype to playable</h3>
+            <p class="story-text">
+              Turn a client's prototype into a game that tests their idea, while keeping it
+              <strong>strategic and also fun and chaotic</strong>.
             </p>
           </div>
-          <iframe 
-            class="project-header"
-            src="https://www.youtube.com/embed/MHf5wOFw9no"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen>
-          </iframe>
-      </div>
-
-      <div class="explanationandvideo-container">
-        <img src="Projects/Plug&Slay/GlovesAbilityShowcase.gif" class="explanation-image" style="margin-left: 5%; margin-top: 0px; width: 40%;"> 
-        <div class="explanation-container">
-          <h1 class="explanation-title interactivetext " style="margin-bottom: 0;">Goal</h1>
-          <p class="explanation-text">
-            Turn a client's prototype into a game to test out the idea, with certain restriction. 
-            Such as having to keep the game strategic, while also being fun and chaotic. 
-          </p>
+          <div class="story-block panel">
+            <span class="contribution-tag contribution-tag--systems story-step">problem</span>
+            <h3 class="story-title">Plugs became safe havens</h3>
+            <p class="story-text">
+              You can only shoot when plugged in, so players stayed near plugs.
+              That led to <strong>spawn camping</strong>.
+            </p>
+          </div>
+          <div class="story-block panel">
+            <span class="contribution-tag contribution-tag--production story-step">solution</span>
+            <h3 class="story-title">Zones with a price</h3>
+            <p class="story-text">
+              Weapons and abilities spawn <strong>away from the plugs</strong>, so getting stronger
+              means leaving safety. A <strong>risk/reward</strong> system that stayed strategic.
+            </p>
+          </div>
         </div>
-      </div>
-      <br>
-      <br>
-      <div class="explanationandvideo-container">
-        <div class="explanation-container">
-          <h1 class="explanation-title interactivetext " style="margin-bottom: 0;">My role</h1>
-          <p class="explanation-text">
-            I took the role of 
-            <span class="interactivetext">lead developer</span> & <span class="interactivetext">technical designer</span>.
-            Because of my diverse background I took a very central role between 
-            the client, the artists, and the other developers. 
-            <br>
-            Explaining design ideas to both artists & programmers, as well as helping with communication between them. 
-          </p>
-        </div>
-        <img src="Projects/Plug&Slay/CharacterSelection.gif" class="explanation-image" style="margin-left: 5%; margin-top: 0px; width: 40%;"> 
-      </div>
+      </section>
 
-      <div class="explanationandvideo-container">
-        <img src="Projects/Plug&Slay/LocalMultiplayer.png" class="explanation-image">
-        <div class="explanation-container">
-          <div class="explanation-heading">
-          <h1 class="explanation-title" style="margin-bottom: 0;">Design Challenge:</h1>
-            <div class="explanation-subtitle-row">
-              <h2 class="explanation-subtitle" style="margin-top: 0;">
-                <span class="interactivetext">rewarding</span> <span class="interactivetext">risk.</span></h2>
-              <span class="contribution-tag contribution-tag--design explanation-heading-tag">design</span>
+
+      <!-- 4. DEEP DIVE -->
+      <section class="pp-section">
+        <h2 class="pp-heading interactivetext"><small>Deep dive</small>How it plays</h2>
+
+        <div class="deep-dive">
+
+          <!-- Design challenge -->
+          <div class="dd-split">
+            <div style="background-size: cover;">
+              <img src="Projects/Plug&Slay/PlugShowcase.gif" class="dd-media" alt="Local multiplayer match" style="max-height: 400px; ">
+            </div>
+            <div class="dd-block">
+              <h3 class="dd-block-title">Design challenge: rewarding risk</h3>
+              <div class="dd-points">
+                <p class="dd-point"><strong>Plugs are safe havens.</strong> Only plugged-in players can shoot, so players naturally want to stay near plugs. But that leads to spawn camping.</p>
+                <p class="dd-point"><strong>Splitting the map in zones.</strong> Weapons and abilities spawn away from the plugs. Plugged-in players can shoot you while you grab them, which keeps it strategic.</p>
+              </div>
             </div>
           </div>
-          <ul class="explanation-list">
-            <li>
-              <strong>Plugs are safe havens.</strong>
-              <p class="explanation-text" style="color: #fff; font-size: 30px">
-                Because you can only shoot when you're plugged in, players will naturally want to stay near plugs.
-                But that leads to spawn camping.
-              </p>
-            </li>
-            <li>
-              <strong>Splitting the map in zones.</strong>
-              <p class="explanation-text" style="color: #fff; font-size: 30px">
-                By making it so weapons & abilities would spawn away from the plugs, this creates a risk/reward system 
-                that also felt strategic. Since plugged in players would be able to shoot you.
-              </p>
-            </li>
-          </ul>
-        </div>
-      </div>
 
-      <h1 class="chapter-title interactivetext" style="text-align: center; margin-top: 100px;">What I did</h1>
-      <div class="contribution-grid">
-        <div class="contribution-card">
-          <div class="contribution-number">01</div>
-          <div class="contribution-tag contribution-tag--systems">systems</div>
-          <h3 class="contribution-title">Local multiplayer</h3>
-          <p class="contribution-desc">2-4 player split-screen input & session setup</p>
+          <!-- Loop diagram. Edit steps to match your real loop. -->
+          <div class="dd-block">
+            <h3 class="dd-block-title">The risk loop</h3>
+            <div class="diagram panel">
+              <div class="flow">
+                <div class="flow-step flow-step--accent">
+                  <span class="flow-step-title">Plugged in</span>
+                  <span class="flow-step-sub">safe, can shoot</span>
+                </div>
+                <div class="flow-arrow">→</div>
+                <div class="flow-step flow-step--warm">
+                  <span class="flow-step-title">Leave the plug</span>
+                  <span class="flow-step-sub">vulnerable, can't shoot</span>
+                </div>
+                <div class="flow-arrow">→</div>
+                <div class="flow-step">
+                  <span class="flow-step-title">Grab a weapon</span>
+                  <span class="flow-step-sub">spawns away from plugs</span>
+                </div>
+                <div class="flow-arrow">→</div>
+                <div class="flow-step flow-step--accent">
+                  <span class="flow-step-title">Plug back in</span>
+                  <span class="flow-step-sub">use it safely</span>
+                </div>
+              </div>
+            </div>
+            <p class="dd-caption">
+              Every trip away from a plug is a gamble, because anyone still plugged in can shoot you.
+            </p>
+          </div>
+
+          <!-- Role -->
+          <div class="dd-split dd-split--reverse">
+            <img src="Projects/Plug&Slay/CharacterSelection.gif" class="dd-media" alt="Character selection">
+            <div class="dd-block">
+              <h3 class="dd-block-title">The person in the middle</h3>
+              <div class="dd-points">
+                <p class="dd-point"><strong>Client, artists, developers.</strong> My diverse background put me at the centre of all three.</p>
+                <p class="dd-point"><strong>Translating ideas.</strong> I explained design ideas to both artists and programmers, and helped them communicate with each other.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Ability showcase -->
+          <div class="dd-split">
+            <img src="Projects/Plug&Slay/GlovesAbilityShowcase.gif" class="dd-media" alt="Gloves ability showcase">
+            <div class="dd-block">
+              <h3 class="dd-block-title">Strategic, but chaotic</h3>
+              <div class="dd-points">
+                <p class="dd-point"><strong>Client restriction.</strong> The game had to stay strategic while still being fun and chaotic. Which we achieved through playtesting & iterating.</p>
+                <p class="dd-point"><strong>Map layouts.</strong> Maps and modes were tuned around socket range, so the strategy lives in the level design.</p>
+              </div>
+            </div>
+          </div>
+
         </div>
-        <div class="contribution-card">
-          <div class="contribution-number">02</div>
-          <div class="contribution-tag contribution-tag--design">design</div>
-          <h3 class="contribution-title">Technical Designer</h3>
-          <p class="contribution-desc">Designed the game's systems and mechanics & implemented them</p>
-        </div>
-      
-        <div class="contribution-card">
-          <div class="contribution-number">03</div>
-          <div class="contribution-tag contribution-tag--gameplay">gameplay</div>
-          <h3 class="contribution-title">Player controller</h3>
-          <p class="contribution-desc">Movement, aiming & the plug-in shoot mechanic</p>
-        </div>
-      
-        <div class="contribution-card">
-          <div class="contribution-number">04</div>
-          <div class="contribution-tag contribution-tag--design">design & gameplay</div>
-          <h3 class="contribution-title">Map & mode variety</h3>
-          <p class="contribution-desc">Layouts tuned around socket-range strategy</p>
-        </div>
-      
-        <div class="contribution-card">
-          <div class="contribution-number">05</div>
-          <div class="contribution-tag contribution-tag--production">production</div>
-          <h3 class="contribution-title">Team liaison</h3>
-          <p class="contribution-desc">Bridged client, artists & programmers</p>
-        </div>
-        <div class="contribution-card">
-          <div class="contribution-number">06</div>
-          <div class="contribution-tag contribution-tag--gameplay">gameplay</div>
-          <h3 class="contribution-title">Character selection</h3>
-          <p class="contribution-desc">Implemented/designed character selection & UI</p>
-        </div>
-      </div>
+      </section>
 
 
-<!--Content-->
-      <h1 class="chapter-title interactivetext"style="text-align: center; margin-top: 100px;">Screenshots</h1>
+      <!-- 5. WHAT I DID -->
+      <section class="pp-section">
+        <h2 class="pp-heading interactivetext"><small>My part</small>What I did</h2>
+        <div class="contribution-grid">
+          <div class="contribution-card">
+            <div class="contribution-number">01</div>
+            <div class="contribution-tag contribution-tag--systems">systems</div>
+            <h3 class="contribution-title">Local multiplayer</h3>
+            <p class="contribution-desc">2-4 player split-screen input & session setup</p>
+          </div>
+          <div class="contribution-card">
+            <div class="contribution-number">02</div>
+            <div class="contribution-tag contribution-tag--design">design</div>
+            <h3 class="contribution-title">Technical Designer</h3>
+            <p class="contribution-desc">Designed the game's systems and mechanics & implemented them</p>
+          </div>
+          <div class="contribution-card">
+            <div class="contribution-number">03</div>
+            <div class="contribution-tag contribution-tag--gameplay">gameplay</div>
+            <h3 class="contribution-title">Player controller</h3>
+            <p class="contribution-desc">Movement, aiming & the plug-in shoot mechanic</p>
+          </div>
+          <div class="contribution-card">
+            <div class="contribution-number">04</div>
+            <div class="contribution-tag contribution-tag--design">design & gameplay</div>
+            <h3 class="contribution-title">Map & mode variety</h3>
+            <p class="contribution-desc">Layouts tuned around socket-range strategy</p>
+          </div>
+          <div class="contribution-card">
+            <div class="contribution-number">05</div>
+            <div class="contribution-tag contribution-tag--production">production</div>
+            <h3 class="contribution-title">Team liaison</h3>
+            <p class="contribution-desc">Bridged client, artists & programmers</p>
+          </div>
+          <div class="contribution-card">
+            <div class="contribution-number">06</div>
+            <div class="contribution-tag contribution-tag--gameplay">gameplay</div>
+            <h3 class="contribution-title">Character selection</h3>
+            <p class="contribution-desc">Implemented/designed character selection & UI</p>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- 6. TAKEAWAYS -->
+      <section class="pp-section">
+        <h2 class="pp-heading interactivetext"><small>Looking back</small>Takeaways</h2>
+        <div class="takeaways">
+          <div class="panel">
+            <h3 class="takeaway-title">Safety needs a price</h3>
+            <p class="takeaway-text">A safe spot only stays interesting if leaving it is rewarded. Putting pickups away from the plugs fixed spawn camping.</p>
+          </div>
+          <div class="panel">
+            <h3 class="takeaway-title">Constraints guide design</h3>
+            <p class="takeaway-text">The client's "strategic but chaotic" brief gave clear rules for deciding which ideas to keep.</p>
+          </div>
+          <div class="panel">
+            <h3 class="takeaway-title">Communication is key</h3>
+            <p class="takeaway-text">We struggled with moving in one direction at first, 
+              but clear communication helped us align our efforts.</p>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- 7. SCREENSHOTS -->
+      <section class="pp-screenshots">
+        <h2 class="pp-heading interactivetext" style="text-align: center;"><small>Gallery</small>Screenshots</h2>
         <div class="row-holder-holder">
           <div class="row-holder">
             <div class="row" data-direction="left" data-speed="slow">
-              <img img src="Projects/Plug&Slay/Screenshots/Sniper.png" 
-                class="explanation-image piece">
-                <img img src="Projects/Plug&Slay/Screenshots/VictoryConcept.png" 
-                class="explanation-image piece">
-                <img img src="Projects/Plug&Slay/Screenshots/RulesScreen.png" 
-                class="explanation-image piece">
-                <img img src="Projects/Plug&Slay/Screenshots/Menu.png" 
-                class="explanation-image piece">
+              <img src="Projects/Plug&amp;Slay/Screenshots/Sniper.png" class="explanation-image piece" alt="Sniper">
+              <img src="Projects/Plug&amp;Slay/Screenshots/VictoryConcept.png" class="explanation-image piece" alt="Victory concept">
+              <img src="Projects/Plug&amp;Slay/Screenshots/RulesScreen.png" class="explanation-image piece" alt="Rules screen">
+              <img src="Projects/Plug&amp;Slay/Screenshots/Menu.png" class="explanation-image piece" alt="Menu">
+              <!-- duplicate set so the scroll loops seamlessly -->
+              <img src="Projects/Plug&amp;Slay/Screenshots/Sniper.png" class="explanation-image piece" alt="">
+              <img src="Projects/Plug&amp;Slay/Screenshots/VictoryConcept.png" class="explanation-image piece" alt="">
+              <img src="Projects/Plug&amp;Slay/Screenshots/RulesScreen.png" class="explanation-image piece" alt="">
+              <img src="Projects/Plug&amp;Slay/Screenshots/Menu.png" class="explanation-image piece" alt="">
             </div>
           </div>
         </div>
+      </section>
+
     </div>
 
 
-    <div class="footer-div">
-        <a href="https://www.linkedin.com/in/s%C3%A9bastien-surmont-77b7a0252/" class="footer image-button">
-        <p class=" footer-text">Contact me on LinkedIn</p></a>
+    <div class="footer-wrapper">
+      <div class="footer-div">
+        <a href="https://www.linkedin.com/in/s%C3%A9bastien-surmont-77b7a0252/" id="linkedinlink" class="footer image-button">
+          <p class="footer-text">Contact me on LinkedIn</p>
+        </a>
         <a href="#" id="emailLink" class="footer image-button">
           <p class="footer-text">Or send me an email</p>
         </a>
+      </div>
     </div>
 
-  <div class="bg"></div>
-  <div class="fadeout"></div>
-  <div class="star-pattern""></div>
+
+    <div class="bg"></div>
+    <div class="fadeout"></div>
+    <div class="star-pattern"></div>
   </body>
 </html>
