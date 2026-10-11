@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Git Clone</title>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/index.css">
+    <link rel="stylesheet" href="/project.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="Images/Icons/DillIcon.png">
+  </head>
+  <body>
+    <ul>
+      <li><a href="index.html">Projects</a></li>
+      <li><a href="404Page.html">Resume</a></li>
+      <li><a href="ContactPage.html">Contact</a></li>
+      <li><a href="AboutMe.html">Youtube</a></li>
+    </ul>
+
+    <!-- TODO: replace with your real GitHub repo URL -->
+    <ul class="nav-right">
+      <li><a href="https://github.com/slobbymonk/Git-Clone">▶ GitHub</a></li>
+    </ul>
+
+
+    <div class="parent-container">
+
+      <!-- 1. HERO -->
+      <div class="textandvideo">
+        <div>
+          <h1 class="project-title interactivetext" style="margin-bottom: 0;">Git Clone</h1>
+          <div class="award-badges">
+            <span class="award-badge award-badge--purple">hobby project</span>
+            <span class="award-badge award-badge--gold">pure C#</span>
+          </div>
+          <p class="project-description">
+            A Git-style version control system built from scratch in C#. Stage files, commit
+            snapshots and manage branches from a command prompt.
+          </p>
+        </div>
+        <img
+          class="project-header"
+          src="Images/Thumbnails/GitCloneThumbnail.png"
+          alt="Git Clone thumbnail">
+      </div>
+
+
+      <!-- 2. AT A GLANCE -->
+      <div class="glance">
+        <div class="glance-item panel">
+          <span class="glance-label">Language</span>
+          <span class="glance-value">C# / .NET 8</span>
+        </div>
+        <div class="glance-item panel">
+          <span class="glance-label">Interface</span>
+          <span class="glance-value">Command prompt</span>
+        </div>
+        <div class="glance-item panel">
+          <span class="glance-label">Storage</span>
+          <span class="glance-value">JSON commit snapshots</span>
+        </div>
+        <div class="glance-item panel">
+          <span class="glance-label">Size</span>
+          <span class="glance-value">~1,400 lines of C#</span>
+        </div>
+      </div>
+
+
+      <!-- 3. STORY -->
+      <section class="pp-section">
+        <h2 class="pp-heading interactivetext"><small>The short version</small>Rebuilding Git's core loop</h2>
+        <div class="story">
+          <div class="story-block panel">
+            <span class="contribution-tag contribution-tag--design story-step">scope</span>
+            <h3 class="story-title">Stage, commit, branch</h3>
+            <p class="story-text">
+              Edit files, <strong>stage</strong> them, <strong>commit</strong> a snapshot and
+              manage <strong>branches</strong>, all through a <strong>git</strong>-style prompt.
+            </p>
+          </div>
+          <div class="story-block panel">
+            <span class="contribution-tag contribution-tag--systems story-step">approach</span>
+            <h3 class="story-title">Model Git's own data</h3>
+            <p class="story-text">
+              A commit holds a <strong>tree of file and folder nodes</strong>, close to Git's own
+              tree and blob objects, and is saved to disk as JSON.
+            </p>
+          </div>
+          <div class="story-block panel">
+            <span class="contribution-tag contribution-tag--production story-step">status</span>
+            <h3 class="story-title">Core in place, gaps listed</h3>
+            <p class="story-text">
+              Staging, commits and branches are implemented. <strong>Restoring old commits,
+              merging and remotes</strong> are not built yet. But with the core in place they can be added easily.
+            </p>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- 4. DEEP DIVE -->
+      <section class="pp-section">
+        <h2 class="pp-heading interactivetext"><small>Deep dive</small>How it works</h2>
+
+        <div class="deep-dive">
+
+          <!-- Pipeline diagram -->
+          <div class="dd-block">
+            <h3 class="dd-block-title">From working directory to commit</h3>
+            <div class="diagram panel">
+              <div class="flow">
+                <div class="flow-step">
+                  <span class="flow-step-title">Working directory</span>
+                  <span class="flow-step-sub">WorkingDirectory · files on disk</span>
+                </div>
+                <div class="flow-arrow">→</div>
+                <div class="flow-step flow-step--accent">
+                  <span class="flow-step-title">Index</span>
+                  <span class="flow-step-sub">added / modified / deleted vs HEAD</span>
+                </div>
+                <div class="flow-arrow">→</div>
+                <div class="flow-step flow-step--warm">
+                  <span class="flow-step-title">Commit tree</span>
+                  <span class="flow-step-sub">Tree · file and folder nodes</span>
+                </div>
+                <div class="flow-arrow">→</div>
+                <div class="flow-step">
+                  <span class="flow-step-title">Branch</span>
+                  <span class="flow-step-sub">commit list + HEAD</span>
+                </div>
+                <div class="flow-arrow">→</div>
+                <div class="flow-step flow-step--accent">
+                  <span class="flow-step-title">JSON on disk</span>
+                  <span class="flow-step-sub">one file per commit</span>
+                </div>
+              </div>
+            </div>
+            <p class="dd-caption">
+              Each stage is its own class. A commit is built by walking the working directory:
+              staged files are snapshotted, and unchanged files are carried over from the previous
+              commit's tree.
+            </p>
+          </div>
+
+          <!-- Change detection -->
+          <div class="dd-block">
+            <h3 class="dd-block-title">Detecting what changed</h3>
+            <div class="code-card">
+              <div class="code-card-header">
+                <span class="code-card-file">Index.cs</span>
+                <span class="contribution-tag contribution-tag--programming">programming</span>
+              </div>
+<pre><code><span class="tok-c">// Index.GetAllChangedFiles(): compare the working directory with HEAD
+// (headFiles = every file in the HEAD commit's tree)</span>
+<span class="tok-k">foreach</span> (<span class="tok-k">var</span> workingFile <span class="tok-k">in</span> workingFiles)
+{
+    <span class="tok-k">if</span> (headFiles.<span class="tok-f">Contains</span>(workingFile.Name))
+    {
+        <span class="tok-c">// tracked in HEAD</span>
+        <span class="tok-k">var</span> fileNode = (<span class="tok-t">FileNode</span>)HEAD.CommitTree.Nodes[workingFile.Name];
+        <span class="tok-k">var</span> currentContent = <span class="tok-t">File</span>.<span class="tok-f">ReadAllText</span>(
+            WorkingDirectory.<span class="tok-f">GetFullPathFromRepositoryPath</span>(workingFile.RelativePath)
+        );
+        <span class="tok-k">var</span> d = diff.<span class="tok-f">DiffText</span>(fileNode.Content, currentContent);
+        <span class="tok-k">if</span> (d.Length &gt; <span class="tok-n">0</span>)
+            fileChanges[workingFile.Name] = <span class="tok-t">FileChangeStatus</span>.Modified;
+    }
+    <span class="tok-k">else</span>
+    {
+        fileChanges[workingFile.Name] = <span class="tok-t">FileChangeStatus</span>.Added;
+    }
+
+    <span class="tok-c">// remove from headFiles so leftover = deleted</span>
+    headFiles.<span class="tok-f">Remove</span>(workingFile.Name);
+}
+
+<span class="tok-c">// anything still in headFiles must have been deleted</span>
+<span class="tok-k">foreach</span> (<span class="tok-k">var</span> deleted <span class="tok-k">in</span> headFiles)
+    fileChanges[deleted] = <span class="tok-t">FileChangeStatus</span>.Deleted;</code></pre>
+              <p class="code-card-caption">
+                <strong>Why it matters:</strong> every file in HEAD goes into a set and gets checked off as
+                the working directory is scanned, so whatever is left over was deleted. Modified files are
+                found by diffing the stored content against what's on disk.
+              </p>
+            </div>
+          </div>
+
+          <!-- Commits as trees -->
+          <div class="dd-block">
+            <h3 class="dd-block-title">Commits as trees</h3>
+            <div class="dd-points">
+              <p class="dd-point"><strong>A tree, not a flat list.</strong> <code>FileNode</code> and <code>FolderNode</code> both implement <code>INode</code>, and folders hold their children, so a commit mirrors the directory structure.</p>
+              <p class="dd-point"><strong>Unchanged files are reused.</strong> When a commit is built, files that didn't change are taken from the previous commit's tree instead of being snapshotted again.</p>
+              <p class="dd-point"><strong>Saved as JSON.</strong> Each commit tree is written with Newtonsoft.Json into a per-branch history folder and read back when the program starts.</p>
+            </div>
+          </div>
+
+          <!-- JSON converter -->
+          <div class="dd-block">
+            <h3 class="dd-block-title">Loading a tree back from JSON</h3>
+            <div class="code-card">
+              <div class="code-card-header">
+                <span class="code-card-file">INode.cs</span>
+                <span class="contribution-tag contribution-tag--programming">programming</span>
+              </div>
+<pre><code><span class="tok-c">// the tree is made of two node types behind one interface</span>
+<span class="tok-k">public class</span> <span class="tok-t">NodeConverter</span> : <span class="tok-t">JsonConverter</span>
+{
+    <span class="tok-k">public override bool</span> <span class="tok-f">CanConvert</span>(<span class="tok-t">Type</span> objectType)
+    {
+        <span class="tok-k">return typeof</span>(<span class="tok-t">INode</span>).<span class="tok-f">IsAssignableFrom</span>(objectType);
+    }
+
+    <span class="tok-k">public override object</span>? <span class="tok-f">ReadJson</span>(<span class="tok-t">JsonReader</span> reader, <span class="tok-t">Type</span> objectType,
+                                  <span class="tok-t">object</span>? existingValue, <span class="tok-t">JsonSerializer</span> serializer)
+    {
+        <span class="tok-t">JObject</span> obj = <span class="tok-t">JObject</span>.<span class="tok-f">Load</span>(reader);
+        <span class="tok-k">if</span> (obj[<span class="tok-s">"Content"</span>] != <span class="tok-k">null</span>)
+        {
+            <span class="tok-k">return</span> obj.<span class="tok-f">ToObject</span>&lt;<span class="tok-t">FileNode</span>&gt;(serializer);
+        }
+        <span class="tok-k">else if</span> (obj[<span class="tok-s">"Children"</span>] != <span class="tok-k">null</span>)
+        {
+            <span class="tok-k">return</span> obj.<span class="tok-f">ToObject</span>&lt;<span class="tok-t">FolderNode</span>&gt;(serializer);
+        }
+
+        <span class="tok-k">throw new</span> <span class="tok-t">JsonSerializationException</span>(<span class="tok-s">"Unknown INode type."</span>);
+    }
+
+    <span class="tok-c">// WriteJson omitted</span>
+}</code></pre>
+              <p class="code-card-caption">
+                <strong>Why it matters:</strong> a folder's children can be files or folders, so JSON has to be
+                told which one to rebuild. The converter looks for <strong>Content</strong> (a file) or
+                <strong>Children</strong> (a folder).
+              </p>
+            </div>
+          </div>
+
+          <!-- Command line -->
+          <div class="dd-block">
+            <h3 class="dd-block-title">The command line</h3>
+            <div class="code-card">
+              <div class="code-card-header">
+                <span class="code-card-file">git prompt</span>
+                <span class="contribution-tag contribution-tag--systems">cli</span>
+              </div>
+<pre><code><span class="tok-c"># git &lt;group&gt; &lt;command&gt;   (every group also has "help")</span>
+<span class="tok-f">git</span> <span class="tok-k">help</span>
+
+<span class="tok-f">git</span> <span class="tok-k">repo</span> create | edit | remove <span class="tok-t">&lt;file&gt;</span>
+<span class="tok-f">git</span> <span class="tok-k">repo</span> list | status
+<span class="tok-f">git</span> <span class="tok-k">repo</span> stage <span class="tok-t">&lt;file&gt;</span> | all
+
+<span class="tok-f">git</span> <span class="tok-k">commit</span> <span class="tok-t">&lt;message&gt;</span>
+<span class="tok-f">git</span> <span class="tok-k">commit</span> list
+
+<span class="tok-f">git</span> <span class="tok-k">branch</span> create <span class="tok-t">&lt;name&gt;</span>
+<span class="tok-f">git</span> <span class="tok-k">branch</span> delete | clone | checkout <span class="tok-t">&lt;id&gt;</span>
+<span class="tok-f">git</span> <span class="tok-k">branch</span> list | current</code></pre>
+              <p class="code-card-caption">
+                <strong>Why it matters:</strong> command names live in constant structs
+                (<strong>RepositoryCommands</strong>, <strong>CommitCommands</strong>, <strong>BranchCommands</strong>),
+                shared by the parser and the help text, so a command is renamed in one place.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+
+      <!-- 5. WHAT I DID -->
+      <section class="pp-section">
+        <h2 class="pp-heading interactivetext"><small>My part</small>What I built</h2>
+        <div class="contribution-grid">
+          <div class="contribution-card">
+            <div class="contribution-number">01</div>
+            <div class="contribution-tag contribution-tag--systems">systems</div>
+            <h3 class="contribution-title">Staging & status</h3>
+            <p class="contribution-desc">Stage files one by one or all at once, and see what was added, modified or deleted against HEAD</p>
+          </div>
+          <div class="contribution-card">
+            <div class="contribution-number">02</div>
+            <div class="contribution-tag contribution-tag--systems">systems</div>
+            <h3 class="contribution-title">Commit trees</h3>
+            <p class="contribution-desc">Snapshots the repository as a tree of file and folder nodes</p>
+          </div>
+          <div class="contribution-card">
+            <div class="contribution-number">03</div>
+            <div class="contribution-tag contribution-tag--systems">systems</div>
+            <h3 class="contribution-title">Branches</h3>
+            <p class="contribution-desc">Create, clone, delete, list and switch branches by ID</p>
+          </div>
+          <div class="contribution-card">
+            <div class="contribution-number">04</div>
+            <div class="contribution-tag contribution-tag--programming">programming</div>
+            <h3 class="contribution-title">JSON persistence</h3>
+            <p class="contribution-desc">Saves commit trees to disk and loads them back with a custom converter</p>
+          </div>
+          <div class="contribution-card">
+            <div class="contribution-number">05</div>
+            <div class="contribution-tag contribution-tag--programming">programming</div>
+            <h3 class="contribution-title">Command interface</h3>
+            <p class="contribution-desc">A git-style prompt with repo, commit and branch commands and built-in help</p>
+          </div>
+          <div class="contribution-card">
+            <div class="contribution-number">06</div>
+            <div class="contribution-tag contribution-tag--programming">programming</div>
+            <h3 class="contribution-title">File management</h3>
+            <p class="contribution-desc">Create, edit and remove files in the working directory from the prompt</p>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- 6. NEXT STEPS (taken from the TODOs in the code) -->
+      <section class="pp-section">
+        <h2 class="pp-heading interactivetext"><small>Looking ahead</small>Next steps</h2>
+        <div class="takeaways">
+          <div class="panel">
+            <h3 class="takeaway-title">Check out old commits</h3>
+            <p class="takeaway-text">Commits are saved, but restoring the working directory from one isn't built yet. It's the first TODO in Repository.cs.</p>
+          </div>
+          <div class="panel">
+            <h3 class="takeaway-title">Link commits together</h3>
+            <p class="takeaway-text">Commits currently sit in a list per branch. Giving each one a parent would make real history, and merging, possible.</p>
+          </div>
+          <div class="panel">
+            <h3 class="takeaway-title">Configurable repository path</h3>
+            <p class="takeaway-text">The folder being tracked is a fixed path in WorkingDirectory, marked with a TODO.</p>
+          </div>
+        </div>
+      </section>
+
+    </div>
+
+
+    <div class="footer-wrapper">
+      <div class="footer-div">
+        <a href="https://www.linkedin.com/in/s%C3%A9bastien-surmont-77b7a0252/" id="linkedinlink" class="footer image-button">
+          <p class="footer-text">Contact me on LinkedIn</p>
+        </a>
+        <a href="#" id="emailLink" class="footer image-button">
+          <p class="footer-text">Or send me an email</p>
+        </a>
+      </div>
+    </div>
+
+
+    <div class="bg"></div>
+    <div class="fadeout"></div>
+    <div class="star-pattern"></div>
+  </body>
+</html>

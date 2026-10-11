@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Xbox Gamecamp</title>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/index.css">
+    <link rel="stylesheet" href="/project.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="Images/Icons/DillIcon.png">
+  </head>
+  <body>
+    <ul>
+      <li><a href="index.html">Projects</a></li>
+      <li><a href="404Page.html">Resume</a></li>
+      <li><a href="ContactPage.html">Contact</a></li>
+    </ul>
+
+    <ul class="nav-right">
+      <li><a href="https://slobbymonk.itch.io/trojan-horse-race">▶ Playable Build</a></li>
+    </ul>
+
+
+    <div class="parent-container">
+
+      <div class="textandvideo">
+        <div>
+          <h1 class="project-title interactivetext" style="margin-bottom: 0;">Trojan Horse Racing</h1>
+          <div class="award-badges">
+            <span class="award-badge award-badge--gold">category winner</span>
+            <span class="award-badge award-badge--purple">best overall</span>
+          </div>
+          <p class="project-description">
+            A racing game where you smash through windows, made in a 3-day in-person game jam
+            with 30 teams.
+          </p>
+        </div>
+        <iframe
+          class="project-header"
+          src="https://www.youtube.com/embed/rMRZyNSpVwo"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen>
+        </iframe>
+      </div>
+
+
+      <!-- ===================================================================
+           2. AT A GLANCE
+           3-4 facts. Who, how many, how long, and the outcome.
+           =================================================================== -->
+      <div class="glance">
+        <div class="glance-item panel">
+          <span class="glance-label">Role</span>
+          <span class="glance-value">Lead developer & technical designer</span>
+        </div>
+        <div class="glance-item panel">
+          <span class="glance-label">Team</span>
+          <span class="glance-value">5 people</span>
+        </div>
+        <div class="glance-item panel">
+          <span class="glance-label">Duration</span>
+          <span class="glance-value">3 days, in person</span>
+        </div>
+        <div class="glance-item panel">
+          <span class="glance-label">Result</span>
+          <span class="glance-value">Won category & best overall</span>
+        </div>
+      </div>
+
+
+      <!-- ===================================================================
+           3. STORY: problem / solution / result
+           2-3 sentences each. Bold only the key phrase.
+           =================================================================== -->
+      <section class="pp-section">
+        <h2 class="pp-heading interactivetext"><small>The short version</small>How we won</h2>
+        <div class="story">
+          <div class="story-block panel">
+            <span class="contribution-tag contribution-tag--design story-step">problem</span>
+            <h3 class="story-title">3 days, 30 teams</h3>
+            <p class="story-text">
+              Xbox Gamecamp gave every team three days to build a game from one of three
+              categories. We picked <strong>minesweeper</strong>.
+            </p>
+          </div>
+          <div class="story-block panel">
+            <span class="contribution-tag contribution-tag--systems story-step">approach</span>
+            <h3 class="story-title">Finish early, polish late</h3>
+            <p class="story-text">
+              I gave the team one goal: <strong>finish the game in day one and a half</strong>.
+              That left the rest of the jam for polish instead of features.
+            </p>
+          </div>
+          <div class="story-block panel">
+            <span class="contribution-tag contribution-tag--production story-step">result</span>
+            <h3 class="story-title">Two wins</h3>
+            <p class="story-text">
+              We won our <strong>category</strong> and took <strong>best overall</strong>
+              out of all 30 teams.
+            </p>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- ===================================================================
+           4. DEEP DIVE
+           The block that changes per project. Mix and match:
+             - .dd-split          media + text (design / art-heavy projects)
+             - .code-card         code snippet (code-heavy projects)
+             - .diagram + .flow   system diagram (NDA friendly)
+           Delete the ones you don't need.
+           =================================================================== -->
+      <section class="pp-section">
+        <h2 class="pp-heading interactivetext"><small>Deep dive</small>What made it feel good</h2>
+
+        <div class="deep-dive">
+
+          <!-- Media + text -->
+          <div class="dd-split">
+            <img src="Projects/TrojanHorseRacing/Screenshots/Working.jpg" class="dd-media" alt="Trojan Horse Racing gameplay">
+            <div class="dd-block">
+              <h3 class="dd-block-title">Feel over features</h3>
+              <div class="dd-points">
+                <p class="dd-point"><strong>Core first.</strong> Exploding windows and movement got most of my time.</p>
+                <p class="dd-point"><strong>Scoped down.</strong> A small game that felt flawless beat a big one that felt rough.</p>
+                <p class="dd-point"><strong>Polish day.</strong> Every player-facing system was tuned in the last day and a half.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Code card: PLACEHOLDER snippet, replace with your real code -->
+          <div class="dd-block">
+            <h3 class="dd-block-title">Window logic</h3>
+            <div class="code-card">
+              <div class="code-card-header">
+                <span class="code-card-file">WindowController.cs</span>
+                <span class="contribution-tag contribution-tag--programming">programming</span>
+              </div>
+<pre><code><span class="tok-c">// Placeholder example: replace with your real snippet (10-20 lines max)</span>
+<span class="tok-k">public void</span> <span class="tok-f">Explode</span>(<span class="tok-t">Vector2</span> hitPoint)
+{
+    <span class="tok-k">if</span> (isBroken) <span class="tok-k">return</span>;
+
+    isBroken = <span class="tok-k">true</span>;
+    glassCollider.enabled = <span class="tok-k">false</span>;   <span class="tok-c">// player can now pass through</span>
+    <span class="tok-f">SpawnShards</span>(hitPoint);
+}</code></pre>
+              <p class="code-card-caption">
+                <strong>Why it matters:</strong> one short caption on what this solves and why you chose it.
+              </p>
+            </div>
+          </div>
+
+          <!-- Diagram card: PLACEHOLDER flow, replace with your real system -->
+          <div class="dd-block">
+            <h3 class="dd-block-title">How a window breaks</h3>
+            <div class="diagram panel">
+              <div class="flow">
+                <div class="flow-step">
+                  <span class="flow-step-title">Player hits window</span>
+                  <span class="flow-step-sub">collision event</span>
+                </div>
+                <div class="flow-arrow">→</div>
+                <div class="flow-step flow-step--accent">
+                  <span class="flow-step-title">Update state</span>
+                  <span class="flow-step-sub">boolean logic</span>
+                </div>
+                <div class="flow-arrow">→</div>
+                <div class="flow-step flow-step--warm">
+                  <span class="flow-step-title">Swap colliders</span>
+                  <span class="flow-step-sub">open the path</span>
+                </div>
+                <div class="flow-arrow">→</div>
+                <div class="flow-step">
+                  <span class="flow-step-title">Explode</span>
+                  <span class="flow-step-sub">shards & feedback</span>
+                </div>
+              </div>
+            </div>
+            <p class="dd-caption">Optional one-line caption explaining the diagram.</p>
+          </div>
+
+        </div>
+      </section>
+
+
+      <!-- ===================================================================
+           5. WHAT I DID  (the existing contribution grid, unchanged)
+           =================================================================== -->
+      <section class="pp-section">
+        <h2 class="pp-heading interactivetext"><small>My part</small>What I did</h2>
+        <div class="contribution-grid">
+          <div class="contribution-card">
+            <div class="contribution-number">01</div>
+            <div class="contribution-tag contribution-tag--systems">systems</div>
+            <h3 class="contribution-title">Window Logic</h3>
+            <p class="contribution-desc">Made windows explode & their colliders change using boolean logic</p>
+          </div>
+          <div class="contribution-card">
+            <div class="contribution-number">02</div>
+            <div class="contribution-tag contribution-tag--systems">systems</div>
+            <h3 class="contribution-title">Character Movement</h3>
+            <p class="contribution-desc">Implemented character movement and physics</p>
+          </div>
+          <div class="contribution-card">
+            <div class="contribution-number">03</div>
+            <div class="contribution-tag contribution-tag--systems">polish</div>
+            <h3 class="contribution-title">Polished Systems</h3>
+            <p class="contribution-desc">Polished all player facing systems to feel smooth</p>
+          </div>
+          <div class="contribution-card">
+            <div class="contribution-number">04</div>
+            <div class="contribution-tag contribution-tag--production">design/programming lead</div>
+            <h3 class="contribution-title">Team lead</h3>
+            <p class="contribution-desc">Coordinated team efforts design & programming wise</p>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- ===================================================================
+           6. TAKEAWAYS
+           2-3 short lessons. Great for NDA projects where code can't be shown.
+           =================================================================== -->
+      <section class="pp-section">
+        <h2 class="pp-heading interactivetext"><small>Looking back</small>Takeaways</h2>
+        <div class="takeaways">
+          <div class="panel">
+            <h3 class="takeaway-title">Scope is a weapon</h3>
+            <p class="takeaway-text">Cutting the feature list early is what made the polish phase possible.</p>
+          </div>
+          <div class="panel">
+            <h3 class="takeaway-title">Set a deadline inside the deadline</h3>
+            <p class="takeaway-text">The day-and-a-half "game is done" milestone kept the whole team aligned.</p>
+          </div>
+          <div class="panel">
+            <h3 class="takeaway-title">Feel beats feature count</h3>
+            <p class="takeaway-text">Judges remembered how the game felt to play, not how much was in it.</p>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- ===================================================================
+           7. SCREENSHOTS
+           =================================================================== -->
+      <section class="pp-screenshots">
+        <h2 class="pp-heading interactivetext" style="text-align: center;"><small>Gallery</small>Screenshots</h2>
+        <div class="row-holder-holder">
+          <div class="row-holder">
+            <div class="row" data-direction="left" data-speed="slow">
+              <img src="Projects/TrojanHorseRacing/Screenshots/THR_Screenshot1.png" class="explanation-image piece" alt="Screenshot 1">
+              <img src="Projects/TrojanHorseRacing/Screenshots/THR_Screenshot2.png" class="explanation-image piece" alt="Screenshot 2">
+              <img src="Projects/TrojanHorseRacing/Screenshots/THR_Screenshot4.png" class="explanation-image piece" alt="Screenshot 3">
+              <img src="Projects/TrojanHorseRacing/Screenshots/THR_Screenshot3.png" class="explanation-image piece" alt="Screenshot 4">
+              <!-- duplicate set so the scroll loops seamlessly -->
+              <img src="Projects/TrojanHorseRacing/Screenshots/THR_Screenshot1.png" class="explanation-image piece" alt="">
+              <img src="Projects/TrojanHorseRacing/Screenshots/THR_Screenshot2.png" class="explanation-image piece" alt="">
+              <img src="Projects/TrojanHorseRacing/Screenshots/THR_Screenshot4.png" class="explanation-image piece" alt="">
+              <img src="Projects/TrojanHorseRacing/Screenshots/THR_Screenshot3.png" class="explanation-image piece" alt="">
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div>
+
+
+    <div class="footer-wrapper">
+      <div class="footer-div">
+        <a href="https://www.linkedin.com/in/s%C3%A9bastien-surmont-77b7a0252/" id="linkedinlink" class="footer image-button">
+          <p class="footer-text">Contact me on LinkedIn</p>
+        </a>
+        <a href="#" id="emailLink" class="footer image-button">
+          <p class="footer-text">Or send me an email</p>
+        </a>
+      </div>
+    </div>
+
+
+    <div class="bg"></div>
+    <div class="fadeout"></div>
+    <div class="star-pattern" style="--bg-image: url('Images/BackgroundPatterns/THRBG.png')"></div>
+  </body>
+</html>

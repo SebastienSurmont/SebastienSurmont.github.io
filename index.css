@@ -217,3 +217,29 @@
 .project10-image{
   background-image: url('Images/Temp/MobileGame.jpg');
 }
+
+
+/* ===== Role switcher (Game Design | Programmer) ===== */
+.role-switch {
+  display: flex;
+  width: fit-content;
+  margin: 6vh auto 0;
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: #1f2125;
+  background-image: url('Images/WigglyLinePattern.png');
+  background-size: 75px 38px;
+  box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.679);
+  font-weight: bold;
+}
+.role-tab {
+  display: block;
+  padding: 14px 28px;
+  color: white;
+  text-decoration: none;
+  transition: background-color 0.15s;
+}
+.role-tab:hover { background-color: #111; }
+.role-tab.is-active,
+.role-tab.is-active:hover { background-color: #2d456c; }
+.role-switch + .hi-myname { margin-top: 8vh; }

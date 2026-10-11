@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Just Chessing Around</title>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/index.css">
+    <link rel="stylesheet" href="/project.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="Images/Icons/DillIcon.png">
+  </head>
+  <body>
+    <ul>
+      <li><a href="index.html">Projects</a></li>
+      <li><a href="404Page.html">Resume</a></li>
+      <li><a href="ContactPage.html">Contact</a></li>
+    </ul>
+
+    <ul class="nav-right">
+      <li><a href="https://store.steampowered.com/app/4592040/Just_Chessing_Around/">▶ Steam Page</a></li>
+    </ul>
+
+
+    <div class="parent-container">
+
+      <!-- 1. HERO -->
+      <div class="textandvideo">
+        <div>
+          <h1 class="project-title interactivetext" style="margin-bottom: 0;">Just Chessing Around</h1>
+          <div class="award-badges">
+            <span class="award-badge award-badge--purple">steam game</span>
+            <span class="award-badge award-badge--gold">programming</span>
+          </div>
+          <p class="project-description">
+            A commercial roguelike chess game shipping on Steam. I built a custom grid engine in Unity,
+            a chess engine with its own APIs on top of it, and the game systems on top of that.
+          </p>
+        </div>
+        <iframe
+          class="project-header"
+          src="https://www.youtube.com/embed/UoVylT7Qph0"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen>
+        </iframe>
+      </div>
+
+
+      <!-- 2. AT A GLANCE -->
+      <div class="glance">
+        <div class="glance-item panel">
+          <span class="glance-label">Role</span>
+          <span class="glance-value">Lead developer</span>
+        </div>
+        <div class="glance-item panel">
+          <span class="glance-label">Team</span>
+          <span class="glance-value">2 people</span>
+        </div>
+        <div class="glance-item panel">
+          <span class="glance-label">Tech</span>
+          <span class="glance-value">Unity, C#, custom grid engine</span>
+        </div>
+        <div class="glance-item panel">
+          <span class="glance-label">Status</span>
+          <span class="glance-value">Shipping on Steam</span>
+        </div>
+      </div>
+
+
+      <!-- 3. STORY -->
+      <section class="pp-section">
+        <h2 class="pp-heading interactivetext"><small>The short version</small>Architecture first</h2>
+        <div class="story">
+          <div class="story-block panel">
+            <span class="contribution-tag contribution-tag--design story-step">problem</span>
+            <h3 class="story-title">Two devs, many systems</h3>
+            <p class="story-text">
+              A roguelike chess game has a lot of interacting rules. With a second developer
+              in the codebase, one wrong dependency can <strong>create bugs that spread</strong>.
+            </p>
+          </div>
+          <div class="story-block panel">
+            <span class="contribution-tag contribution-tag--systems story-step">approach</span>
+            <h3 class="story-title">Layers with hard boundaries</h3>
+            <p class="story-text">
+              A <strong>grid engine</strong> at the base, a <strong>chess engine with APIs</strong> on top,
+              and game systems built only through those APIs.
+            </p>
+          </div>
+          <div class="story-block panel">
+            <span class="contribution-tag contribution-tag--production story-step">result</span>
+            <h3 class="story-title">Safe to extend, reusable</h3>
+            <p class="story-text">
+              New content slots in without touching the backend, and the grid engine
+              is <strong>reusable in future projects</strong>.
+            </p>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- 4. DEEP DIVE -->
+      <section class="pp-section">
+        <h2 class="pp-heading interactivetext"><small>Deep dive</small>How it's built</h2>
+
+        <div class="deep-dive">
+
+          <!-- Architecture diagram. Edit the layer names/subtitles to match your real code. -->
+          <div class="dd-block">
+            <h3 class="dd-block-title">The layers</h3>
+            <div class="diagram panel">
+              <div class="flow">
+                <div class="flow-step">
+                  <span class="flow-step-title">Grid engine</span>
+                  <span class="flow-step-sub">tiles, pathfinding (A*)</span>
+                </div>
+                <div class="flow-arrow">→</div>
+                <div class="flow-step flow-step--accent">
+                  <span class="flow-step-title">Chess engine</span>
+                  <span class="flow-step-sub">pieces, moves, public APIs</span>
+                </div>
+                <div class="flow-arrow">→</div>
+                <div class="flow-step flow-step--warm">
+                  <span class="flow-step-title">Game systems</span>
+                  <span class="flow-step-sub">buffs, environments, AI</span>
+                </div>
+                <div class="flow-arrow">→</div>
+                <div class="flow-step">
+                  <span class="flow-step-title">Unity front end</span>
+                  <span class="flow-step-sub">views, camera, UI</span>
+                </div>
+              </div>
+            </div>
+            <p class="dd-caption">
+              Each layer only talks to the one below it through its API. Everything in the game
+              interacts with the grid layer, which makes it an engine within an engine.
+            </p>
+          </div>
+
+          <!-- Media + points -->
+          <div class="dd-split">
+            <img src="Projects/JCA/JCAGameplay.gif" class="dd-media" alt="Just Chessing Around gameplay">
+            <div class="dd-block">
+              <h3 class="dd-block-title">Building the grid engine</h3>
+              <div class="dd-points">
+                <p class="dd-point"><strong>Layered architecture.</strong> Separate layers of abstraction on top of the grid keep bugs contained.</p>
+                <p class="dd-point"><strong>Filling Unity's gaps.</strong> Working outside Unity's built-in tools meant building missing features myself.</p>
+                <p class="dd-point"><strong>Custom A*.</strong> The layered structure made it straightforward to slot pathfinding in.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Code card: PLACEHOLDER. Replace with your real buff code. -->
+          <div class="dd-block">
+            <h3 class="dd-block-title">Buff system</h3>
+            <div class="code-card">
+              <div class="code-card-header">
+                <span class="code-card-file">Buff.cs</span>
+                <span class="contribution-tag contribution-tag--programming">programming</span>
+              </div>
+              <pre><code><span class="tok-c">// This class also has a few APIs methods to make buffs easily mutable.</span>
+              <span class="tok-k">public abstract class</span> <span class="tok-t">Buff</span>
+              {
+                  <span class="tok-k">public abstract void</span> <span class="tok-f">ActivateInSlot</span>(<span class="tok-t">GameEventsContext</span> ctx);
+                  <span class="tok-k">public abstract void</span> <span class="tok-f">DeactivateInSlot</span>(<span class="tok-t">GameEventsContext</span> ctx);
+              }</pre>
+              <p class="code-card-caption">
+                <strong>Why it matters:</strong> buffs use polymorphism, so a new buff is a new class.
+                No backend changes, and a buff can only interact with the game using predefined callbacks. Making it very moddable.
+              </p>
+            </div>
+          </div>
+
+          <!-- Media + points, reversed -->
+          <div class="dd-split dd-split--reverse">
+            <img src="Projects/JCA/CabbageClubTeam.jpg" class="dd-media" alt="The team">
+            <div class="dd-block">
+              <h3 class="dd-block-title">Built for a team of two</h3>
+              <div class="dd-points">
+                <p class="dd-point"><strong>Front end / back end split.</strong> My friend can build content without being able to cause systemic bugs.</p>
+                <p class="dd-point"><strong>MVP.</strong> Game logic is kept separate from what's shown on screen.</p>
+                <p class="dd-point"><strong>Strategy pattern.</strong> Behaviour like AI decisions is swappable, not hard-coded.</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+
+      <!-- 5. WHAT I DID -->
+      <section class="pp-section">
+        <h2 class="pp-heading interactivetext"><small>My part</small>What I did</h2>
+        <div class="contribution-grid">
+          <div class="contribution-card">
+            <div class="contribution-number">01</div>
+            <div class="contribution-tag contribution-tag--systems">systems</div>
+            <h3 class="contribution-title">Grid Engine</h3>
+            <p class="contribution-desc">Everything in the game interacts with a grid layer, making it an engine within an engine</p>
+          </div>
+          <div class="contribution-card">
+            <div class="contribution-number">02</div>
+            <div class="contribution-tag contribution-tag--systems">systems</div>
+            <h3 class="contribution-title">Chess Engine & APIs</h3>
+            <p class="contribution-desc">Chess rules and pieces on top of the grid, exposed through APIs the rest of the game builds on</p>
+          </div>
+          <div class="contribution-card">
+            <div class="contribution-number">03</div>
+            <div class="contribution-tag contribution-tag--systems">systems</div>
+            <h3 class="contribution-title">Buff System</h3>
+            <p class="contribution-desc">Polymorphic and easily expandable to new buffs without touching the backend</p>
+          </div>
+          <div class="contribution-card">
+            <div class="contribution-number">04</div>
+            <div class="contribution-tag contribution-tag--programming">programming</div>
+            <h3 class="contribution-title">Custom A* Pathfinding</h3>
+            <p class="contribution-desc">Built for the grid engine, since Unity doesn't provide it for this setup</p>
+          </div>
+          <div class="contribution-card">
+            <div class="contribution-number">05</div>
+            <div class="contribution-tag contribution-tag--gameplay">gameplay</div>
+            <h3 class="contribution-title">Environments</h3>
+            <p class="contribution-desc">Implemented boards with unique tiles & dangers, such as tornadoes and quicksand</p>
+          </div>
+          <div class="contribution-card">
+            <div class="contribution-number">06</div>
+            <div class="contribution-tag contribution-tag--production">production</div>
+            <h3 class="contribution-title">Lead dev & marketing</h3>
+            <p class="contribution-desc">Led the codebase and ran the game's marketing</p>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- 6. TAKEAWAYS -->
+      <section class="pp-section">
+        <h2 class="pp-heading interactivetext"><small>Looking back</small>Takeaways</h2>
+        <div class="takeaways">
+          <div class="panel">
+            <h3 class="takeaway-title">Boundaries protect teams</h3>
+            <p class="takeaway-text">A clean front end / back end split lets two people work fast without breaking each other's code.</p>
+          </div>
+          <div class="panel">
+            <h3 class="takeaway-title">Polymorphism over special cases</h3>
+            <p class="takeaway-text">Adding a buff means adding a class, not editing the engine.</p>
+          </div>
+          <div class="panel">
+            <h3 class="takeaway-title">Invest in the base layer</h3>
+            <p class="takeaway-text">The grid engine took work up front but now underpins every system, and carries over to future games.</p>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- 7. SCREENSHOTS -->
+      <section class="pp-screenshots">
+        <h2 class="pp-heading interactivetext" style="text-align: center;"><small>Gallery</small>Screenshots</h2>
+        <div class="row-holder-holder">
+          <div class="row-holder">
+            <div class="row" data-direction="left" data-speed="slow">
+              <img src="Projects/JCA/Screenshot_Desert.png" class="explanation-image piece" alt="Desert">
+              <img src="Projects/JCA/Swamp_ChangingBuffs.png" class="explanation-image piece" alt="Swamp, changing buffs">
+              <img src="Projects/JCA/ThroneRoom_PieceSelected.png" class="explanation-image piece" alt="Throne room">
+              <img src="Projects/JCA/Shop.png" class="explanation-image piece" alt="Shop">
+              <img src="Projects/JCA/DarkHallways.png" class="explanation-image piece" alt="Dark hallways">
+              <img src="Projects/JCA/UnderlingRoom.png" class="explanation-image piece" alt="Underling room">
+              <img src="Projects/JCA/Screenshot_Grass.png" class="explanation-image piece" alt="Grass">
+              <img src="Projects/JCA/Screenshot_Defeated.png" class="explanation-image piece" alt="Defeated">
+              <!-- duplicate set so the scroll loops seamlessly -->
+              <img src="Projects/JCA/Screenshot_Desert.png" class="explanation-image piece" alt="">
+              <img src="Projects/JCA/Swamp_ChangingBuffs.png" class="explanation-image piece" alt="">
+              <img src="Projects/JCA/ThroneRoom_PieceSelected.png" class="explanation-image piece" alt="">
+              <img src="Projects/JCA/Shop.png" class="explanation-image piece" alt="">
+              <img src="Projects/JCA/DarkHallways.png" class="explanation-image piece" alt="">
+              <img src="Projects/JCA/UnderlingRoom.png" class="explanation-image piece" alt="">
+              <img src="Projects/JCA/Screenshot_Grass.png" class="explanation-image piece" alt="">
+              <img src="Projects/JCA/Screenshot_Defeated.png" class="explanation-image piece" alt="">
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div>
+
+
+    <div class="footer-wrapper">
+      <div class="footer-div">
+        <a href="https://www.linkedin.com/in/s%C3%A9bastien-surmont-77b7a0252/" id="linkedinlink" class="footer image-button">
+          <p class="footer-text">Contact me on LinkedIn</p>
+        </a>
+        <a href="#" id="emailLink" class="footer image-button">
+          <p class="footer-text">Or send me an email</p>
+        </a>
+      </div>
+    </div>
+
+
+    <div class="bg"></div>
+    <div class="fadeout"></div>
+    <div class="star-pattern" style="--bg-image: url('Images/BackgroundPatterns/JustChessingAroundBG.png')"></div>
+  </body>
+</html>
